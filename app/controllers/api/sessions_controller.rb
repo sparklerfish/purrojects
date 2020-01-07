@@ -2,7 +2,7 @@ class Api::SessionsController < ApplicationController
     def create
         @user = User.find_by_credentials(params[:user][:username], params[:user][:password])
         if @user.nil?
-            flash.now[:errors] = ['Invalid credentials']
+            flash.now[:errors] = ["Sorry, we can't find that account, or your password didn't match. Please try again!"]
             render :new
         else
             login!(@user)
@@ -19,5 +19,3 @@ class Api::SessionsController < ApplicationController
         end
     end
 end
-
-Sorry, we can't find that account, or your password didn't match. Please try again!
