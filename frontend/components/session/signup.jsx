@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom"
 
 class Signup extends React.Component {
   componentDidMount() {
@@ -42,39 +43,48 @@ class Signup extends React.Component {
       <div className="session-image">
         <div className="dimmed">
           <div className="sessionbox">
-            <h1>Sign Up</h1>
-            <form>
-              <label>
-                <input
-                  type="text"
-                  placeholder="Username"
-                  value={this.state.username}
-                  onChange={this.handleInput("username")}
-                />
-              </label>
-              <br />
-              <label>
-                <input
-                  type="text"
-                  placeholder="Email"
-                  value={this.state.email}
-                  onChange={this.handleInput("email")}
-                />
-              </label>
-              <br />
-              <label>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  value={this.state.password}
-                  onChange={this.handleInput("password")}
-                />
-              </label>
-              <br />
-              <br />
-              {this.renderErrors()}
-              <button onClick={this.handleSubmit}>Sign Up</button>
-            </form>
+            <center>
+              <form>
+                <label>
+                  <input
+                    className="session-input"
+                    type="text"
+                    placeholder=" Username"
+                    value={this.state.username}
+                    onChange={this.handleInput("username")}
+                  />
+                </label>
+                <br />
+                <label>
+                  <input
+                    className="session-input"
+                    type="text"
+                    placeholder=" Email"
+                    value={this.state.email}
+                    onChange={this.handleInput("email")}
+                  />
+                </label>
+                <br />
+                <label>
+                  <input
+                    className="session-input"
+                    type="password"
+                    placeholder=" Password"
+                    value={this.state.password}
+                    onChange={this.handleInput("password")}
+                  />
+                </label>
+                <br />
+                <br />
+                {this.renderErrors()}
+                <button className="session-button" onClick={this.handleSubmit}>
+                  Sign Me Up !
+                </button>
+                <p>
+                  Already a member? <Link to="/login">Login >></Link>
+                </p>
+              </form>
+            </center>
           </div>
         </div>
       </div>

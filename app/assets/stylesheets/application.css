@@ -97,7 +97,7 @@ body {
   height: 900px;
   top: 0px;
   left: 50px;
-  background:rgba(0,0,0,0.1);
+  background:rgba(0,0,0,0.2);
   backdrop-filter: blur(4px);
 }
 
@@ -141,13 +141,46 @@ body {
   padding: 10px
 }
 
-input[type=submit] {
-  background-color: #4CAF50;
+.session-button {
+  background-color:#faac18;
   border: none;
   color: white;
-  padding: 16px 32px;
+  /* padding: 16px 32px; */
   text-decoration: none;
+  font-size: 15pt;
   margin: 4px 2px;
   cursor: pointer;
-  width: 400px;
+  width: 360px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.demo {
+  background-color: #587ebf;
+}
+
+.session-input {
+  border: none;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  font-size: 15pt;
+  margin: 4px 2px;
+  width: 360px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.sessionbox p {
+  color: white;
+  font-size: 10pt;
+}
+
+.sessionbox p a {
+  color: white;
+  font-size: 10pt;
+}
+
+.sessionbox p a:visited {
+  color: white;
+  font-size: 10pt;
 }
