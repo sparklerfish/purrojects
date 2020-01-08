@@ -1,6 +1,10 @@
 import React from "react";
 
 class Signup extends React.Component {
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+  
   constructor(props) {
     super(props);
     this.state = {
@@ -41,27 +45,27 @@ class Signup extends React.Component {
             <h1>Sign Up</h1>
             <form>
               <label>
-                Username:
                 <input
                   type="text"
+                  placeholder="Username"
                   value={this.state.username}
                   onChange={this.handleInput("username")}
                 />
               </label>
               <br />
               <label>
-                Email:
                 <input
                   type="text"
+                  placeholder="Email"
                   value={this.state.email}
                   onChange={this.handleInput("email")}
                 />
               </label>
               <br />
               <label>
-                Password:
                 <input
                   type="password"
+                  placeholder="Password"
                   value={this.state.password}
                   onChange={this.handleInput("password")}
                 />

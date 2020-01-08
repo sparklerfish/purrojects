@@ -1,6 +1,10 @@
 import React from "react";
 
 class Login extends React.Component {
+  componentDidMount() {
+    this.props.clearErrors()
+  }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -35,36 +39,35 @@ class Login extends React.Component {
 
   render() {
     return (
-
-    <div className="session-image">
-      <div className="dimmed">
-        <div className="sessionbox">
-          <h1>Log In</h1>
-          <form>
-            <label>
-              Username:
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.handleInput("username")}
-              />
-            </label>
-            <br />
-            <label>
-              Password:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.handleInput("password")}
-              />
-            </label>
-            <br />
-            {this.renderErrors()}
-            <button onClick={this.handleSubmit}>Log In</button>
-          </form>
+      <div className="session-image">
+        <div className="dimmed">
+          <div className="sessionbox">
+            <h1>Log In</h1>
+            <form>
+              <label>
+                <input
+                  placeholder="Username"
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.handleInput("username")}
+                />
+              </label>
+              <br />
+              <label>
+                <input
+                  placeholder="Password"
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleInput("password")}
+                />
+              </label>
+              <br />
+              {this.renderErrors()}
+              <button onClick={this.handleSubmit}>Log In</button>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
     );
   }
 }
