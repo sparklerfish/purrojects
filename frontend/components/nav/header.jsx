@@ -6,26 +6,37 @@ class Header extends React.Component {
     super(props);
   }
 
+
   render() {
     if (this.props.currentUser) {
       return (
         <div className="navbar">
-          {this.props.currentUser.username}
-          <br />
-          <button onClick={this.props.logout}>Logout</button>
+          <div className="right-nav">
+            <ul>
+              <li>
+                <button onClick={this.props.logout}>Logout</button>
+              </li>
+              <li>
+                {this.props.currentUser.username}
+              </li>
+            </ul>
+          </div>
         </div>
       );
     } else {
       return (
         <div className="navbar">
-          <ul>
-            <li>
-              <Link to="/login">Log In</Link>
-            </li>    
-            <li>
-              <Link to="/signup">Sign Up</Link>
-            </li>        
-          </ul>
+          <div className="right-nav">
+            <ul>
+              <li>
+                <Link to="/signup">Sign Up</Link>
+              </li>
+              <li>|</li>
+              <li>
+                <Link to="/login">Log In</Link>
+              </li>
+            </ul>
+          </div>
         </div>
       );
     }

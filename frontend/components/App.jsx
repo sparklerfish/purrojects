@@ -3,13 +3,18 @@ import HeaderContainer from './nav/headerContainer';
 import { AuthRoute } from "../util/route_util";
 import SignupContainer from './session/signupContainer';
 import LoginContainer from './session/loginContainer';
+import { Route } from 'react-router-dom';
+import Splash from './splash';
+import MainNav from "./nav/mainnav";
+
 
 const App = () => (
   <div>
     <HeaderContainer />
-    <h1>purrojects</h1>
+    <MainNav />
     <AuthRoute path="/signup" component={SignupContainer} />
     <AuthRoute path="/login" component={LoginContainer} />
+    <Route exact path="/" component={Splash} />
   </div>
 );
 
