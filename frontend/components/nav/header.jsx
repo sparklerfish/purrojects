@@ -10,9 +10,14 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="navbar">
-          {this.props.currentUser.username}
-          <br />
-          <button onClick={this.props.logout}>Logout</button>
+          <ul>
+            <li>
+              {this.props.currentUser.username}
+            </li>
+            <li>
+              <a onClick={this.props.logout}>Logout</a>
+            </li>
+          </ul>
         </div>
       );
     } else {

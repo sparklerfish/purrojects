@@ -10,6 +10,7 @@ class Signup extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   handleInput(type) {
@@ -22,6 +23,18 @@ class Signup extends React.Component {
     e.preventDefault();
     this.props
       .createNewUser(this.state)
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
@@ -55,6 +68,7 @@ class Signup extends React.Component {
               onChange={this.handleInput("password")}
             />
           </label>
+          {this.renderErrors()}
           <button onClick={this.handleSubmit}>Sign Up</button>
         </form>
       </div>
