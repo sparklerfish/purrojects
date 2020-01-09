@@ -12,13 +12,9 @@ export default (state = _nullErrors, action) => {
     case RECEIVE_SESSION_ERRORS:
       return action.errors.responseJSON;
     case RECEIVE_CURRENT_USER:
-<<<<<<< HEAD
-      return _nullErrors;
-=======
       return [];
     case CLEAR_ERRORS:
       return [];
->>>>>>> userAuth
     default:
       return state;
   }

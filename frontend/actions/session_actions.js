@@ -19,23 +19,6 @@ export const receiveErrors = errors => ({
   errors
 });
 
-<<<<<<< HEAD
-
-export const signup = user => dispatch => (
-  APIUtil.signup(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-);
-
-export const login = user => dispatch => (
-  APIUtil.login(user).then(user => (
-    dispatch(receiveCurrentUser(user))
-  ), err => (
-    dispatch(receiveErrors(err.responseJSON))
-  ))
-=======
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
 })
@@ -50,7 +33,6 @@ export const login = user => dispatch => (
   APIUtil.login(user)
   .then(user => (dispatch(receiveCurrentUser(user))))
   .fail(errors => dispatch(receiveErrors(errors)))
->>>>>>> userAuth
 );
 
 export const logout = () => dispatch => (

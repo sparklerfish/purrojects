@@ -11,16 +11,6 @@ class Header extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="navbar">
-<<<<<<< HEAD
-          <ul>
-            <li>
-              {this.props.currentUser.username}
-            </li>
-            <li>
-              <a onClick={this.props.logout}>Logout</a>
-            </li>
-          </ul>
-=======
           <div className="right-nav">
             <ul>
               <li>
@@ -31,7 +21,6 @@ class Header extends React.Component {
               </li>
             </ul>
           </div>
->>>>>>> userAuth
         </div>
       );
     } else {

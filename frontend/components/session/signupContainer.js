@@ -6,11 +6,7 @@ import Signup from "./signup";
 const mapStateToProps = ({ errors }) => {
   return {
     errors: errors.session,
-<<<<<<< HEAD
-    formType: 'signup'
-=======
     formType: "signup"
->>>>>>> userAuth
   };
 };
 
