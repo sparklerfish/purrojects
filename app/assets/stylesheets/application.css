@@ -14,30 +14,178 @@
  *= require_self
  */
 
+<<<<<<< HEAD
 .navbar {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+=======
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  margin: 0;
+>>>>>>> userAuth
 }
 
  .navbar ul {
   list-style-type: none;
   margin: 0;
+  background-color: #555;
+  height: 38px;
   padding: 0;
-  overflow: hidden;
+}
+
+.navbar {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.right-nav li {
+  float: right;
+  color: white;
+  font-size: 9pt;
+  text-align: center;
+  padding: 12px 5px;
+  text-decoration: none;
+}
+
+.right-nav {
+  padding: 0px 20px 0px 0px;
   background-color: #555;
 }
 
-.navbar li {
-  float: right;
-}
-
-.navbar li a {
+.right-nav li a {
   display: block;
   color: white;
+  font-size: 9pt;
   text-align: center;
-  padding: 14px 16px;
+  /* padding: 12px 16px; */
   text-decoration: none;
 }
 
 .navbar li a:hover {
   text-decoration: underline;
+}
+
+.main-image {
+  height: 450px;
+  width: 100%;
+  background-image: url("cat.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 119px;
+}
+
+.session-image {
+  height: 900px;
+  width: 100%;
+  background-image: url("harry.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 119px;
+}
+/* 
+.dimmed {
+  position: relative;
+} */
+
+.dimmed {
+  /* margin: 0px 0px 0px 0px; */
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 400px;
+  height: 900px;
+  top: 0px;
+  left: 50px;
+  background:rgba(0,0,0,0.2);
+  backdrop-filter: blur(4px);
+}
+
+.sessionbox {
+  content: " ";
+  z-index: 10;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 400px;
+  height: 900px;
+  top: 119px;
+  left: 0;
+  right: 0;
+}
+
+
+ .mainnav {
+  list-style-type: none;
+  margin: 0;
+  /* overflow: hidden; */
+  background-color: #eee;
+  border-bottom: 2px solid #ccc;
+  height: 80px;
+  position: absolute;
+  top: 38px;
+  width: 100%
+}
+
+.logo a {
+  text-decoration: none;
+  font-weight: bolder;
+  font-size: 16pt;
+}
+
+.logo a:visited {
+  text-decoration: none;
+}
+
+.logo {
+  padding: 10px
+}
+
+.session-button {
+  background-color:#faac18;
+  border: none;
+  color: white;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  font-size: 15pt;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 360px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.demo {
+  background-color: #587ebf;
+}
+
+.session-input {
+  border: none;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  font-size: 15pt;
+  margin: 4px 2px;
+  width: 360px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.sessionbox p {
+  color: white;
+  font-size: 10pt;
+}
+
+.sessionbox p a {
+  color: white;
+  font-size: 10pt;
+}
+
+.sessionbox p a:visited {
+  color: white;
+  font-size: 10pt;
 }
