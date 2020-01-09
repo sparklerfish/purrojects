@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Login extends React.Component {
-  componentWillUnmount() {
-    this.props.clearErrors()
+  componentDidMount() {
+    this.props.clearErrors();
   }
 
   constructor(props) {
@@ -32,19 +32,23 @@ class Login extends React.Component {
   demoLogin(e) {
     e.preventDefault();
     this.props.login({
-      username: 'guest',
-      password: 'password'
+      username: "guest",
+      password: "password"
     });
   }
 
   renderErrors() {
-    return (
-      <ul className="session-errors">
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
-        ))}
-      </ul>
-    );
+    if (this.props.errors.length > 0) {
+      return (
+        <ul className="session-errors">
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>{error}</li>
+          ))}
+        </ul>
+      );
+    } else {
+      return null;
+    }
   }
 
   render() {
@@ -75,7 +79,7 @@ class Login extends React.Component {
                 </label>
                 <br />
                 <br />
-                {this.props.errors.length > 0 ? this.renderErrors() : null}
+                {this.renderErrors()}
                 <button className="session-button" onClick={this.handleSubmit}>
                   Login
                 </button>
