@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Login extends React.Component {
-  componentDidMount() {
+  componentWillUnmount() {
     this.props.clearErrors()
   }
 
@@ -39,7 +39,7 @@ class Login extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="session-errors">
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
@@ -57,7 +57,7 @@ class Login extends React.Component {
                 <label>
                   <input
                     className="session-input"
-                    placeholder=" Username"
+                    placeholder="Username"
                     type="text"
                     value={this.state.username}
                     onChange={this.handleInput("username")}
@@ -67,18 +67,22 @@ class Login extends React.Component {
                 <label>
                   <input
                     className="session-input"
-                    placeholder=" Password"
+                    placeholder="Password"
                     type="password"
                     value={this.state.password}
                     onChange={this.handleInput("password")}
                   />
                 </label>
                 <br />
-                {this.renderErrors()}
+                <br />
+                {this.props.errors.length > 0 ? this.renderErrors() : null}
                 <button className="session-button" onClick={this.handleSubmit}>
                   Login
                 </button>
-                <button className="session-button demo" onClick={this.demoLogin}>
+                <button
+                  className="session-button demo"
+                  onClick={this.demoLogin}
+                >
                   Demo User
                 </button>
                 <p>

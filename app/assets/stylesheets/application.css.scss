@@ -161,11 +161,11 @@ body {
 
 .session-input {
   border: none;
-  /* padding: 16px 32px; */
+  padding: 0px 16px;
   text-decoration: none;
   font-size: 15pt;
   margin: 4px 2px;
-  width: 360px;
+  width: 328px;
   height: 42px;
   border-radius: 5px;
 }
@@ -181,6 +181,16 @@ body {
 }
 
 .sessionbox p a:visited {
+  color: white;
+  font-size: 10pt;
+}
+
+.session-errors {
+  list-style: none;
+  background-color: darkred;
+  width: 328px;
+  border-radius: 5px;
+  padding: 16px;
   color: white;
   font-size: 10pt;
 }
