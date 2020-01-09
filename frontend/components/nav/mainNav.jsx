@@ -14,6 +14,11 @@ class MainNav extends React.Component {
                     <Link to="/projects" className="button">Projects</Link>
 
                 </div>
+                <div className="right-main-nav">
+                    <div className="search-bar">
+                        Search coming soon!
+                    </div>
+                </div>
             </div>
         )
     }
