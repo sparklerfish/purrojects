@@ -1,0 +1,24 @@
+.mainnav .button {
+    position: relative;
+    top: -2px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+.button {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    background-color: #f6f6f6;
+    border-color: #dedede;
+    color: #333;
+}

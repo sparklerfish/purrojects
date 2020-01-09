@@ -6,16 +6,16 @@
 .main-image {
   height: 450px;
   width: 100%;
-  background-image: url("cat_cropped_gradient.jpg");
-  background-position: center;
+  background-image: url("harry_gradient.jpg");
+  background-position: 25%;
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
-  overflow: hidden;
+  /* overflow: hidden; */
   top: 128px;
 }
 
-.big-splash-text {
+.big-splash-text { 
     /* position: absolute;
     top: 265px;
     left: 50px; */
@@ -33,7 +33,7 @@
 
 .splash-text {
     position: absolute;
-    left: 50px;
+    left: 75px;
     top: 240px;
     max-width: 550px;
     width: 100%;

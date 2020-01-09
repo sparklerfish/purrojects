@@ -10,6 +10,7 @@ class MainNav extends React.Component {
                         <img src={window.logo} height="60px"/>
                     </Link>
                 </div>
+                <Link to="/projects" className="button"></Link>
             </div>
         )
     }
