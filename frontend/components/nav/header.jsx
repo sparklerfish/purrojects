@@ -11,9 +11,10 @@ class Header extends React.Component {
       <div className="right-nav">
         <ul>
           <li>
-            <button onClick={this.props.logout}>Logout</button>
+            <a onClick={this.props.logout}>Logout</a>
           </li>
-          <li>{this.props.currentUser.username}</li>
+          <li>|</li>
+          <li>Hello, {this.props.currentUser.username}!</li>
         </ul>
       </div>
     );
@@ -38,6 +39,24 @@ class Header extends React.Component {
   render() {
     return (
       <div className="navbar">
+        <div className="left-nav">
+          <ul>
+            <li>
+              <Link to="/">
+                <i className="fa fa-home w3-large"></i>
+              </Link>
+            </li>
+            <li>
+              Sleep
+            </li>
+            <li>
+              Eat
+            </li>
+            <li>
+              Play
+            </li>
+          </ul>
+        </div>
         {this.props.currentUser
           ? this.loggedInRightNav()
           : this.loggedOutRightNav()}

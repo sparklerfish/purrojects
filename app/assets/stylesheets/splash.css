@@ -1,0 +1,14 @@
+
+
+.main-image {
+  height: 450px;
+  width: 100%;
+  background-image: url("cat.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  top: 128px;
+}
+
+

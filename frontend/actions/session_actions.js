@@ -24,7 +24,6 @@ export const clearErrors = () => ({
 })
 
 export const signup = user => dispatch => {
-  debugger
   return APIUtil.signup(user)
     .then(user => dispatch(receiveCurrentUser(user)))
     .fail(errors => dispatch(receiveErrors(errors)));
