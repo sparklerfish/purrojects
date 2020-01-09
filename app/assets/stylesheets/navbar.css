@@ -42,18 +42,6 @@
   text-decoration: underline;
 }
 
- .mainnav {
-  list-style-type: none;
-  margin: 0;
-  /* overflow: hidden; */
-  background-color: #eee;
-  border-bottom: 2px solid #ccc;
-  height: 90px;
-  position: absolute;
-  top: 38px;
-  width: 100%
-}
-
 .logo {
   padding: 12px
 }

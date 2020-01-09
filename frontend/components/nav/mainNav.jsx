@@ -5,12 +5,15 @@ class MainNav extends React.Component {
     render() {
         return (
             <div className="mainnav">
-                <div className="logo">
-                    <Link to="/">
-                        <img src={window.logo} height="60px"/>
-                    </Link>
+                <div className="left-main-nav">
+                    <div className="logo">
+                        <Link to="/">
+                            <img src={window.logo} height="60px"/>
+                        </Link>
+                    </div>
+                    <Link to="/projects" className="button">Projects</Link>
+
                 </div>
-                <Link to="/projects" className="button"></Link>
             </div>
         )
     }

@@ -1,12 +1,14 @@
 .mainnav .button {
     position: relative;
-    top: -2px;
+    top: 25px;
     margin: 0 5px;
     background-color: #fff;
     border-color: #ccc;
 }
 
 .button {
+    height: 34px;
+    width: 96px;
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
@@ -21,4 +23,25 @@
     background-color: #f6f6f6;
     border-color: #dedede;
     color: #333;
+    text-decoration: none;
+}
+
+
+ .mainnav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+  margin: 0;
+  /* overflow: hidden; */
+  background-color: #eee;
+  border-bottom: 2px solid #ccc;
+  height: 90px;
+  position: absolute;
+  top: 38px;
+  width: 100%
+}
+
+.left-main-nav {
+    display: flex;
+    flex-direction: row;
 }
