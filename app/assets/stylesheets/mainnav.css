@@ -28,9 +28,9 @@
 
 
  .mainnav {
-     display: flex;
-     justify-content: space-between;
-     align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin: 0;
   /* overflow: hidden; */
   background-color: #eee;
