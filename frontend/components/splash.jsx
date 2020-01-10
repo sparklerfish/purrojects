@@ -33,9 +33,9 @@ const Splash = () => (
       <div className="home-text-box">
         <h2>A HAPPY PLACE</h2>
         <p>
-          Making things makes people and cats happy. We can't prove it, but we know it to
-          be true. Find your happy place, and your cat's happy place, and join one of the friendliest online
-          communities anywhere.
+          Making things makes people and cats happy. We can't prove it, but we 
+          know it to be true. Find your happy place, and your cat's happy place, 
+          and join one of the friendliest online communities anywhere.
         </p>
       </div>
     </div>
