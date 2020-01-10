@@ -86,6 +86,7 @@ class Signup extends React.Component {
                   Sign Me Up !
                 </button>
                 <p>
+                  <br/>
                   Already a member? <Link to="/login">Login >></Link>
                 </p>
               </form>

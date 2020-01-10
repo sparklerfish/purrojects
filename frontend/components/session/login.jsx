@@ -90,6 +90,7 @@ class Login extends React.Component {
                   Demo User
                 </button>
                 <p>
+                  <br/>
                   New to Purrojects? <Link to="/signup">Sign Up >></Link>
                 </p>
               </form>

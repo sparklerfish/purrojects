@@ -42,3 +42,14 @@
     padding: 25px 0;
     text-shadow: 0 1px 4px rgba(0,0,0,0.15);
 }
+
+.home-text {
+    padding: 50px;
+    margin-top: 50px;
+    display: flex;
+    top: 1000px;
+}
+
+.home-text-box {
+    margin: 10px;
+}
