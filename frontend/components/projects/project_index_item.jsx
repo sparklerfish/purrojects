@@ -2,7 +2,6 @@ import React from "react";
 
 class ProjectIndexItem extends React.Component {
     render() {
-        debugger
         return (
             <div className="project-item">
                 <div className="project-item-image">
