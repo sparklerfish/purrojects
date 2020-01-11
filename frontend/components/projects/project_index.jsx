@@ -4,18 +4,18 @@ import ProjectIndexItem from './project_index_item';
 class ProjectIndex extends React.Component {
     componentDidMount() {
         this.props.requestProjects();
+        this.props.requestUsers();
     }
 
     render() {
-        const { projects } = this.props;
+        
+        const { projects, users } = this.props;
         // debugger
         return(
             <div className="project-list">
-                <ul>
                     {projects.map(project => (
-                        <ProjectIndexItem project={project} key={project.id}/>
+                        <ProjectIndexItem project={project} users={users} key={project.id}/>
                     ))}
-                </ul>
             </div>
         )
     }
