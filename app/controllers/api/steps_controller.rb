@@ -8,11 +8,6 @@ class Api::StepsController < ApplicationController
         end
     end
 
-    def index
-        steps = Project.find(params[:project_id]).steps
-        render json: steps
-    end
-
     def destroy
         step = Step.find(params[:id]).destroy
         render json: step
@@ -26,6 +21,9 @@ class Api::StepsController < ApplicationController
         else
             render json: { message: 'Step not found', status: 404 }
         end
+    end
+
+    def show
     end
 
 

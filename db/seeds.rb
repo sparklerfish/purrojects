@@ -13,6 +13,12 @@ Project.destroy_all
     User.create(username: Faker::Games::Pokemon.name, email: Faker::Internet.email, password: 'password')
 end
 
+guest = User.create(
+    username: 'guest', 
+    email: 'guest@guest.com',
+    password: 'password'
+)
+
 p1 = Project.create!(
     title: 'Giant Cat Tree',
     body: 'A thing for your cat to climb on',
@@ -54,3 +60,14 @@ p6 = Project.create!(
     author: User.order('RANDOM()').first,
     picture_url: 'http://placekitten.com/g/306/255',
 )
+
+projects = Project.all
+projects.each do |project|
+    5.times do
+        Step.create!(
+        title: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 4),
+        body: Faker::Lorem.paragraph(sentence_count: 1, supplemental: true, random_sentences_to_add: 3),
+        project_id: project.id
+    )
+    end
+end
