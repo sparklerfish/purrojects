@@ -5,5 +5,6 @@
         json.author do
             json.extract! project.author, :username
         end
+        json.picture_url project.picture_url
     end
 end

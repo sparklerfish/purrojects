@@ -5,7 +5,7 @@ class ProjectIndexItem extends React.Component {
         return (
             <div className="project-item">
                 <div className="project-item-image">
-                    Project photo goes here
+                    <img src={this.props.project.picture_url} />
                 </div>
                 <div className="project-item-info">
                     {this.props.project.title} by {this.props.project.author.username}

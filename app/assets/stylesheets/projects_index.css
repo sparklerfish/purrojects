@@ -5,6 +5,9 @@
     top: 128px;
     width: 100%;
     flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
 }
 
 .project-item {
