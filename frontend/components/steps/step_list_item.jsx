@@ -3,9 +3,9 @@ import React from 'react'
 class StepListItem extends React.Component {
     render() {
         return (
-          <div>
-            <h1>{this.props.step.title}</h1>
-            <p>{this.props.step.body}</p>
+          <div className="project-step">
+            <div className="project-step-title">{this.props.step.title}</div>
+            <div className="project-step-body">{this.props.step.body}</div>
           </div>
         );
 

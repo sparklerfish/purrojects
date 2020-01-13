@@ -20,11 +20,18 @@ class ProjectShow extends React.Component {
         // console.log(this.props.steps)
         // debugger
         return (
-            <div>
-                {this.props.project.title}
-                <StepList project_id={this.props.project.id} steps={this.props.steps} />
-
-            </div>
+          <div className="project-show">
+            <br/>
+            <div className="project-title">{this.props.project.title}</div>
+            <div className="project-body">{this.props.project.body}</div>
+            <br/>
+            <hr/>
+            <br/>
+            <StepList
+              project_id={this.props.project.id}
+              steps={this.props.steps}
+            />
+          </div>
         );
     }
 }

@@ -1,0 +1,55 @@
+
+.project-show {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  width: 100%;
+  position: absolute;
+  top: 128px;
+  text-align: center;
+}
+
+.project-title {
+    padding: 0 20px;
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-body {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Nunito",helvetica,arial,sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: #555;
+    margin: 3px 0 20px;
+}
+.project-step-title {
+    padding: 0 20px;
+    color: #333;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.project-step-body {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Nunito",helvetica,arial,sans-serif;
+    font-weight: 300;
+    text-align: center;
+    color: #555;
+    margin: 3px 0 20px;
+}
+
+.project-step-body:after {
+    content: '';
+    display: block;
+    width: 100px;
+    margin: 30px auto 0;
+    border-top: 1px solid #d6d6d6
+}
