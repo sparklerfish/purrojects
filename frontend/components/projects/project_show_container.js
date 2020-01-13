@@ -4,15 +4,19 @@ import { connect } from 'react-redux';
 import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
+    // console.log(ownProps.match.params.projectId);
+    // console.log(state.entities.projects[1])
+    // console.log(state)
     return {
-        project: state.entities.projects[ownProps.match.params.projectId]
+        project: state.entities.projects[ownProps.match.params.projectId],
+        steps: state.entities.steps
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
         return {
-        requestProject: (projectId) => dispatch(requestProject(projectId))
+        requestProject: (projectId) => dispatch(requestProject(projectId)),
+        requestSteps: (projectId) => dispatch(requestSteps(projectId))
     }
 }
 

@@ -1,24 +1,28 @@
 import React from "react";
 
-import StepListContainer from "../steps/step_list_container";
+import StepList from "../steps/step_list";
 
 class ProjectShow extends React.Component {
     constructor(props) {
         super(props)
     }
     componentDidMount() {
+        this.props.requestProject(this.props.match.params.projectId);
         // debugger
-        // this.props.requestProject(this.props.project.id);
+        this.props.requestSteps(this.props.match.params.projectId);
     }
 
     render() {
-        // debugger
-        const { project } = this.props;
-
+        // console.log(this.props)
+        if (!this.props.project) return null
+        
+        const { project, steps } = this.props;
+        
+        debugger
         return (
             <div>
-                test
-                {/* <StepListContainer project_id={project.id} /> */}
+                {project.title}
+                <StepList project_id={project.id} steps={steps} />
             </div>
         );
     }

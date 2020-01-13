@@ -1,7 +1,7 @@
-export const fetchSteps = () =>
+export const fetchSteps = (projectId) =>
   $.ajax({
     method: "GET",
-    url: `/api/steps`
+    url: `/api/projects/${projectId}`
   });
 
 export const createStep = (step) =>

@@ -1,13 +1,20 @@
-const StepList = ({ steps, todo_id, createStep }) => {
-  const stepItems = steps.map(step => (
-    <StepListItem key={step.id} step={step} />
-  ));
+import React from 'react'
 
-  return (
-    <div>
-      <ul className="step-list">{stepItems}</ul>
-    </div>
-  );
-};
+class StepList extends React.Component {
+  render() {
+    debugger
+    const steps = this.props.steps
+
+    return (
+      <div>
+        <ul className="step-list">
+          {/* {steps[1]} */}
+        </ul>
+      </div>
+    );
+  }
+
+}
+
 
 export default StepList;

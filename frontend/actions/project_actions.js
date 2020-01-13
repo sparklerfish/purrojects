@@ -4,15 +4,20 @@ export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
 
+
+const removeSteps = project => {
+    delete project['steps']; 
+    return project; 
+}
+
 const receiveProject = project => ({
     type: RECEIVE_PROJECT,
     project
 });
 
-const receiveProjects = ({projects, steps}) => ({
+const receiveProjects = (projects) => ({
     type: RECEIVE_ALL_PROJECTS,
-    projects,
-    steps
+    projects
 });
 
 const removeProject = projectId => ({
@@ -27,7 +32,10 @@ export const requestProjects = () => dispatch => (
 
 export const requestProject = projectId => dispatch => (
     ProjectAPIUtil.fetchProject(projectId)
-        .then(project => dispatch(receiveProject(project)))
+        .then(project => { 
+            // debugger; 
+            return dispatch(receiveProject(removeSteps(project)))
+        })
 );
 
 export const createProject = project => dispatch => (

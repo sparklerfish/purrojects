@@ -1,14 +1,16 @@
 import * as StepAPIUtil from "../util/step_api_util";
 
-export const RECEIVE_STEPS = "RECEIVE_STEPS";
+export const RECEIVE_ALL_STEPS = "RECEIVE_STEPS";
 export const RECEIVE_STEP = "RECEIVE_STEP";
 export const REMOVE_STEP = "REMOVE_STEP";
 
 // sync actions
-export const receiveSteps = steps => ({
-  type: RECEIVE_STEPS,
+export const receiveSteps = ({ steps })=> {
+  // debugger
+  return {
+  type: RECEIVE_ALL_STEPS,
   steps
-});
+}};
 
 export const receiveStep = step => ({
   type: RECEIVE_STEP,
@@ -21,8 +23,8 @@ export const removeStep = stepId => ({
 });
 
 // async actions
-export const requestSteps = () => dispatch =>
-  StepAPIUtil.fetchSteps().then(steps => dispatch(receiveSteps(steps)));
+export const requestSteps = (projectId) => dispatch =>
+  StepAPIUtil.fetchSteps(projectId).then(steps => dispatch(receiveSteps(steps)));
 
 export const createStep =  (step) => dispatch =>
   StepAPIUtil.createStep(step).then(step =>

@@ -5,11 +5,13 @@ const ProjectsReducer = (oldState = {}, action) => {
     let nextState = Object.assign({}, oldState);
 
     switch(action.type) {
+
         case RECEIVE_ALL_PROJECTS:
+            // debugger
             return action.projects;
         case RECEIVE_PROJECT:
-            debugger
-            const newProject = { [action.project.id]: action.project };
+            // debugger
+            const newProject = action.project;
             return Object.assign({}, oldState, newProject);
         case REMOVE_PROJECT:
             delete nextState[action.projectId]

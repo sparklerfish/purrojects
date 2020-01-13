@@ -3,6 +3,7 @@ import ProjectIndexItem from './project_index_item';
 
 class ProjectIndex extends React.Component {
     componentDidMount() {
+        // debugger
         this.props.requestProjects();
         this.props.requestUsers();
     }
