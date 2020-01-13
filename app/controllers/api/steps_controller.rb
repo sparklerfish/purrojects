@@ -26,6 +26,10 @@ class Api::StepsController < ApplicationController
     def show
     end
 
+    def index
+        @steps = Step.all
+    end
+
 
     private
 

@@ -1,6 +1,7 @@
 class Api::ProjectsController < ApplicationController
     def index
-        @projects = Project.all
+        @projects = Project.includes(:author).all
+        
     end
 
     def new
@@ -31,11 +32,12 @@ class Api::ProjectsController < ApplicationController
 
     def edit
         @project = current_user.projects.find(params[:id])
+        @steps = @project.steps
         render :edit
     end
 
     def show
-        @project = Project.find(params[:id])
+        @project = Project.includes(:steps, :author).find(params[:id])
     end
 
     def destroy

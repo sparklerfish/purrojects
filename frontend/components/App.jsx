@@ -7,6 +7,7 @@ import { Route } from 'react-router-dom';
 import Splash from './splash';
 import MainNav from "./nav/main_nav";
 import ProjectIndexContainer from "./projects/project_index_container";
+import ProjectShowContainer from "./projects/project_show_container";
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
     <AuthRoute path="/login" component={LoginContainer} />
     <Route exact path="/" component={Splash} />
     <Route exact path="/projects" component={ProjectIndexContainer} />
+    <Route path="/projects/:projectId" component={ProjectShowContainer} />
   </div>
 );
 

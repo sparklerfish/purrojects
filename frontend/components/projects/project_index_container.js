@@ -4,7 +4,7 @@ import { requestUsers } from "../../actions/user_actions";
 import ProjectIndex from "./project_index";
 
 const mapStateToProps = state => {
-    // debugger
+    debugger
     return {
       projects: Object.values(state.entities.projects),
       users: state.entities.users
