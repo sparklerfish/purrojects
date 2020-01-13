@@ -9,9 +9,10 @@ const receiveProject = project => ({
     project
 });
 
-const receiveProjects = projects => ({
+const receiveProjects = ({projects, steps}) => ({
     type: RECEIVE_ALL_PROJECTS,
-    projects
+    projects,
+    steps
 });
 
 const removeProject = projectId => ({

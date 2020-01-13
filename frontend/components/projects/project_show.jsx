@@ -7,11 +7,12 @@ class ProjectShow extends React.Component {
         super(props)
     }
     componentDidMount() {
-        this.props.requestProject();
+        // debugger
+        // this.props.requestProject(this.props.project.id);
     }
 
     render() {
-        debugger
+        // debugger
         const { project } = this.props;
 
         return (
