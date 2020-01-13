@@ -18,7 +18,7 @@ class ProjectShow extends React.Component {
         
         // const { project, steps } = this.props;
         // console.log(this.props.steps)
-        debugger
+        // debugger
         return (
             <div>
                 {this.props.project.title}

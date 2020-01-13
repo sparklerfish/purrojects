@@ -4,8 +4,8 @@ class StepListItem extends React.Component {
     render() {
         return (
           <div>
-            <h1>{step.title}</h1>
-            <p>{step.body}</p>
+            <h1>{this.props.step.title}</h1>
+            <p>{this.props.step.body}</p>
           </div>
         );
 
