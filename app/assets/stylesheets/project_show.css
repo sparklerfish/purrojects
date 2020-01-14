@@ -4,7 +4,7 @@
   width: 100%;
   position: absolute;
   top: 128px;
-  text-align: center;
+  text-align: left;
   padding-left: 50px;
   padding-right: 50px;
 }
@@ -24,7 +24,7 @@
     line-height: 32px;
     font-family: "Nunito",helvetica,arial,sans-serif;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
     color: #555;
     margin: 3px 0 20px;
     white-space: pre-line;
@@ -44,9 +44,10 @@
     line-height: 32px;
     font-family: "Nunito",helvetica,arial,sans-serif;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
     color: #555;
     margin: 3px 0 20px;
+    white-space: pre-line;
 }
 
 .project-step-body:after {
