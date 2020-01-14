@@ -1,10 +1,11 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom';
+import Modal from './modal'
 
-class StepForm extends React.Component {
+class NewProjectForm extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = this.props.step;
+        this.state = this.props.project;
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
@@ -13,22 +14,21 @@ class StepForm extends React.Component {
         this.props.action(this.state);
     }
 
+    componentDidMount() {
+        this.props.openModal('title');
+    }
+
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
     }
 
     render() {
         return (
-            <div>
+            <div style={{zIndex: 15, paddingTop: '100px'}}>
+                <Modal />
+
                 <form onSubmit={this.handleSubmit}>
-                    <label for="title">
-                        <input
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update("title")}
-                        />
-                    </label>
-                    <label for="body">
+                    <label htmlFor="body">
                         <textarea
                             value={this.state.body}
                             onChange={this.update("body")}
@@ -36,9 +36,10 @@ class StepForm extends React.Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
+                
             </div>
         )
     }
 }
 
-export default StepForm;
+export default withRouter(NewProjectForm);

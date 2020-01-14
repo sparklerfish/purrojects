@@ -16,7 +16,7 @@ class MainNav extends React.Component {
                 </div>
                 <div className="right-main-nav">
                     <div className="publish-link">
-                        PUBLISH PURROJECT
+                        <Link to="/projects/new">PUBLISH PURROJECT</Link>
                     </div>
                     <div className="search-bar">
                         Search coming soon!

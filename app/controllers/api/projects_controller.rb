@@ -4,7 +4,7 @@ class Api::ProjectsController < ApplicationController
     end
 
     def new
-        render :new
+        
     end
 
     def create

@@ -1,6 +1,9 @@
+import React from 'react';
 import { createProject } from "../../util/project_api_util";
 // import { createStep } from "../../util/step_api_util";
 import { connect } from "react-redux";
+import NewProjectForm from "./new_project_form";
+import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],
@@ -12,7 +15,9 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    createProject: (project) => dispatch(createProject(project)),
+    action: (project) => dispatch(updateProject(project)),
+    openModal: modal => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm)
+export default connect(mapStateToProps, mapDispatchToProps)(NewProjectForm)

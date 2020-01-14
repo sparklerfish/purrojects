@@ -45,13 +45,23 @@ p3 = Project.create!(
     picture_url: 'http://placekitten.com/g/306/255',
 )
 
+
+p5 = Project.create!(
+    title: 'DIY Cat Tent',
+    body: "I kept seeing photos of cat tents on Pinterest and being shared on Facebook, but none of them had good instructions! I decided to make a cat tent for Luna and document it so you guys could make one too. :D
+
+    This cat tent is super easy to make - you really just need a t-shirt, some wire hangers and a piece of cardboard. As a bonus, it really only takes five minutes, so if your cat ignores it you didn't put too much effort in. ;)",
+    author: User.order('RANDOM()').first,
+    picture_url: 'http://placekitten.com/g/306/255',
+)
+
+
 # p4 = Project.create!(
 #     title: 'Sock',
 #     body: 'Just a sock on the floor.',
 #     author: User.order('RANDOM()').first,
 #     picture_url: 'http://placekitten.com/g/306/255',
 # )
-
 # p5 = Project.create!(
 #     title: 'Cardboard Cat House',
 #     body: 'A palace for your kitty',

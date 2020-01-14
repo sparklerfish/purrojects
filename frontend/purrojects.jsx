@@ -3,6 +3,8 @@ import configureStore from './store/store';
 import React from 'react';
 import Root from './components/root';
 
+import { closeModal } from './actions/modal_actions'; 
+
 document.addEventListener("DOMContentLoaded", () => {
   let store;
   if (window.currentUser) {
@@ -17,9 +19,12 @@ document.addEventListener("DOMContentLoaded", () => {
   } else {
     store = configureStore();
   }
+  // window.store = store; 
+  // window.getState = store.getState;
+  // window.dispatch = store.dispatch;
 
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
+  // window.closeModal = closeModal; 
+
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
 });
