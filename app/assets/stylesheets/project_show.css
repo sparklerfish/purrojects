@@ -5,6 +5,8 @@
   position: absolute;
   top: 128px;
   text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .project-title {
@@ -25,6 +27,7 @@
     text-align: center;
     color: #555;
     margin: 3px 0 20px;
+    white-space: pre-line;
 }
 .project-step-title {
     padding: 0 20px;
