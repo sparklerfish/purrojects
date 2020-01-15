@@ -15,7 +15,7 @@ class ProjectIndex extends React.Component {
         return(
             <div className="project-list">
                     {projects.map(project => (
-                        <ProjectIndexItem project={project} users={users} key={project.id}/>
+                        <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
                     ))}
             </div>
         )

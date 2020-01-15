@@ -7,15 +7,35 @@ class NewProjectTitle extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
+    // componentDidMount() {
+    //     this.props.clearErrors();
+    // }
+
     handleSubmit(e) {
-        debugger
+        // debugger
         e.preventDefault();
-        this.props.closeModal();
-        this.props.createProject(this.state);
+        this.props.createProject(this.state)
+        .then(() => this.props.closeModal());
+
     }
 
     update(field) {
         return e => this.setState({ [field]: e.currentTarget.value })
+    }
+
+    renderErrors() {
+        // debugger
+        if (this.props.errors.length > 0) {
+            return (
+                <ul className="project-errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>{error}</li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return null;
+        }
     }
 
     
@@ -38,7 +58,7 @@ class NewProjectTitle extends React.Component {
                             onChange={this.update("title")}
                         />
                     </label>
-                    <br/>
+                    {this.renderErrors()}
                     <input className="modal-button" type="submit" value="Start Purroject »" />
                 </form>
 

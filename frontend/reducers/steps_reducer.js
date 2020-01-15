@@ -10,7 +10,11 @@ const StepsReducer = (oldState = {}, action) => {
 
   switch (action.type) {
     case RECEIVE_ALL_STEPS:
-      return action.steps;
+      if (action.steps) {
+        return action.steps;
+      } else {
+        return {};
+      }
     case RECEIVE_STEP:
       nextState[action.step.id] = action.step;
       return nextState;

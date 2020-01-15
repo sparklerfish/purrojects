@@ -53,7 +53,10 @@ export const createProject = project => dispatch => {
     // debugger; 
     return ProjectAPIUtil.createProject(project)
         .then(project => dispatch(receiveProject(project)))
-        .fail(errors => dispatch(receiveErrors(errors)))
+        .fail(errors => { 
+            // debugger; 
+            return dispatch(receiveErrors(errors)); 
+        })
 };
 
 export const updateProject = project => dispatch => (
