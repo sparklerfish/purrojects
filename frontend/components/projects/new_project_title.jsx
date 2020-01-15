@@ -22,17 +22,24 @@ class NewProjectTitle extends React.Component {
 
     render() {
         return (
-            <div style={{ zIndex: 15, paddingTop: '100px' }}>
+            <div>
+                <img className="modal-image" src={window.modal_header}/>
+                <br/>
+                <br/>
+                <br/>
                 <form onSubmit={this.handleSubmit}>
                     I made a purroject called:
+                    <br/>
                     <label htmlFor="title">
                         <input
                             type="text"
+                            className="title-input"
                             value={this.state.title}
                             onChange={this.update("title")}
                         />
                     </label>
-                    <input type="submit" value="Submit" />
+                    <br/>
+                    <input className="modal-button" type="submit" value="Start Purroject »" />
                 </form>
 
             </div>

@@ -9,9 +9,44 @@
 }
 
 .modal-child {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 5px solid red;
+    text-align: center;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 455px;
+    height: 400px;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.modal-button {
+  background-color: #e86c00;
+  border: none;
+  color: white;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  font-size: 13pt;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 180px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.title-input {
+    padding: 10px;
+    border: none;
+    border-bottom: solid 1px #c9c9c9;
+    transition: border .3s;
+    border-radius: 0;
+    font-size: 18px;
+    width: 350px;
+    margin: 20px 0;
+}
+
+.modal-image {
+    border-radius: 4px 4px 0 0;
+    vertical-align: top;
 }

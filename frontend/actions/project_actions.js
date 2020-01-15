@@ -3,6 +3,8 @@ import * as ProjectAPIUtil from '../util/project_api_util'
 export const RECEIVE_ALL_PROJECTS = 'RECEIVE_ALL_PROJECTS';
 export const RECEIVE_PROJECT = 'RECEIVE_PROJECT';
 export const REMOVE_PROJECT = 'REMOVE_PROJECT';
+export const RECEIVE_PROJECT_ERRORS = 'RECEIVE_PROJECT_ERRORS';
+export const CLEAR_ERRORS = 'CLEAR_ERRORS'
 
 
 const removeSteps = project => {
@@ -25,6 +27,15 @@ const removeProject = projectId => ({
     projectId
 });
 
+const receiveErrors = errors => ({
+    type: RECEIVE_PROJECT_ERRORS,
+    errors
+});
+
+const clearErrors = () => ({
+    type: CLEAR_ERRORS
+})
+
 export const requestProjects = () => dispatch => (
     ProjectAPIUtil.fetchProjects()
         .then((projects) => dispatch(receiveProjects(projects)))
@@ -42,11 +53,13 @@ export const createProject = project => dispatch => {
     // debugger; 
     return ProjectAPIUtil.createProject(project)
         .then(project => dispatch(receiveProject(project)))
+        .fail(errors => dispatch(receiveErrors(errors)))
 };
 
 export const updateProject = project => dispatch => (
     ProjectAPIUtil.updateProject(project)
         .then(project => dispatch(receiveProject(project)))
+        .fail(errors => dispatch(receiveErrors(errors)))
 );
 
 export const deleteProject = projectId => dispatch => (
