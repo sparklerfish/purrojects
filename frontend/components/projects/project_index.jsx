@@ -10,6 +10,7 @@ class ProjectIndex extends React.Component {
 
 
     render() {
+        
         const { projects, users } = this.props;
         // debugger
         return(

@@ -15,8 +15,15 @@ class NewProjectTitle extends React.Component {
         // debugger
         e.preventDefault();
         this.props.createProject(this.state)
+            // .then(project => {
+            //     debugger; 
+            //     localStorage.setItem('newProjectId', project.id)
+            // })
+            .then(() => {
+                debugger; 
+                console.log(localStorage.getItem('newProjectId'))
+            })
         .then(() => this.props.closeModal());
-
     }
 
     update(field) {

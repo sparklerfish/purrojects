@@ -8,7 +8,7 @@ import Splash from './splash';
 import MainNav from "./nav/main_nav";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectShowContainer from "./projects/project_show_container"; 
-import NewProjectFormContainer from "./projects/new_project_form_container"; 
+import NewProjectIndexContainer from "./projects/new_project_index_container"; 
 
 
 const App = () => (
@@ -19,7 +19,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
       <Route exact path="/" component={Splash} />
-      <ProtectedRoute path="/projects/new" component={NewProjectFormContainer} />
+      <ProtectedRoute path="/projects/new" component={NewProjectIndexContainer} />
       <Route exact path="/projects" component={ProjectIndexContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
     </Switch>

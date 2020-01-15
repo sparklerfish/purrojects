@@ -25,7 +25,6 @@ class NewProjectForm extends React.Component {
     render() {
         return (
             <div style={{zIndex: 15, paddingTop: '100px'}}>
-                <Modal />
 
                 <form onSubmit={this.handleSubmit}>
                     <label htmlFor="body">
@@ -42,4 +41,4 @@ class NewProjectForm extends React.Component {
     }
 }
 
-export default withRouter(NewProjectForm);
+export default withRouter(EditProjectForm);

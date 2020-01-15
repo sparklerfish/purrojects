@@ -2,10 +2,10 @@ import React from 'react';
 import { createProject } from "../../util/project_api_util";
 // import { createStep } from "../../util/step_api_util";
 import { connect } from "react-redux";
-import NewProjectForm from "./new_project_form";
+import NewProjectForm from "./edit_project_form";
 import { openModal, closeModal } from "../../actions/modal_actions";
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     project: {
         title: "",

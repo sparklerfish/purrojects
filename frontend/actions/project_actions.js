@@ -53,6 +53,12 @@ export const createProject = project => dispatch => {
     // debugger; 
     return ProjectAPIUtil.createProject(project)
         .then(project => dispatch(receiveProject(project)))
+        .then(project => {
+            // debugger; 
+            localStorage.setItem('newProjectId', project.project.id); 
+            // debugger; 
+        })
+        // .then(console.log(localStorage.getItem('newProjectId')))
         .fail(errors => { 
             // debugger; 
             return dispatch(receiveErrors(errors)); 
