@@ -9,6 +9,9 @@ import MainNav from "./nav/main_nav";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectShowContainer from "./projects/project_show_container"; 
 import NewProjectIndexContainer from "./projects/new_project_index_container"; 
+import EditProjectFormContainer from "./projects/edit_project_form_container";
+import EditProjectIndexContainer from "./projects/edit_project_index_container";
+import EditStepFormContainer from "./projects/edit_step_form_container";
 
 
 const App = () => (
@@ -20,7 +23,10 @@ const App = () => (
       <AuthRoute path="/login" component={LoginContainer} />
       <Route exact path="/" component={Splash} />
       <ProtectedRoute path="/projects/new" component={NewProjectIndexContainer} />
+      <ProtectedRoute path="/projects/:projectId/update" component={EditProjectIndexContainer} />
       <Route exact path="/projects" component={ProjectIndexContainer} />
+      <Route exact path="/projects/:projectId/edit" component={EditProjectFormContainer} />
+      <Route exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
     </Switch>
   </div>

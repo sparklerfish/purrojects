@@ -1,7 +1,8 @@
 import {
   RECEIVE_ALL_STEPS,
   RECEIVE_STEP,
-  REMOVE_STEP
+  REMOVE_STEP,
+  CLEAR_STEPS
 } from "../actions/step_actions";
 
 const StepsReducer = (oldState = {}, action) => {
@@ -21,6 +22,8 @@ const StepsReducer = (oldState = {}, action) => {
     case REMOVE_STEP:
       delete nextState[action.stepId];
       return nextState;
+    case CLEAR_STEPS:
+      return {};
     default:
       return oldState;
   }

@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 class ProjectEditBox extends React.Component {
     constructor(props) {
@@ -14,7 +15,9 @@ class ProjectEditBox extends React.Component {
 
         return (
         <div className="edit-box">
+            <Link to={`/projects/${this.props.projectId}/edit`}>
             Intro + Supplies: {this.props.project.title}
+            </Link>
         </div>
         )
 

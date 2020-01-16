@@ -1,17 +1,18 @@
 import React from 'react'
 // import { withRouter } from 'react-router-dom';
 
-class EditProjectForm extends React.Component {
+class EditStepForm extends React.Component {
     constructor(props) {
         super(props);
-        this.state = this.props.project;
+        this.state = this.props.step;
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
-        this.props.history.push(`/projects/${this.props.project.id}/update`)
+        // debugger
+        this.props.history.push(`/projects/${this.props.step.project_id}/update`)
     }
 
     update(field) {
@@ -19,10 +20,9 @@ class EditProjectForm extends React.Component {
     }
 
     render() {
-
         return (
-            
-            <div style={{zIndex: 15, paddingTop: '100px'}}>
+
+            <div style={{ zIndex: 15, paddingTop: '100px' }}>
                 <form onSubmit={this.handleSubmit}>
 
                     <label htmlFor="title">
@@ -40,10 +40,10 @@ class EditProjectForm extends React.Component {
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
-                
+
             </div>
         )
     }
 }
 
-export default EditProjectForm;
+export default EditStepForm;

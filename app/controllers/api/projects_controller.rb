@@ -22,7 +22,7 @@ class Api::ProjectsController < ApplicationController
         @project = current_user.projects.find(params[:id])
         if @project
             if @project.update(project_params)
-                render :show
+                render '/api/projects/newproject', status: 200
             else
                 render json: @project.errors.full_messages, status: 422
             end
