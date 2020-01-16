@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     createProject: (project) => dispatch(createProject(project)),
-    createStep: (step) => dispatch(createStep(step))
+    updateStep: (step) => dispatch(updateStep(step))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectForm)

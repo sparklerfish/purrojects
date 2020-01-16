@@ -1,0 +1,21 @@
+.edit-box {
+    display: block;
+    position: relative;
+    padding-top: 0;
+    list-style: none;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f6f6f6;
+    margin-top: 0;
+    width: 970px;
+    height: 147px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.new-edit-container {
+    position: absolute;
+    margin: 0 auto;
+    top: 128px;
+    width: 100%;
+}
