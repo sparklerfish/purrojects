@@ -103,12 +103,12 @@ p1steps = Step.create!([
         The last carpet cutting step is to cut a notch at each corner. Again, this allows the carpet to be wrapped around the platform and stapled providing a nice clean look.
 
         The last picture shows the top and bottom platforms with the carpet cut and notched..",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     },
     {
         title: "Marking the Middles",
         body: "I used a straight edge to make a 'X' in the middle of each rectangle - and drilled a pilot hole in each piece. This will help align all the parts in future steps.",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     },
     {
         title: "The Carpeting Jig - Cool Part 1",
@@ -127,7 +127,7 @@ p1steps = Step.create!([
         Put the top of the panel against the 2x4, then push the piece between the 2x and 1x - the carpet will nicely conform to the plywood allowing you to put a couple staples to hold the carpet in place.
 
         When we were doing this with the scouts they seemed to enjoy this part - some of the younger scouts didn't quite have the power to push things together but the older ones didn't have any issues.",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     },
     {
         title: "Assembly Step - Getting Ready to Wrap the Rope",
@@ -136,7 +136,7 @@ p1steps = Step.create!([
         The assembly steps here require driving a lag bold from the BOTTOM of the bottom piece (that has already been carpeted into the 2x4 stand. At this point the bolt should be snug, but loose enough to allow you to turn the post.
 
         The TOP piece is screwed into the top of the 2x4. I used 3 screws, they were about 2in long. The middle screw goes through the middle of the plywood into the middle pilot hole on the top. The other 2 screws add additional security. This piece is tightly secured.",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     },
     {
         title: "Wrapping the Rope - Cool Bit Number 2",
@@ -147,7 +147,7 @@ p1steps = Step.create!([
         The second picture shows my son guiding the winding rope as I turned the top piece. This approach seems to be a lot easier than wrapping the rope around the wood. Also, it is easy to get everything nice and snug.
 
         When you get to the bottom finish it off with a couple staples and cut the remaining rope. In my case I only had a couple inches of rope left over - glad I added some carpet to the top and bottom.",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     },
     {
         title: "Finishing It Up",
@@ -156,7 +156,7 @@ p1steps = Step.create!([
         Now all that remains is to carpet the top piece. This is just like the bottom piece, but you have the whole cat tree to deal with when pushing things into the carpeting jig.
 
         Conclusion - Using these techniques my son was able to explain the assembly instruction to a bunch of middle school boys (and a few high school age) and they were able to assemble about 25 of these cat trees in several hours.",
-        project_id: 1
+        project_id: Project.find_by(title: 'Cat Tree').id
     }
 ])
 
@@ -165,22 +165,22 @@ p2steps = Step.create!([
     {
         title: "Preheat",
         body: 'Preheat the oven to 350 degrees Fahrenheit.',
-        project_id: 2
+        project_id: Project.find_by(title: 'Cat Treats').id
     },
     {
         title: "Mix",
         body: 'Combine cheeses and yogurt. Add flour and cornmeal. If needed, add a small amount of water to create a nice dough.',
-        project_id: 2
+        project_id: Project.find_by(title: 'Cat Treats').id
     },
     {
         title: "Form Treats",
         body: 'Knead dough into a ball and roll to 1/4 inch. Cut into one inch sized pieces and place on greased cookie sheet.',
-        project_id: 2
+        project_id: Project.find_by(title: 'Cat Treats').id
     },
     {
         title: "Bake",
         body: 'Bake for 25 minutes. Makes 2 dozen.',
-        project_id: 2
+        project_id: Project.find_by(title: 'Cat Treats').id
     }
 ])
 
@@ -188,31 +188,31 @@ p3steps = Step.create!([
     {
         title: "Cut the Fabric",
         body: 'Cut a 17" round of fabric. I made a circle on a brown kraft paper shopping bag to use as a pattern, so I can use it over and over. Pick a center spot and measure out 8.5" and then continue till you have made a circle. Join all the marks and cut it out. Lay on doubled fabric and cut your round.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
     {
         title: "Cut the Batting",
         body: 'Cut a 16" round of fiberfill or any type of batting. If you have old quilted mattress covers, these work well also. This piece is going to go in between the two pieces of the 17" round fabric you just cut. I sew an X across this fabric. I fold it in half to make a mark, pin and then sew. Go opposite and do the same so you have sewn an x across all 3 layers. This keeps the batting from shifting when the bed is washed.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
     {
         title: "Cut a Rectangle",
         body: 'Cut a 14" rectangle the outside measurement of your circle. This is usually about 60" So 14" wide by 60" long. Sew the end together and double the fabric, wrong sides together, right side facing out.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
     {
         title: "Sew",
         body: 'sew this rectangle to your circle, leaving an opening to stuff it with.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
     {
         title: "Stuff",
         body: 'Stuff the outer ring to the desired fullness (I like them real full) of loose fiberfill. I save old stuffed pillows and take the stuffing out, to again save money. Once it is stuffed to the desired fullness, back under the machine to close the hole.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
     {
         title: "Finishing Up",
         body: 'Turn the bed inside out so the seams on the edges disappear under the stuffed ring.',
-        project_id: 3
+        project_id: Project.find_by(title: 'stuffed cat bed').id
     },
 ])
