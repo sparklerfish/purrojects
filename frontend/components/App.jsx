@@ -25,11 +25,11 @@ const App = () => (
       <Route exact path="/" component={Splash} />
       <ProtectedRoute path="/projects/new" component={NewProjectIndexContainer} />
       <ProtectedRoute path="/projects/create" component={CreateProject} />
-      <ProtectedRoute path="/projects/:projectId/update" component={EditProjectIndexContainer} />
-      <Route exact path="/projects" component={ProjectIndexContainer} />
+      <ProtectedRoute exact path="/projects/:projectId/update" component={EditProjectIndexContainer} />
       <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectFormContainer} />
       <ProtectedRoute exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
+      <Route exact path="/projects" component={ProjectIndexContainer} />
     </Switch>
   </div>
 );

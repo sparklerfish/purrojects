@@ -49,8 +49,6 @@ class EditProjectIndex extends React.Component {
         return (
 
             <div className="new-edit-container">
-
-                <Modal />
                 <center>
                     <div>
                         <div>

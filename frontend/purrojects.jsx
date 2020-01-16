@@ -34,8 +34,9 @@ import { closeModal } from './actions/modal_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
+
   let preloadedState = loadState();
-  let store = configureStore(preloadedState)
+  let store = configureStore(preloadedState);
   store.subscribe(throttle(() => {
     saveState({
       entities: store.getState().entities,
