@@ -23,24 +23,29 @@ class EditStepForm extends React.Component {
         return (
 
             <div style={{ zIndex: 15, paddingTop: '100px' }}>
-                <form onSubmit={this.handleSubmit}>
+                <center>
+                    <div className="form-container">
+                        <form onSubmit={this.handleSubmit}>
 
-                    <label htmlFor="title">
-                        <input type="text"
-                            value={this.state.title}
-                            onChange={this.update("title")}
-                        />
-                    </label>
+                            <label htmlFor="title">
+                                <input type="text"
+                                    value={this.state.title}
+                                    onChange={this.update("title")}
+                                    className="update-title-input"
+                                />
+                            </label>
 
-                    <label htmlFor="body">
-                        <textarea
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                        />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-
+                            <label htmlFor="body">
+                                <textarea
+                                    value={this.state.body}
+                                    onChange={this.update("body")}
+                                    className="update-body-input"
+                                />
+                            </label>
+                            <input type="submit" value="Save" />
+                        </form>
+                    </div>
+                </center>
             </div>
         )
     }

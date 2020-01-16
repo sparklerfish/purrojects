@@ -7,9 +7,9 @@ class NewProjectTitle extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this)
     }
 
-    // componentDidMount() {
-    //     this.props.clearErrors();
-    // }
+    componentDidMount() {
+        this.props.clearErrors();
+    }
 
     handleSubmit(e) {
         // debugger

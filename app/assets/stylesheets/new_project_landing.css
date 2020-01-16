@@ -1,0 +1,72 @@
+.splash-container {
+    height: 450px;
+    width: 100%;
+}
+.create-image {
+  height: 600px;
+  width: 100%;
+  background-image: url("harry3.jpg");
+  background-position: 25%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  /* overflow: hidden; */
+  top: 128px;
+}
+
+
+.big-create-text { 
+    /* position: absolute;
+    top: 265px;
+    left: 50px; */
+    color: white;
+    font-family: 'BenchNine', sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 32pt;
+    padding: 20px;
+}
+.small-create-text {
+    /* position: absolute;
+    top: 360px;
+    left: 50px; */
+    color: white;
+    font-size: 13pt;
+}
+
+.create-text {
+    position: relative;
+    margin: auto;
+    /* left: 0 75px; */
+    top: 100px;
+    max-width: 700px;
+    width: 100%;
+    /* border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff; */
+    /* padding: 0px 0; */
+    text-shadow: 0 1px 4px rgba(0,0,0,0.15);
+    text-align: center;
+}
+.create-button {
+  background-color:#faac18;
+  border: none;
+  color: white;
+  /* padding: 16px 32px; */
+  text-decoration: none;
+  font-size: 14pt;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 200px;
+  height: 42px;
+  border-radius: 5px;
+}
+
+.home-text {
+    padding: 50px;
+    margin-top: 50px;
+    display: flex;
+    top: 1000px;
+}
+
+.home-text-box {
+    margin: 10px;
+}

@@ -6,11 +6,11 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f6f6f6;
-    margin-top: 0;
+    margin-top: 20px;
     width: 970px;
     height: 147px;
-    margin: 20px auto;
-    text-align: center;
+    margin: 20px 0px 20px 0px;
+    /* text-align: center; */
 }
 
 .new-edit-container {
@@ -18,4 +18,77 @@
     margin: 0 auto;
     top: 128px;
     width: 100%;
+}
+
+.update-title-input {
+    width: 762px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.update-body-input {
+    width: 762px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    /* box-shadow: inset 0 1px 1px rgba(0,0,0,.075); */
+    margin-bottom: 20px;
+    position: relative;
+    overflow: auto;
+    padding: 10px;
+    padding-bottom: 5px;
+    outline: 0;
+    background: 0 0;
+    white-space: normal;
+    min-height: 370px;
+}
+
+
+
+
+.form-container {
+    position: relative;
+    width: 800px;
+    margin: 30px auto;
+    display: block;
+    border: 1px solid #ccc;
+    background-color: #f6f6f6;
+    border-radius: 12px;
+}
+
+.done-button {
+    height: 34px;
+    width: 200px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    background-color: #e86c00;
+    border-color: #cf6000;
+    color: #fff;
+    text-decoration: none;
+}
+
+.new-submit {
+    text-decoration: none;
 }

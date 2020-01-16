@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 import Modal from './modal'
 import ProjectEditBoxContainer from './project_edit_box_container';
 import StepEditBoxList from './step_edit_box_list'
-import { clearSteps } from '../../actions/step_actions';
+// import { clearSteps } from '../../actions/step_actions';
 
 
 class NewProjectIndex extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -28,6 +30,11 @@ class NewProjectIndex extends React.Component {
                 Intro + Supplies (click to edit)
             </div>
         )
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.clearSteps();
     }
 
 
@@ -56,6 +63,13 @@ class NewProjectIndex extends React.Component {
                             <div className="button" onClick={() => this.props.createStep(emptyStep)}>
                                 Add Step
                             </div>
+                        </div>
+                        <div className="new-submit">
+                            <Link to={`/projects/${this.props.match.params.projectId}`}>
+                                <div className="done-button" onClick={this.handleSubmit}>
+                                    Done with Purroject!
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </center>

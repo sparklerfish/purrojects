@@ -9,6 +9,8 @@ import { clearSteps } from '../../actions/step_actions';
 class EditProjectIndex extends React.Component {
     constructor(props) {
         super(props);
+
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     componentDidMount() {
@@ -29,6 +31,13 @@ class EditProjectIndex extends React.Component {
             </div>
         )
     }
+
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.clearSteps();
+    }
+
 
 
     render() {
@@ -58,9 +67,9 @@ class EditProjectIndex extends React.Component {
                             </div>
                         </div>
 
-                        <div>
+                        <div className="new-submit">
                             <Link to={`/projects/${this.props.match.params.projectId}`}>
-                                <div className="button">
+                                <div className="done-button" onClick={this.handleSubmit}>
                                     Done with Purroject!
                                 </div>
                             </Link>

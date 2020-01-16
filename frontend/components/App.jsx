@@ -12,6 +12,7 @@ import NewProjectIndexContainer from "./projects/new_project_index_container";
 import EditProjectFormContainer from "./projects/edit_project_form_container";
 import EditProjectIndexContainer from "./projects/edit_project_index_container";
 import EditStepFormContainer from "./projects/edit_step_form_container";
+import CreateProject from "./projects/new_project_landing";
 
 
 const App = () => (
@@ -23,10 +24,11 @@ const App = () => (
       <AuthRoute path="/login" component={LoginContainer} />
       <Route exact path="/" component={Splash} />
       <ProtectedRoute path="/projects/new" component={NewProjectIndexContainer} />
+      <ProtectedRoute path="/projects/create" component={CreateProject} />
       <ProtectedRoute path="/projects/:projectId/update" component={EditProjectIndexContainer} />
       <Route exact path="/projects" component={ProjectIndexContainer} />
-      <Route exact path="/projects/:projectId/edit" component={EditProjectFormContainer} />
-      <Route exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
+      <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectFormContainer} />
+      <ProtectedRoute exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
     </Switch>
   </div>
