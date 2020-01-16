@@ -36,6 +36,7 @@ class EditProjectIndex extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.clearSteps();
+        this.props.history.push(`/projects/${this.props.match.params.projectId}`)
     }
 
 

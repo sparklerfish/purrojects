@@ -14,9 +14,10 @@ class NewProjectIndex extends React.Component {
     }
 
     componentDidMount() {
-        if (localStorage.getItem('newProjectId') > 0) {
-            localStorage.setItem('newProjectId', undefined);
-        }
+        // if (localStorage.getItem('newProjectId') > 0) {
+        //     localStorage.setItem('newProjectId', undefined);
+        // }
+        localStorage.setItem('newProjectId', undefined);
         this.props.openModal('title');
         this.props.requestProject(this.props.newProjectId);
         this.props.requestSteps(this.props.match.params.projectId);
@@ -35,11 +36,12 @@ class NewProjectIndex extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.clearSteps();
+        this.props.history.push(`/projects/${this.props.newProjectId}`)
     }
 
 
     render() {
-        // if (!this.props.project) return null
+        // if (!this.props.match.params.projectId) return null
         // console.log(localStorage.getItem('newProjectId'))
         // debugger
         let emptyStep = {title: "", body: "", project_id: this.props.newProjectId}
@@ -65,7 +67,7 @@ class NewProjectIndex extends React.Component {
                             </div>
                         </div>
                         <div className="new-submit">
-                            <Link to={`/projects/${this.props.match.params.projectId}`}>
+                            <Link to={`/projects/${this.props.newProjectId}`}>
                                 <div className="done-button" onClick={this.handleSubmit}>
                                     Done with Purroject!
                                 </div>

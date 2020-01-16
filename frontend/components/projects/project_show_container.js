@@ -1,4 +1,4 @@
-import {requestProject} from '../../actions/project_actions'
+import { requestProject, deleteProject } from '../../actions/project_actions'
 import {requestSteps} from '../../actions/step_actions'
 import { connect } from 'react-redux';
 import ProjectShow from './project_show';
@@ -16,7 +16,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
         return {
         requestProject: (projectId) => dispatch(requestProject(projectId)),
-        requestSteps: (projectId) => dispatch(requestSteps(projectId))
+        requestSteps: (projectId) => dispatch(requestSteps(projectId)),
+        deleteProject: (projectId) => dispatch(deleteProject(projectId))
     }
 }
 

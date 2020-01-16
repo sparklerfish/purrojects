@@ -14,11 +14,11 @@ class ProjectEditBox extends React.Component {
         if (!this.props.project) return null;
 
         return (
-        <div className="edit-box">
             <Link to={`/projects/${this.props.projectId}/edit`}>
-            Intro + Supplies: {this.props.project.title}
+                <div className="edit-box">
+                    Intro + Supplies: {this.props.project.title}
+                </div>
             </Link>
-        </div>
         )
 
     }

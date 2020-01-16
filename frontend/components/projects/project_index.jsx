@@ -6,6 +6,7 @@ class ProjectIndex extends React.Component {
         // debugger
         this.props.requestProjects();
         this.props.requestUsers();
+        this.props.clearSteps();
     }
 
 

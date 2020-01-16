@@ -87,8 +87,12 @@
     border-color: #cf6000;
     color: #fff;
     text-decoration: none;
+    margin: 10px 0px 10px 0px;
+
 }
 
 .new-submit {
     text-decoration: none;
+    margin: 10px 0px 10px 0px;
+
 }
