@@ -35,14 +35,14 @@ import { closeModal } from './actions/modal_actions';
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  // let preloadedState = loadState();
-  let store = configureStore();
-  // store.subscribe(throttle(() => {
-  //   saveState({
-  //     entities: store.getState().entities,
-  //     session: store.getState().session
-  //   })
-  // }, 1000));
+  let preloadedState = loadState();
+  let store = configureStore(preloadedState);
+  store.subscribe(throttle(() => {
+    saveState({
+      entities: store.getState().entities,
+      session: store.getState().session
+    })
+  }, 1000));
 
   const root = document.getElementById("root");
   ReactDOM.render(<Root store={store} />, root);
