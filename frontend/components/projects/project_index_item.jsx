@@ -10,9 +10,11 @@ class ProjectIndexItem extends React.Component {
 
         return (
           <div className="project-item">
-            <div className="project-item-image">
-              <img src={this.props.project.picture_url} />
-            </div>
+              <Link to={`/projects/${this.props.project.id}`}>
+                <div className="project-item-image">
+                  <img src={this.props.project.picture_url} />
+                </div>
+            </Link>
             <div className="project-item-info">
               <Link to={`/projects/${this.props.project.id}`}>
                 <b>{this.props.project.title}</b>
