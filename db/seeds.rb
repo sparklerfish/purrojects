@@ -16,7 +16,7 @@ ApplicationRecord.connection.reset_pk_sequence!('projects')
 # USERS
 # ##############################################################################
 
-10.times do 
+20.times do 
     User.create(username: Faker::Games::Pokemon.name, email: Faker::Internet.email, password: 'password')
 end
 
