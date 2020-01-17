@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import EditProjectIndex from "./edit_project_index";
 import { requestProject } from '../../actions/project_actions';
-import { requestSteps, createStep, clearSteps } from '../../actions/step_actions';
+import { requestSteps, createStep, clearSteps, destroyStep } from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => ({
     createStep: (step) => dispatch(createStep(step)),
     requestProject: (projectId) => dispatch(requestProject(projectId)),
     requestSteps: (projectId) => dispatch(requestSteps(projectId)),
-    clearSteps: () => dispatch(clearSteps())
+    clearSteps: () => dispatch(clearSteps()),
+    destroyStep: (stepId) => dispatch(destroyStep(stepId))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditProjectIndex)

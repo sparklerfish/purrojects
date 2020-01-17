@@ -20,7 +20,7 @@ class EditStepForm extends React.Component {
     }
 
     render() {
-
+        // if (!this.props.step.project_id) return null;
         return (
 
             <div style={{ zIndex: 15, paddingTop: '100px' }}>

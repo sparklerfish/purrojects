@@ -122,7 +122,7 @@
     position: absolute;
     display: block;
     top: 53px;
-    right: 6px;
+    right: 10px;
 }
 
 .edit-box-right {
@@ -224,3 +224,20 @@
 }
 
     
+.delete-step {
+    padding: 0;
+    position: absolute;
+    display: block;
+    top: 100px;
+    /* bottom: 500px; */
+    right: 15px;
+    font-size: 25px;
+    color: #7E7E7E;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.delete-step:hover {
+    color: red;
+}

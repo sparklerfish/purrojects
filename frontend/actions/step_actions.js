@@ -39,5 +39,6 @@ export const createStep =  (step) => dispatch =>
 export const updateStep = step => dispatch =>
   StepAPIUtil.updateStep(step).then(step => dispatch(receiveStep(step)));
 
-export const destroyStep = step => dispatch =>
-  StepAPIUtil.destroyStep(step).then(step => dispatch(removeStep(step)));
+export const destroyStep = stepId => dispatch =>
+  StepAPIUtil.destroyStep(stepId)
+  .then(() => dispatch(removeStep(stepId)));

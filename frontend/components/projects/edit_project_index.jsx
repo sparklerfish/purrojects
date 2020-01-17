@@ -80,6 +80,7 @@ class EditProjectIndex extends React.Component {
                         <StepEditBoxList
                             projectId={this.props.newProjectId}
                             steps={this.props.steps}
+                            destroyStep={this.props.destroyStep}
                         />
                         <div>
                             <div className="add-step-button" onClick={() => this.props.createStep(emptyStep)}>

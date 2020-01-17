@@ -1,13 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class StepEditBox extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleDelete = this.handleDelete.bind(this);
+        this.handleRedirect = this.handleRedirect.bind(this);
+    }
+
+    handleDelete(e) {
+        console.log("deleting");
+        e.stopPropagation();
+        this.props.destroyStep(this.props.step.id);
+    }
+
+    handleRedirect() {
+        let path = `/steps/${this.props.step.id}/edit`;
+        // let history = useHistory();
+        this.props.history.push(path);
+        // this.props.history.push(`/steps/${this.props.step.id}/edit`)
+    }
+
     render() {
         if (!this.props.step) return null;
 
         const stepNo = this.props.idx + 1
         return (
-            <Link to={`/steps/${this.props.step.id}/edit`}>
+            <div onClick={this.handleRedirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
                         <div className="image-box-holder">
@@ -24,12 +44,17 @@ class StepEditBox extends React.Component {
                             }
                         </div>
                         <img src={window.caret} />
+                        <div 
+                            className="delete-step" 
+                            onClick={this.handleDelete}>
+                                ×
+                        </div>
                     </div>
                 </div>
-            </Link>
+            </div>
         );
 
     }
 }
 
-export default StepEditBox
+export default withRouter(StepEditBox);

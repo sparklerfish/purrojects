@@ -29,7 +29,6 @@ class ProjectEditBox extends React.Component {
                         Intro + Supplies: {this.props.project.title}
                         </div>
                         <img src={window.caret} />
-
                     </div>
                 </div>
             </Link>

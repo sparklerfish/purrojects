@@ -15,7 +15,8 @@ class StepEditBoxList extends React.Component {
                         <StepEditBox  
                             step={step} 
                             key={step.id} 
-                            idx={idx} 
+                            idx={idx}
+                            destroyStep={this.props.destroyStep}
                         />
                     ))}
                 </ul>
