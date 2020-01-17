@@ -19,7 +19,7 @@ class Api::ProjectsController < ApplicationController
     end
 
     def update
-        @project = current_user.projects.find(params[:id])
+        @project = Project.find(params[:id])
         if @project
             if @project.update(project_params)
                 render '/api/projects/newproject', status: 200

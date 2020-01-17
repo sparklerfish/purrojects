@@ -37,6 +37,7 @@ class EditProjectForm extends React.Component {
 
                             <label htmlFor="body">
                                 <textarea
+                                    placeholder="Type your description..."
                                     value={this.state.body}
                                     onChange={this.update("body")}
                                     className="update-body-input"

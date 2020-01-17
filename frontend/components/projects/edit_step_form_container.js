@@ -6,7 +6,8 @@ import { updateStep } from '../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
-    step: state.entities.steps[ownProps.match.params.stepId]
+    step: state.entities.steps[ownProps.match.params.stepId],
+    stepNo: ((Object.values(state.entities.steps).indexOf(state.entities.steps[ownProps.match.params.stepId]) + 1))
 })
 
 const mapDispatchToProps = dispatch => ({

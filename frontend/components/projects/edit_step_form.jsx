@@ -20,6 +20,7 @@ class EditStepForm extends React.Component {
     }
 
     render() {
+
         return (
 
             <div style={{ zIndex: 15, paddingTop: '100px' }}>
@@ -29,6 +30,7 @@ class EditStepForm extends React.Component {
 
                             <label htmlFor="title">
                                 <input type="text"
+                                    placeholder="Type Your Title"
                                     value={this.state.title}
                                     onChange={this.update("title")}
                                     className="update-title-input"
@@ -37,6 +39,7 @@ class EditStepForm extends React.Component {
 
                             <label htmlFor="body">
                                 <textarea
+                                    placeholder="Type your description..."
                                     value={this.state.body}
                                     onChange={this.update("body")}
                                     className="update-body-input"
