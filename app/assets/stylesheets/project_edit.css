@@ -9,13 +9,15 @@
     margin-top: 20px;
     width: 970px;
     height: 147px;
-    margin: 20px 0px 20px 0px;
+    margin-left: auto;
+    margin-right: auto;
     /* text-align: center; */
 }
 
 .new-edit-container {
     position: absolute;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
     top: 128px;
     width: 100%;
 }
@@ -54,6 +56,7 @@
     background: 0 0;
     white-space: normal;
     min-height: 370px;
+    resize: none;
 }
 
 
@@ -87,12 +90,137 @@
     border-color: #cf6000;
     color: #fff;
     text-decoration: none;
-    margin: 10px 0px 10px 0px;
-
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .new-submit {
     text-decoration: none;
     margin: 10px 0px 10px 0px;
-
 }
+
+.step-box-title {
+    font-weight: 700;
+    width: 355px;
+    /* display: block;
+    position: absolute;
+    vertical-align: top; */
+    overflow: hidden;
+    height: 135px;
+    padding-right: 37px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+
+    display: inline-block;
+    position: relative;
+    line-height: 140px;
+    height: 140px;
+}
+
+.edit-box img {
+    position: absolute;
+    display: block;
+    top: 53px;
+    right: 6px;
+}
+
+.edit-box-right {
+    width: 355px;
+    display: block;
+    position: absolute;
+    vertical-align: top;
+    overflow: hidden;
+    height: 135px;
+    padding-right: 37px;
+    top: 0;
+    right: 0;
+}
+
+.edit-box-left {
+    width: 585px;
+    display: block;
+    position: relative;
+    vertical-align: top;
+    left: 0;
+    top: 0;
+}
+
+.image-box {
+    position: absolute;
+    text-align: center;
+    width: auto;
+    left: 12px;
+    right: 12px;
+    height: auto;
+    top: 9px;
+    bottom: 12px;
+    color: #aaa;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 3px rgba(0,0,0,.15);
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.15);
+    -moz-box-shadow: inset 0 0 3px rgba(0,0,0,.15);
+    background-color: #fff;
+    border: 1px solid #dedede;
+}
+
+.image-box-holder {
+    display: block;
+    width: 560px;
+    height: 150px;
+    position: relative;
+    margin-left: 0;
+    padding-left: 12px;
+    /* float: left; */
+}
+
+.add-step-button {
+    height: 34px;
+    width: 200px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    background-color: #f6f6f6;
+    border-color: #dedede;
+    color: #333;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.save-step-button {
+    height: 34px;
+    width: 200px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    background-color: white;
+    border-color: #dedede;
+    color: #333;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+    

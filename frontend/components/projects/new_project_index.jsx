@@ -11,6 +11,9 @@ class NewProjectIndex extends React.Component {
         super(props);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            steps: {}
+        }
     }
 
     componentDidMount() {
@@ -20,6 +23,7 @@ class NewProjectIndex extends React.Component {
         localStorage.setItem('newProjectId', undefined);
         this.props.openModal('title');
         this.props.requestProject(this.props.newProjectId);
+        this.props.clearSteps();
         this.props.requestSteps(this.props.match.params.projectId);
     }
 
@@ -27,9 +31,25 @@ class NewProjectIndex extends React.Component {
 
     noProjectComponent() {
         return (
+            // <center>
             <div className="edit-box">
-                Intro + Supplies (click to edit)
+                <div className="edit-box-left">
+                    <div className="image-box-holder">
+                        <div className="image-box">
+                            Image Upload Coming Soon!
+                            </div>
+                    </div>
+                </div>
+                <div className="edit-box-right">
+                    <div className="step-box-title">
+
+                        Intro + Supplies: (Click to Edit)
+                        </div>
+                    <img src={window.caret} />
+
+                </div>
             </div>
+            // </center>
         )
     }
 
@@ -50,7 +70,7 @@ class NewProjectIndex extends React.Component {
             <div className="new-edit-container">
 
                 <Modal />
-                <center>
+                {/* <center> */}
                     <div>
                         <div>
                             {(localStorage.getItem('newProjectId') > 0) ?
@@ -62,7 +82,7 @@ class NewProjectIndex extends React.Component {
                             steps={this.props.steps}
                         />
                         <div>
-                            <div className="button" onClick={() => this.props.createStep(emptyStep)}>
+                            <div className="add-step-button" onClick={() => this.props.createStep(emptyStep)}>
                                 Add Step
                             </div>
                         </div>
@@ -74,7 +94,7 @@ class NewProjectIndex extends React.Component {
                             </Link>
                         </div>
                     </div>
-                </center>
+                {/* </center> */}
             </div>
         )
     }

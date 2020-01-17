@@ -6,7 +6,7 @@ export default (state = [], action) => {
 
     switch (action.type) {
         case RECEIVE_PROJECT_ERRORS:
-            debugger; 
+            // debugger; 
             return action.errors.responseJSON;
         case CLEAR_ERRORS:
             return [];

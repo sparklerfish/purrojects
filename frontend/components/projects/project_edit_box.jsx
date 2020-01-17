@@ -16,7 +16,21 @@ class ProjectEditBox extends React.Component {
         return (
             <Link to={`/projects/${this.props.projectId}/edit`}>
                 <div className="edit-box">
-                    Intro + Supplies: {this.props.project.title}
+                    <div className="edit-box-left">
+                        <div className="image-box-holder">
+                            <div className="image-box">
+                                Image Upload Coming Soon!
+                            </div>
+                        </div>
+                    </div>
+                    <div className="edit-box-right">
+                        <div className="step-box-title">
+
+                        Intro + Supplies: {this.props.project.title}
+                        </div>
+                        <img src={window.caret} />
+
+                    </div>
                 </div>
             </Link>
         )

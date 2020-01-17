@@ -42,7 +42,8 @@ class EditProjectForm extends React.Component {
                                     className="update-body-input"
                                 />
                             </label>
-                            <input type="submit" value="Save" />
+                            <input type="submit" value="Save" className="save-step-button" />
+                            <br/>
                         </form>
                     </div>
                 </center>

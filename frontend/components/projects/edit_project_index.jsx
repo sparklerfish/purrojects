@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Modal from './modal'
+// import Modal from './modal'
 import ProjectEditBoxContainer from './project_edit_box_container';
 import StepEditBoxList from './step_edit_box_list'
-import { clearSteps } from '../../actions/step_actions';
+// import { clearSteps } from '../../actions/step_actions';
 
 
 class EditProjectIndex extends React.Component {
@@ -11,6 +11,10 @@ class EditProjectIndex extends React.Component {
         super(props);
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.state = {
+            project: this.props.project,
+            steps: {}
+        }
     }
 
     componentDidMount() {
@@ -18,6 +22,7 @@ class EditProjectIndex extends React.Component {
         //     localStorage.setItem('newProjectId', undefined);
         // }
         // this.props.openModal('title');
+        this.props.clearSteps();
         this.props.requestProject(this.props.match.params.projectId);
         this.props.requestSteps(this.props.match.params.projectId);
     }
@@ -26,9 +31,25 @@ class EditProjectIndex extends React.Component {
 
     noProjectComponent() {
         return (
-            <div className="edit-box">
-                Intro + Supplies (click to edit)
-            </div>
+            // <center>
+                <div className="edit-box">
+                    <div className="edit-box-left">
+                        <div className="image-box-holder">
+                            <div className="image-box">
+                                Image Upload Coming Soon!
+                            </div>
+                        </div>
+                    </div>
+                    <div className="edit-box-right">
+                        <div className="step-box-title">
+
+                            Intro + Supplies: (Click to Edit)
+                        </div>
+                        <img src={window.caret} />
+
+                    </div>
+                </div>
+            // </center>
         )
     }
 
@@ -49,7 +70,7 @@ class EditProjectIndex extends React.Component {
         return (
 
             <div className="new-edit-container">
-                <center>
+                {/* <center> */}
                     <div>
                         <div>
                             {(localStorage.getItem('newProjectId') > 0) ?
@@ -61,22 +82,24 @@ class EditProjectIndex extends React.Component {
                             steps={this.props.steps}
                         />
                         <div>
-                            <div className="button" onClick={() => this.props.createStep(emptyStep)}>
+                            <div className="add-step-button" onClick={() => this.props.createStep(emptyStep)}>
                                 Add Step
                             </div>
                         </div>
 
                         <div className="new-submit">
-                            <Link to={`/projects/${this.props.match.params.projectId}`}>
-                                <div className="done-button" onClick={this.handleSubmit}>
-                                    Done with Purroject!
-                                </div>
-                            </Link>
+                            <center>
+                                <Link to={`/projects/${this.props.match.params.projectId}`}>
+                                    <div className="done-button" onClick={this.handleSubmit}>
+                                        Done with Purroject!
+                                    </div>
+                                </Link>
+                            </center>
                         </div>
 
 
                     </div>
-                </center>
+                {/* </center> */}
             </div>
         )
     }
