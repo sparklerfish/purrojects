@@ -26,7 +26,7 @@ p1 = Project.create!(
     title: 'Cat Tree',
     body: "Several years ago when my son was in scouts for his eagle project he made a couple dozen cat trees to donate to the local shelter to give to folks who adopt a cat. Since he had such a large number to make we came up with some techniques to help production.  For this 'ible I scavenged some plywood, a 2x4, some carpet remnants, and some sisal rope.",
     author: User.order('RANDOM()').first,
-    picture_url: 'http://placekitten.com/g/306/255',
+    picture_url: 'cat_tree.jpg',
 )
 
 p2 = Project.create!(
@@ -38,14 +38,46 @@ p2 = Project.create!(
     • 1/4 cup plain yogurt or sour cream
     • 1/4 cup cornmeal",
     author: User.order('RANDOM()').first,
-    picture_url: 'http://placekitten.com/g/306/255',
+    picture_url: 'cat_treats.jpg',
 )
 
 p3 = Project.create!(
-    title: 'stuffed cat bed',
+    title: 'Stuffed Cat Bed',
     body: 'Cats love these easy to make, stuffed cat beds. We also sell them for $15 each for the local cat shelter.',
     author: User.order('RANDOM()').first,
-    picture_url: 'http://placekitten.com/g/306/255',
+    picture_url: 'stuffed_cat_bed.jpg',
+)
+
+p4 = Project.create!(
+    title: 'Hidden Litter Box',
+    body: 'Since we have cats, and we also foster kittens, we needed to add litter boxes around the house. We didn\'t just want the boxes out in the open so we wanted to hide them in plain sight. We saw enclosures at Petco but they ran about $70 to $200 for just one. So we decided to make some ourselves..
+
+    This will be my very first Instructable, so please bear with me..
+    
+    I purchased two double drawer nightstands for $30 at a thrift shop. ($15 a piece)
+    
+    Tools used:
+    
+    mitre saw or mitre box and saw (for the trim moulding)
+    drill+bits
+    screwdrivers
+    jigsaw (for cutting the openings and the mdf)
+    Spray paint
+    scuff pad
+    sand paper or electric sander
+    
+    
+    Materials/ hardware:
+    
+    Spray paint
+    small screws
+    MDF
+    small outside corner trim (moulding) "L" trim : Kelleher 3/4 in. x 3/4 in. Oak Outside Corner Moulding 98¢ lf
+    Double Roller Catch with Spear Strike
+    square corner door hinges x2
+    Metal vent grill',
+    author: User.order('RANDOM()').first,
+    picture_url: 'hidden_litter_box.jpg',
 )
 
 
@@ -55,7 +87,7 @@ p5 = Project.create!(
 
     This cat tent is super easy to make - you really just need a t-shirt, some wire hangers and a piece of cardboard. As a bonus, it really only takes five minutes, so if your cat ignores it you didn't put too much effort in. ;)",
     author: User.order('RANDOM()').first,
-    picture_url: 'http://placekitten.com/g/306/255',
+    picture_url: "diy_cat_tent.jpg"
 )
 
 
@@ -218,4 +250,42 @@ p3steps = Step.create!([
         body: 'Turn the bed inside out so the seams on the edges disappear under the stuffed ring.',
         project_id: p3.id
     },
+])
+
+p4steps = Step.create!([
+    {
+        title: "Disassembly",
+        body: "I started with double drawer nightstands. I took the drawers apart, and the drawer supports were removed from the inside. We will only be needing the drawer faces (fronts). Then the faces were screwed on to MDF in the original configuration as they would be when they were working drawers.",
+        project_id: p4.id
+    },
+    {
+        title: "Entrance and Vent Openings",
+        body: "I cut out the opening for the entrance and trimmed it with \"L\" shaped moulding for aesthetic purposes. If you don't want to use trim, make sure to sand the edges to prevent injuries to the cats. I also cut out an opening on the back for ventilation, we will attach a vent grill over this opening with heavy duty double sided tape.
+
+
+        *trim for opening used: Kelleher 3/4 in. x 3/4 in. Oak Outside Corner Moulding",
+        project_id: p4.id
+    },
+    {
+        title: "Assembly",
+        body: "Once the \"false\' drawers are assembled, I attached them to the nightstand using regular square corner door hinges. The door will open downward. A friend gave me some carpet so I could line the floor. I stapled the carpet in. I used a Double Roller Catch with Spear Strike to hold the door closed.
+
+        *NOTE: because the MDF adds width to the drawer face thickness the screws for the handles are too short now. I used drill bit that was alrger than the screw\'s head diameter and added tape so it would only drill the depth of the MDF.",
+        project_id: p4.id
+    },
+    {
+        title: "Tweaks",
+        body: "Because I used regular hinges, the drawer face touches the trim at the bottom of the nightstand and prevents the door from opening all the way. This can and will be resolved by eliminating the gap between the drawer faces by moving the bottom face up against the top one. Now the gap will be on the bottom giving you that space needed for the door to open fully.",
+        project_id: p4.id
+    },
+    {
+        title: "Final Product",
+        body: "The \"shabby chic\" look was sorta accomplished by spraying it blue first, and then a white top coat was added. Then it was gone over with a scuff pad.(This was my partner in crime Heather's idea, she watches and reads way too much HGTV stuff. okay, so do I) She also wanted the handles to look \"old\" so I prayed them gold, (that didn't work, so I sprayed them gold) let the paint dry, sprayed black over them and quickly wiped it off. (my idea)                                                                     
+
+            Total cost for two of these enclosures = about $70. Compared to $70-$200 for one at Petco..
+            
+            
+            (make sure you have a drop cloth to cover your working surface when you paint to protect from overspray, my lovely assistant didn't, so now we have blue stripes on our driveway) MY fault really, I should have done the work in my workshop(garage) but I live in CA and it was way too HOT in there during the summer..  ",
+        project_id: p4.id
+    }
 ])
