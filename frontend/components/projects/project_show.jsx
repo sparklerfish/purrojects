@@ -9,7 +9,6 @@ class ProjectShow extends React.Component {
     }
     componentDidMount() {
         this.props.requestProject(this.props.match.params.projectId);
-        // debugger
         this.props.requestSteps(this.props.match.params.projectId);
     }
 
@@ -19,13 +18,9 @@ class ProjectShow extends React.Component {
     }
 
     render() {
-        // console.log(this.props)
         if (!this.props.project) return null
         if (!this.props.steps) return null
-        
-        // const { project, steps } = this.props;
-        // console.log(this.props.steps)
-        // debugger
+
         return (
           <div className="project-show">
             <center>

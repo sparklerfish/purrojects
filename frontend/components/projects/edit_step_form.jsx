@@ -1,5 +1,4 @@
 import React from 'react'
-// import { withRouter } from 'react-router-dom';
 
 class EditStepForm extends React.Component {
     constructor(props) {
@@ -11,7 +10,6 @@ class EditStepForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.action(this.state);
-        // debugger
         this.props.history.push(`/projects/${this.props.step.project_id}/update`)
     }
 
@@ -20,7 +18,6 @@ class EditStepForm extends React.Component {
     }
 
     render() {
-        // if (!this.props.step.project_id) return null;
         return (
 
             <div style={{ zIndex: 15, paddingTop: '100px' }}>

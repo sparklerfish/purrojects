@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import ProjectEditBox from './project_edit_box';
 
 const mapStateToProps = (state, ownProps) => {
-    // debugger
     return {
         project: state.entities.projects[ownProps.projectId],
     };

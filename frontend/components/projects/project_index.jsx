@@ -3,7 +3,6 @@ import ProjectIndexItem from './project_index_item';
 
 class ProjectIndex extends React.Component {
     componentDidMount() {
-        // debugger
         this.props.requestProjects();
         this.props.requestUsers();
         this.props.clearSteps();
@@ -13,7 +12,6 @@ class ProjectIndex extends React.Component {
     render() {
         
         const { projects, users } = this.props;
-        // debugger
         return(
             <div className="project-list">
                     {projects.map(project => (

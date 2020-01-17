@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import NewProjectIndex from "./new_project_index";
 import { openModal, closeModal } from "../../actions/modal_actions";
 import { requestProject } from '../../actions/project_actions';
-// import { requestSteps } from '../../actions/step_actions';
 
 const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],

@@ -1,5 +1,4 @@
 import React from 'react';
-// import { createStep } from "../../actions/step_actions";
 import { connect } from "react-redux";
 import EditProjectIndex from "./edit_project_index";
 import { requestProject } from '../../actions/project_actions';

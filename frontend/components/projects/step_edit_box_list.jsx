@@ -6,7 +6,6 @@ class StepEditBoxList extends React.Component {
     render() {
         if (!this.props.steps) return null;
 
-        // debugger
         const steps = Object.values(this.props.steps)
         return (
             <div>

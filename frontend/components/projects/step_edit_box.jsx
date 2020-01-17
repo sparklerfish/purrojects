@@ -10,16 +10,13 @@ class StepEditBox extends React.Component {
     }
 
     handleDelete(e) {
-        console.log("deleting");
         e.stopPropagation();
         this.props.destroyStep(this.props.step.id);
     }
 
     handleRedirect() {
         let path = `/steps/${this.props.step.id}/edit`;
-        // let history = useHistory();
         this.props.history.push(path);
-        // this.props.history.push(`/steps/${this.props.step.id}/edit`)
     }
 
     render() {

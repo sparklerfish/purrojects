@@ -10,10 +10,8 @@ class Api::ProjectsController < ApplicationController
     def create
         @project = Project.new(project_params)
         if @project.save
-            # debugger
             render '/api/projects/newproject', status: 200
         else
-            # debugger 
             render json: @project.errors.full_messages, status: 422
         end
     end

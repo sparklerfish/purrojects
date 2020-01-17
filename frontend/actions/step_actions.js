@@ -7,7 +7,6 @@ export const CLEAR_STEPS = "CLEAR_STEPS";
 
 // sync actions
 export const receiveSteps = ({ steps })=> {
-  // debugger
   return {
   type: RECEIVE_ALL_STEPS,
   steps

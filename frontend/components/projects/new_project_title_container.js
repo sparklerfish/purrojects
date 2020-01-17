@@ -1,6 +1,5 @@
 import React from 'react';
 import { createProject } from "../../actions/project_actions";
-// import { createStep } from "../../util/step_api_util";
 import { connect } from "react-redux";
 import NewProjectTitle from "./new_project_title";
 import { closeModal } from '../../actions/modal_actions'

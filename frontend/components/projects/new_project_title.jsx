@@ -12,13 +12,8 @@ class NewProjectTitle extends React.Component {
     }
 
     handleSubmit(e) {
-        // debugger
         e.preventDefault();
         this.props.createProject(this.state)
-            // .then(project => {
-            //     debugger; 
-            //     localStorage.setItem('newProjectId', project.id)
-            // })
         .then(() => this.props.closeModal());
     }
 
@@ -27,7 +22,6 @@ class NewProjectTitle extends React.Component {
     }
 
     renderErrors() {
-        // debugger
         if (this.props.errors.length > 0) {
             return (
                 <ul className="project-errors">

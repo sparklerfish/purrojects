@@ -4,9 +4,6 @@ import { connect } from 'react-redux';
 import ProjectShow from './project_show';
 
 const mapStateToProps = (state, ownProps) => {
-    // console.log(ownProps.match.params.projectId);
-    // console.log(state.entities.projects[1])
-    // console.log(state)
     return {
         project: state.entities.projects[ownProps.match.params.projectId],
         steps: state.entities.steps

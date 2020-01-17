@@ -7,10 +7,8 @@ const ProjectsReducer = (oldState = {}, action) => {
     switch(action.type) {
 
         case RECEIVE_ALL_PROJECTS:
-            // debugger
             return action.projects;
         case RECEIVE_PROJECT:
-            // debugger
             const newProject = action.project;
             return Object.assign({}, oldState, newProject);
         case REMOVE_PROJECT:

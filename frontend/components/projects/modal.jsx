@@ -12,7 +12,6 @@ class Modal extends React.Component {
         return (
             <div className="modal-background">
                 <div className="modal-child" onClick={e => e.stopPropagation()}>
-                    {/* test */}
                     <NewProjectTitleContainer />
                 </div>
             </div>
@@ -21,7 +20,6 @@ class Modal extends React.Component {
 }
 
 const mapStateToProps = state => {
-    // debugger
     return {
         modal: state.ui.modal
     };

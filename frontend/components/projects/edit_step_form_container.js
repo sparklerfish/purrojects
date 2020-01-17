@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from "react-redux";
 import EditStepForm from "./edit_step_form";
 import { updateStep } from '../../actions/step_actions';
-// import { openModal, closeModal } from "../../actions/modal_actions";
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
