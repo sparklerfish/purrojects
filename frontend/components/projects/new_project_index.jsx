@@ -18,9 +18,9 @@ class NewProjectIndex extends React.Component {
     componentDidMount() {
         localStorage.setItem('newProjectId', undefined);
         this.props.openModal('title');
-        this.props.requestProject(this.props.newProjectId);
+        // this.props.requestProject(this.props.newProjectId);
         this.props.clearSteps();
-        this.props.requestSteps(this.props.match.params.projectId);
+        // this.props.requestSteps(this.props.match.params.projectId);
     }
 
 
