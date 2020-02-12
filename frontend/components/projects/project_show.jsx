@@ -17,9 +17,26 @@ class ProjectShow extends React.Component {
       this.props.history.push(`/projects`)
     }
 
+    editLinks() {
+      return(
+        <div>
+          <div className="done-button">
+            <Link to={`/projects/${this.props.project.id}/update`}>
+              Edit Purroject
+            </Link>
+          </div>
+
+          <div className="delete-button" onClick={this.handleDelete}>
+            Delete Purroject
+          </div>
+        </div>
+      )
+    }
+
     render() {
-        if (!this.props.project) return null
-        if (!this.props.steps) return null
+      if (!this.props.project) return null
+      if (!this.props.steps) return null
+      if (!this.props.userId) return null
 
         return (
           <div className="project-show">
@@ -34,15 +51,7 @@ class ProjectShow extends React.Component {
                 project_id={this.props.project.id}
                 steps={this.props.steps}
               />
-              <div className="done-button">
-                <Link to={`/projects/${this.props.project.id}/update`}>
-                  Edit Purroject
-                </Link>
-              </div>
-
-              <div className="delete-button" onClick={this.handleDelete}>
-                  Delete Purroject
-              </div>
+              {this.props.project.author_id === this.props.userId ? this.editLinks() : null }
             </center>
           </div>
         );
