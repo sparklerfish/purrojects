@@ -13,7 +13,7 @@ import EditProjectFormContainer from "./projects/edit_project_form_container";
 import EditProjectIndexContainer from "./projects/edit_project_index_container";
 import EditStepFormContainer from "./projects/edit_step_form_container";
 import CreateProject from "./projects/new_project_landing";
-
+import NotFound from "./not_found";
 
 const App = () => (
   <div>
@@ -30,6 +30,7 @@ const App = () => (
       <ProtectedRoute exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
       <Route exact path="/projects" component={ProjectIndexContainer} />
+      <Route component={NotFound}/>
     </Switch>
   </div>
 );

@@ -1,0 +1,51 @@
+.not-found-text {
+  position: fixed;
+  margin-bottom: 10vh;
+  bottom: 0;
+  width: 100%;
+}
+
+.not-found-title {
+    padding: 0 20px;
+    color: white;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 34px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.not-found-body {
+    font-size: 20px;
+    line-height: 32px;
+    font-family: "Nunito",helvetica,arial,sans-serif;
+    font-weight: 300;
+    text-align: left;
+    color: white;
+    margin: 0 auto;
+    white-space: pre-line;
+    max-width: 800px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.not-found-body a {
+    font-weight: 800;
+}
+
+.not-found-body a:hover {
+    font-weight: 800;
+    text-decoration: underline;
+}
+
+.not-found-image {
+  height: 100%;
+  width: 100%;
+  background-position: 25%; 
+  background-image: url("confused_cat.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 128px;
+}
