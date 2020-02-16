@@ -1,11 +1,12 @@
 import { createComment, updateComment } from "../../util/comment_api_util";
 import { connect } from "react-redux";
+import CommentForm from './comment_form'
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],
     comment: {
         body: "",
-        projectId: ownProps.match.params.projectId
+        projectId: ownProps.projectId
     }
 })
 

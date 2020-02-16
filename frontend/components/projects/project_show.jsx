@@ -2,6 +2,7 @@ import React from "react";
 import StepList from "../steps/step_list";
 import { Link } from "react-router-dom";
 import CommentList from "../comments/comment_list";
+import AddComment from "../comments/add_comment";
 
 class ProjectShow extends React.Component {
     constructor(props) {

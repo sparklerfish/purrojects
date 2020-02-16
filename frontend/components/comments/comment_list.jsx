@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentListItem from './comment_list_item';
+import AddComment from './add_comment';
 
 const CommentList = props => {
     if (!props.comments) return null;
@@ -15,6 +16,7 @@ const CommentList = props => {
                     <CommentListItem comment={comment} key={comment.id}/>
                 ))}
             </ul>
+            <AddComment projectId={props.projectId}/>
         </div>
     )
 };
