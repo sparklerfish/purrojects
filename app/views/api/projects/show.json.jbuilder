@@ -13,7 +13,7 @@ end
 json.comments do
   @comments.each do |comment|
     json.set! comment.id do 
-      json.extract! comment, :id, :body
+      json.extract! comment, :id, :body, :time_ago
         json.author do
             json.extract! comment.author, :username
         end
