@@ -1,6 +1,6 @@
 @comments.each do |comment|
     json.set! comment.id do
-        json.extract! comment, :id, :body, :project_id
+        json.extract! comment, :id, :body, :project_id, :created_at
 
         json.author do
             json.extract! comment.author, :username
