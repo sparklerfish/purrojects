@@ -7,6 +7,7 @@ class Project < ApplicationRecord
         class_name: 'User'
 
     has_many :steps
+    has_many :comments
 
     has_many_attached :photos
 end

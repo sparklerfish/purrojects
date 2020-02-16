@@ -87,3 +87,27 @@
     margin: 10px 0px 10px 0px;
 
 }
+
+.comment-body {
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "Nunito",helvetica,arial,sans-serif;
+    font-weight: 300;
+    text-align: left;
+    color: #555;
+    margin: 3px 0 20px;
+    white-space: pre-line;
+    max-width: 800px;
+}
+
+.comment-author {
+    font-size: 18px;
+    line-height: 32px;
+    font-family: "Nunito",helvetica,arial,sans-serif;
+    font-weight: 700;
+    text-align: left;
+    color: #555;
+    margin: 3px 0 20px;
+    white-space: pre-line;
+    max-width: 800px;
+}

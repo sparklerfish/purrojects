@@ -1,6 +1,7 @@
 import React from "react";
 import StepList from "../steps/step_list";
 import { Link } from "react-router-dom";
+import CommentList from "../comments/comment_list";
 
 class ProjectShow extends React.Component {
     constructor(props) {
@@ -10,6 +11,7 @@ class ProjectShow extends React.Component {
     componentDidMount() {
         this.props.requestProject(this.props.match.params.projectId);
         this.props.requestSteps(this.props.match.params.projectId);
+        this.props.requestComments(this.props.match.params.projectId);
     }
 
     handleDelete() {
@@ -39,7 +41,7 @@ class ProjectShow extends React.Component {
       if (!this.props.project) return null
       if (!this.props.steps) return null
       if (!this.props.userId) return null
-
+      // console.log(this.props)
         return (
           <div className="project-show">
             <center>
@@ -54,6 +56,10 @@ class ProjectShow extends React.Component {
                 steps={this.props.steps}
               />
               {this.props.project.author_id === this.props.userId ? this.editLinks() : null }
+              <CommentList
+                project_id={this.props.project.id}
+                comments={this.props.comments}
+              />
             </center>
           </div>
         );
