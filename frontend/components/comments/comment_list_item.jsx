@@ -2,9 +2,9 @@ import React from 'react'
 
 const CommentListItem = props => {
     return (
-        <li>
-            {props.comment.author.username} 
-            {props.comment.body}
+        <li className="comment-list-item">
+            <span className="comment-author">{props.comment.author.username} </span>
+            <span className="comment-body">{props.comment.body}</span>
         </li>
     )
 }
