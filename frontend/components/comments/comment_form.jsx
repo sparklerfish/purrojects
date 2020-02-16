@@ -6,11 +6,13 @@ class CommentForm extends React.Component {
 
         this.state = this.props.comment;
         this.handleSubmit = this.handleSubmit.bind(this)
+        this.toggleForm = this.props.toggleForm;
     }
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state);
+        this.props.createComment(this.state);
+        this.toggleForm();
     }
 
     update(field) {

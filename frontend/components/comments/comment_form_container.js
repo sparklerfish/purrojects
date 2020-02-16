@@ -7,7 +7,8 @@ const mapStateToProps = (state, ownProps) => ({
     comment: {
         body: "",
         projectId: ownProps.projectId
-    }
+    },
+    toggleForm: ownProps.toggleForm
 })
 
 const mapDispatchToProps = dispatch => ({

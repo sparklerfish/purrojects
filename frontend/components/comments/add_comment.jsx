@@ -23,7 +23,7 @@ class AddComment extends React.Component {
                     <div className="done-button">
                         Post Comment
                         {/* {this.state.formVisible ? <CommentFormContainer /> : null} */}
-                        {/* <CommentFormContainer projectId={this.props.projectId}/> */}
+                        {/* <CommentFormContainer projectId={this.props.projectId} toggleForm={this.toggleForm}/> */}
                     </div>
                 </center>
             </div>
