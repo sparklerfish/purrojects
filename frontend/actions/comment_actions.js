@@ -28,8 +28,13 @@ export const clearComments = () => ({
 })
 
 // async actions
-export const requestComments = (projectId) => dispatch =>
-    CommentAPIUtil.fetchComments(projectId).then(comments => dispatch(receiveComments(comments)));
+export const requestComments = (projectId) => dispatch => {
+    // debugger
+    CommentAPIUtil.fetchComments(projectId)
+    .then(comments => {
+        console.log(comments)
+        dispatch(receiveComments(comments))});
+}
 
 export const createComment = (comment) => dispatch =>
     CommentAPIUtil.createComment(comment).then(comment =>

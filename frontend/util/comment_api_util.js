@@ -1,12 +1,12 @@
-export const fetchComments = projectId => {
-    $.ajax({
+export const fetchComments = (projectId) => {
+    return $.ajax({
         method: "GET",
         url: `/api/projects/${projectId}`
     });
 };
 
-export const createComment = comment => {
-    $.ajax({
+export const createComment = (comment) => {
+    return $.ajax({
         method: "POST",
         url: `/api/comments`,
         data: { comment }
@@ -14,7 +14,7 @@ export const createComment = comment => {
 };
 
 export const updateComment = comment => {
-    $.ajax({
+    return $.ajax({
         method: "PATCH",
         url: `/api/comments/${comment.id}`,
         data: { comment }
@@ -22,7 +22,7 @@ export const updateComment = comment => {
 };
 
 export const destroyComment = commentId => {
-    $.ajax({
+    return $.ajax({
         method: "DELETE",
         url: `/api/comments/${commentId}`
     });

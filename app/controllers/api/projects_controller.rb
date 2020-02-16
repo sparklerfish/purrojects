@@ -38,6 +38,7 @@ class Api::ProjectsController < ApplicationController
     def show
         @project = Project.includes(:steps, :author).find(params[:id])
         @steps = @project.steps
+        @comments = @project.comments
     end
 
     def destroy
