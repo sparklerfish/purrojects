@@ -1,6 +1,6 @@
 import * as CommentAPIUtil from "../util/comment_api_util";
 
-export const RECEIVE_ALL_COMMENTS = "RECEIVE_COMMENTS";
+export const RECEIVE_ALL_COMMENTS = "RECEIVE_ALL_COMMENTS";
 export const RECEIVE_COMMENT = "RECEIVE_COMMENT";
 export const REMOVE_COMMENT = "REMOVE_COMMENT";
 export const CLEAR_COMMENTS = "CLEAR_COMMENTS";
@@ -32,13 +32,14 @@ export const requestComments = (projectId) => dispatch => {
     // debugger
     CommentAPIUtil.fetchComments(projectId)
     .then(comments => {
-        console.log(comments)
         dispatch(receiveComments(comments))});
 }
 
 export const createComment = (comment) => dispatch =>
-    CommentAPIUtil.createComment(comment).then(comment =>
-        dispatch(receiveComment(comment))
+    CommentAPIUtil.createComment(comment)
+        .then(comment => {
+            dispatch(receiveComment(comment))
+        }
     );
 
 export const updateComment = comment => dispatch =>

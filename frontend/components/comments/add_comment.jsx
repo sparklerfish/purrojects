@@ -1,5 +1,5 @@
+import React from 'react';
 import CommentFormContainer from "./comment_form_container";
-import React from 'react'
 
 class AddComment extends React.Component {
     constructor(props) {
@@ -7,28 +7,32 @@ class AddComment extends React.Component {
         this.state = {
             formVisible: false
         }
-        // this.toggleForm = this.toggleForm.bind(this);
+        this.toggleForm = this.toggleForm.bind(this);
     }
 
-    // toggleForm = e => {
-    //     e.preventDefault();
-    //     // this.state.formVisible ? this.setState({ formVisible: false }) : this.setState({ formVisible: true })
-    // }
+    toggleForm = e => {
+        // e.stopPropagation();
+        // e.preventDefault();
+        console.log(this.props)
+        this.setState({ formVisible: !this.state.formVisible });
+    }
 
     render () {
         return (
-            <div className="new-submit">
-                <center>
-                    {/* <div className="done-button" onClick={this.toggleForm}> */}
-                    <div className="done-button">
-                        Post Comment
-                        {/* {this.state.formVisible ? <CommentFormContainer /> : null} */}
-                        {/* <CommentFormContainer projectId={this.props.projectId} toggleForm={this.toggleForm}/> */}
-                    </div>
-                </center>
-            </div>
-    
-        )
+          <div className="new-submit">
+              <center>
+                <div className="done-button" onClick={this.toggleForm}>
+                    Post Comment
+                </div>
+                {this.state.formVisible ? (
+                <CommentFormContainer
+                    projectId={this.props.projectId}
+                    toggleForm={this.toggleForm}
+                />
+                ) : null}
+              </center>
+          </div>
+        );
 
     }
 }

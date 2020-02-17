@@ -53,12 +53,12 @@ class ProjectShow extends React.Component {
               <hr/>
               <br/>
               <StepList
-                project_id={this.props.project.id}
+                projectId={this.props.project.id}
                 steps={this.props.steps}
               />
               {this.props.project.author_id === this.props.userId ? this.editLinks() : null }
               <CommentList
-                project_id={this.props.project.id}
+                projectId={this.props.project.id}
                 comments={this.props.comments}
               />
             </center>

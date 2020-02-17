@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 class CommentForm extends React.Component {
     constructor(props) {
@@ -21,17 +21,19 @@ class CommentForm extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label for="body">
+            <center>
+                <div className="comment-box">
+
+                    <div>
                         <textarea
                             value={this.state.body}
                             onChange={this.update("body")}
                         />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
+                        <div className="done-button" onClick={this.handleSubmit}>Submit</div>
+                    </div>
+                </div>
+
+            </center>
         )
     }
 }

@@ -22,7 +22,9 @@
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-plugin-transform-class-properties": "^6.24.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --watch --mode=development",

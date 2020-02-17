@@ -4,6 +4,7 @@ class Api::CommentsController < ApplicationController
         if comment.save
             render json: comment
         else
+            puts comment.errors.full_messages
             render json: comment.errors.full_messages, status: 422
         end
     end
@@ -34,6 +35,6 @@ class Api::CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:title, :body, :project_id, :author, :time_ago, photos: [])
+        params.require(:comment).permit(:body, :project_id, :author_id, :project, :time_ago, photos: [])
     end
 end
