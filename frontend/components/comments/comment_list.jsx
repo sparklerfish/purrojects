@@ -8,18 +8,7 @@ class CommentList extends React.Component {
         this.state = {
             rerender: false
         }
-        // this.updateList = this.updateList.bind(this)
     }
-
-    // updateList() {
-    //     this.forceUpdate();
-    //     console.log("list updated")
-    //     // this.props.requestComments(this.props.projectId);
-    //     this.setState({
-    //         rerender: !this.state.rerender
-    //     })
-    //     console.log(this.state);
-    // }
 
     render() {
         if (!this.props.comments) return null;

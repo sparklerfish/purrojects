@@ -159,3 +159,48 @@
     margin-left: 20px;
     min-height: 86px;
 }
+
+.comment-button {
+    height: 46px;
+    width: 153px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    /* display: inline-block; */
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 9px;
+    text-align: center;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    background-color: #faac18;
+    border-color: #e5991e;
+    color: #fff;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.disabled-comment-button {
+    height: 46px;
+    width: 153px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: default;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 0;
+    padding: 9px;
+    text-align: center;
+    vertical-align: middle;
+    /* white-space: nowrap; */
+    background-color: #FCC979;
+    border-color: #EFBD78;
+    color: #fff;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
