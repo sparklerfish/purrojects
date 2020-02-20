@@ -4,7 +4,6 @@ class Api::CommentsController < ApplicationController
         if comment.save
             render json: comment
         else
-            puts comment.errors.full_messages
             render json: comment.errors.full_messages, status: 422
         end
     end
@@ -28,7 +27,7 @@ class Api::CommentsController < ApplicationController
     end
 
     def index
-        @comments = Comment.all
+        @comments = Comment.includes(:author).all 
     end
 
 

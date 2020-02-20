@@ -8,18 +8,23 @@ class AddComment extends React.Component {
             formVisible: false
         }
         this.toggleForm = this.toggleForm.bind(this);
+        console.log("Project ID is " + this.props.projectId)
     }
 
-    toggleForm = e => {
-        // e.stopPropagation();
-        // e.preventDefault();
-        console.log(this.props)
+    toggleForm = () => {
         this.setState({ formVisible: !this.state.formVisible });
+    }
+
+    componentDidUpdate() {
+        const commentForm = document.getElementById("comment-form");
+        if (this.state.formVisible) {
+            commentForm.scrollIntoView();
+        }
     }
 
     render () {
         return (
-          <div className="new-submit">
+            <div className="new-submit" id="comment-form">
               <center>
                 <div className="done-button" onClick={this.toggleForm}>
                     Post Comment
@@ -28,6 +33,7 @@ class AddComment extends React.Component {
                 <CommentFormContainer
                     projectId={this.props.projectId}
                     toggleForm={this.toggleForm}
+                    updateList={this.props.updateList}
                 />
                 ) : null}
               </center>

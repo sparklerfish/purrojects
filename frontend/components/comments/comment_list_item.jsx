@@ -1,6 +1,7 @@
 import React from 'react'
 
 const CommentListItem = props => {
+    if (!props.comment.author) return null;
     return (
         <li className="comment-container">
             <img src={window.user} className="comment-avatar"/>
