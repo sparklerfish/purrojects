@@ -8,7 +8,7 @@ class AddComment extends React.Component {
             formVisible: false
         }
         this.toggleForm = this.toggleForm.bind(this);
-        console.log("Project ID is " + this.props.projectId)
+        // console.log("Project ID is " + this.props.projectId)
     }
 
     toggleForm = () => {
@@ -33,7 +33,6 @@ class AddComment extends React.Component {
                 <CommentFormContainer
                     projectId={this.props.projectId}
                     toggleForm={this.toggleForm}
-                    updateList={this.props.updateList}
                 />
                 ) : null}
               </center>

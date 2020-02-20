@@ -13,8 +13,9 @@ class CommentForm extends React.Component {
     handleSubmit() {
         this.props.createComment(this.state);
         this.toggleForm();
-        this.props.updateList();
+        // this.props.updateList();
         // console.log(this.props)
+        this.props.requestComments(this.props.comment.project_id)
     }
 
     update(field) {

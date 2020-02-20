@@ -8,18 +8,18 @@ class CommentList extends React.Component {
         this.state = {
             rerender: false
         }
-        this.updateList = this.updateList.bind(this)
+        // this.updateList = this.updateList.bind(this)
     }
 
-    updateList() {
-        this.forceUpdate();
-        console.log("list updated")
-        // this.props.requestComments(this.props.projectId);
-        this.setState({
-            rerender: !this.state.rerender
-        })
-        console.log(this.state);
-    }
+    // updateList() {
+    //     this.forceUpdate();
+    //     console.log("list updated")
+    //     // this.props.requestComments(this.props.projectId);
+    //     this.setState({
+    //         rerender: !this.state.rerender
+    //     })
+    //     console.log(this.state);
+    // }
 
     render() {
         if (!this.props.comments) return null;
@@ -35,7 +35,7 @@ class CommentList extends React.Component {
                         <CommentListItem comment={comment} key={comment.id}/>
                     ))}
                 </ul>
-                <AddComment projectId={this.props.projectId} updateList={this.updateList}/>
+                <AddComment projectId={this.props.projectId}/>
             </div>
         )
     }

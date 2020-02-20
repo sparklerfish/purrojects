@@ -1,4 +1,4 @@
-import { createComment, updateComment } from "../../actions/comment_actions";
+import { createComment, updateComment, requestComments } from "../../actions/comment_actions";
 import { connect } from "react-redux";
 import CommentForm from './comment_form'
 
@@ -11,7 +11,7 @@ const mapStateToProps = (state, ownProps) => ({
       author_id: state.session.id
     },
   toggleForm: ownProps.toggleForm,
-  updateList: ownProps.updateList
+  // updateList: ownProps.updateList
 });
 
 const mapDispatchToProps = dispatch => ({
