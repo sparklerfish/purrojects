@@ -9,6 +9,10 @@ class CommentForm extends React.Component {
         this.toggleForm = this.props.toggleForm.bind(this);
     }
 
+    componentDidMount() {
+        this.props.clearErrors();
+    }
+
     handleSubmit() {
         this.props.createComment(this.state);
         this.toggleForm();
@@ -19,10 +23,25 @@ class CommentForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
+    renderErrors() {
+        if (this.props.errors.length > 0) {
+            return (
+                <ul className="comment-errors">
+                    {this.props.errors.map((error, i) => (
+                        <li key={`error-${i}`}>{error}</li>
+                    ))}
+                </ul>
+            );
+        } else {
+            return null;
+        }
+    }
+
     render() {
         return (
             <div className="comment-box">
                 <div>
+                    {this.renderErrors()}
                     <textarea
                         value={this.state.body}
                         onChange={this.update("body")}

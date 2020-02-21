@@ -12,4 +12,3 @@ export const requestUsers = () => dispatch => (
   UserAPIUtil.fetchUsers()
     .then(users => dispatch(receiveUsers(users)))
 );
-

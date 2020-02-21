@@ -11,12 +11,14 @@ const mapStateToProps = (state, ownProps) => ({
       author_id: state.session.id
     },
   toggleForm: ownProps.toggleForm,
+  errors: state.errors.comment
 });
 
 const mapDispatchToProps = dispatch => ({
-  createComment: (comment) => dispatch(createComment(comment)),
-  updateComment: (comment) => dispatch(updateComment(comment)),
-  requestComments: (projectId) => dispatch(requestComments(projectId)),
+  createComment: comment => dispatch(createComment(comment)),
+  updateComment: comment => dispatch(updateComment(comment)),
+  requestComments: projectId => dispatch(requestComments(projectId)),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CommentForm)

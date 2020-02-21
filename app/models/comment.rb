@@ -3,6 +3,8 @@ require 'action_view/helpers'
 include ActionView::Helpers::DateHelper
 
 class Comment < ApplicationRecord
+    validates :body, presence: true
+    
     belongs_to :project
     belongs_to :author,
         primary_key: :id,
