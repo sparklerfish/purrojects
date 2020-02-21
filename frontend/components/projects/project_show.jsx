@@ -2,19 +2,11 @@ import React from "react";
 import StepList from "../steps/step_list";
 import { Link } from "react-router-dom";
 import CommentListContainer from "../comments/comment_list_container";
-import AddComment from "../comments/add_comment";
 
 class ProjectShow extends React.Component {
   constructor(props) {
     super(props)
     this.handleDelete = this.handleDelete.bind(this)
-    console.log(this.props)
-    // this.getComments = this.props.requestComments(this.props.match.params.projectId);
-    // this.forceUpdate = this.forceUpdate.bind(this); 
-    // this.updateList = this.updateList.bind(this);
-    // this.state = {
-    //   rerender: false
-    // }
   }
 
   componentDidMount() {
@@ -29,16 +21,6 @@ class ProjectShow extends React.Component {
       this.props.history.push(`/projects`)
     }
   }
-
-  // updateList() {
-  //   this.forceUpdate();
-  //   console.log("list updated")
-  //   // this.props.requestComments(this.props.projectId);
-  //   this.setState({
-  //     rerender: !this.state.rerender
-  //   })
-  //   console.log(this.state);
-  // }
 
   editLinks() {
     return(
@@ -60,7 +42,6 @@ class ProjectShow extends React.Component {
     if (!this.props.project) return null
     if (!this.props.steps) return null
     if (!this.props.userId) return null
-    // console.log(this.props)
     return (
       <div className="project-show">
         <center>
@@ -79,7 +60,6 @@ class ProjectShow extends React.Component {
             projectId={this.props.project.id}
             comments={this.props.comments}
           />
-          {/* <AddComment projectId={this.props.project.id} updateList={this.updateList} /> */}
         </center>
       </div>
     );

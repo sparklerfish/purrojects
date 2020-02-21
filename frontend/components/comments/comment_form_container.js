@@ -11,7 +11,6 @@ const mapStateToProps = (state, ownProps) => ({
       author_id: state.session.id
     },
   toggleForm: ownProps.toggleForm,
-  // updateList: ownProps.updateList
 });
 
 const mapDispatchToProps = dispatch => ({

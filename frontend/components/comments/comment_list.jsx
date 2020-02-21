@@ -12,12 +12,10 @@ class CommentList extends React.Component {
 
     render() {
         if (!this.props.comments) return null;
-        // console.log(props.comments)
         const comments = Object.values(this.props.comments);
-        // console.log(comments)
         return (
             <div className="comments-container">
-                <div className="project-step-title">{comments.length} Discussions</div>
+                <div className="project-step-title">{comments.length} Comments</div>
                 <br />
                 <ul className="comment-list">
                     {comments.map((comment) => (

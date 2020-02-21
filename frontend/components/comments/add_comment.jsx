@@ -9,7 +9,6 @@ class AddComment extends React.Component {
             clickable: true
         }
         this.toggleForm = this.toggleForm.bind(this);
-        // console.log("Project ID is " + this.props.projectId)
     }
 
     toggleForm = () => {
@@ -45,18 +44,15 @@ class AddComment extends React.Component {
     render () {
         return (
             <div className="new-submit" id="comment-form">
-              <center>
-                {this.state.clickable ? this.clickableButton() : this.unclickableButton() }
+                {this.state.clickable ? this.clickableButton() : this.unclickableButton()}
                 {this.state.formVisible ? (
                 <CommentFormContainer
                     projectId={this.props.projectId}
                     toggleForm={this.toggleForm}
                 />
                 ) : null}
-              </center>
           </div>
         );
-
     }
 }
 

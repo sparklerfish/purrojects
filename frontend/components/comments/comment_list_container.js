@@ -6,7 +6,6 @@ import CommentList from './comment_list';
 
 const mapStateToProps = (state) => {
     return {
-        // project: state.entities.projects[ownProps.match.params.projectId],
         steps: state.entities.steps,
         comments: state.entities.comments,
         userId: state.session.id
