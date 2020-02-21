@@ -1,4 +1,4 @@
-import { createComment, updateComment, requestComments } from "../../actions/comment_actions";
+import { createComment, updateComment, requestComments, clearErrors } from "../../actions/comment_actions";
 import { connect } from "react-redux";
 import CommentForm from './comment_form'
 

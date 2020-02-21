@@ -1,4 +1,4 @@
-import { RECEIVE_COMMENT_ERRORS, CLEAR_ERRORS } from '../actions/project_actions';
+import { RECEIVE_COMMENT_ERRORS, CLEAR_ERRORS } from '../actions/comment_actions';
 
 export default (state = [], action) => {
     Object.freeze(state);

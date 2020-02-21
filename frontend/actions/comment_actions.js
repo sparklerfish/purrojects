@@ -28,7 +28,7 @@ export const clearComments = () => ({
 });
 
 export const receiveErrors = errors => ({
-    type: RECEIVE_PROJECT_ERRORS,
+    type: RECEIVE_COMMENT_ERRORS,
     errors
 });
 
@@ -45,12 +45,14 @@ export const requestComments = projectId => dispatch => {
 
 export const createComment = comment => dispatch => {
     CommentAPIUtil.createComment(comment)
-        .then(comment => dispatch(receiveComment(comment)));
+        .then(comment => dispatch(receiveComment(comment)))
+        .fail(errors => dispatch(receiveErrors(errors)))
 }
 
 export const updateComment = comment => dispatch => {
     CommentAPIUtil.updateComment(comment)
-    .then(comment => dispatch(receiveComment(comment)));
+        .then(comment => dispatch(receiveComment(comment)))
+        .fail(errors => dispatch(receiveErrors(errors)))
 }
 
 export const destroyComment = commentId => dispatch => {
