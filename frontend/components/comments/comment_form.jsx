@@ -27,16 +27,6 @@ class CommentForm extends React.Component {
         return e => this.setState({ [field]: e.currentTarget.value });
     }
 
-    // formSuccess() {
-    //     const comment = await handleSubmit();
-    //     // if (this.props.errors.length > 0) {
-    //     //     console.log(this.props.errors)
-    //     // } else {
-    //     //     // this.toggleForm();
-    //     //     this.props.requestComments(this.props.comment.project_id);
-    //     // }
-    // }
-
     renderErrors() {
         if (this.props.errors.length > 0) {
             return (
