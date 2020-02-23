@@ -5,7 +5,8 @@ class CommentForm extends React.Component {
         super(props);
 
         this.state = this.props.comment;
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCancel = this.handleCancel.bind(this);
         this.toggleForm = this.props.toggleForm.bind(this);
     }
 
@@ -20,7 +21,6 @@ class CommentForm extends React.Component {
         });
         create.then(()=> {
             setTimeout(() => {
-                // console.log(this.props.errors)
                 if (this.props.errors.length === 0) {
                     this.toggleForm();
                     this.props.requestComments(this.props.comment.project_id);
@@ -29,6 +29,11 @@ class CommentForm extends React.Component {
                 }
             }, 100)
         })
+    }
+
+    handleCancel() {
+        this.props.clearErrors();
+        this.toggleForm();
     }
 
     update(field) {
@@ -58,7 +63,8 @@ class CommentForm extends React.Component {
                         value={this.state.body}
                         onChange={this.update("body")}
                     />
-                    <div className="done-button" onClick={this.handleSubmit}>Submit</div>
+                    <span className="done-button" onClick={this.handleSubmit}>Submit</span>
+                    <span className="done-button" onClick={this.handleCancel}>Cancel</span>
                 </div>
             </div>
         )
