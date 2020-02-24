@@ -15,7 +15,7 @@ class CommentList extends React.Component {
         const comments = Object.values(this.props.comments);
         return (
           <div className="comments-container">
-            <div className="project-step-title">{comments.length} Comments</div>
+            <div className="project-step-title">{comments.length} Comment{comments.length === 1 ? null : "s"}</div>
             <br />
             <ul className="comment-list">
               {comments.map(comment => (
