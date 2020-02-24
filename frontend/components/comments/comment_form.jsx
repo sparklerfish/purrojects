@@ -6,7 +6,7 @@ class CommentForm extends React.Component {
 
         this.state = this.props.comment;
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCancel = this.handleCancel.bind(this);
+        this.cancel = this.cancel.bind(this);
         this.toggleForm = this.props.toggleForm.bind(this);
     }
 
@@ -27,11 +27,11 @@ class CommentForm extends React.Component {
                 } else {
                     return;
                 }
-            }, 100)
-        })
+            }, 100);
+        });
     }
 
-    handleCancel() {
+    cancel() {
         this.props.clearErrors();
         this.toggleForm();
     }
@@ -57,23 +57,30 @@ class CommentForm extends React.Component {
     render() {
         return (
           <div className="comment-box">
-            <div>
-              <div>
-                <textarea
-                  value={this.state.body}
-                  onChange={this.update("body")}
-                />
-                <div className="comment-input">{this.renderErrors()}</div>
-                <p className="policy">
-                  We have a <b>be nice</b> policy.<br/>
-                  Please be positive and
-                  constructive.
-                </p>
-                <span className="cancel-button" onClick={this.handleCancel}>
+            <div className="comment-input">
+              <img src={window.user} className="comment-avatar" />
+              <textarea
+                value={this.state.body}
+                onChange={this.update("body")}
+              />
+            </div>
+            <div className="comment-errors">{this.renderErrors()}</div>
+            <div className="comment-actions">
+              <p className="policy">
+                <br />
+                We have a <b>be nice</b> policy.
+                <br />
+                Please be positive and constructive.
+              </p>
+              <div className="buttons">
+                <span className="cancel-button" onClick={this.cancel}>
                   Cancel
                 </span>
-                <span className="comment-submit-button" onClick={this.handleSubmit}>
-                  Submit
+                <span
+                  className="comment-submit-button"
+                  onClick={this.handleSubmit}
+                >
+                  Post
                 </span>
               </div>
             </div>
