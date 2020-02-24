@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 class Login extends React.Component {
   componentDidMount() {
     this.props.clearErrors();
+    window.scrollTo(0, 0);
   }
 
   constructor(props) {
@@ -92,8 +93,8 @@ class Login extends React.Component {
                   Demo User
                 </button>
                 <p>
-                  <br/>
-                  New to Purrojects? <Link to="/signup">Sign Up >></Link>
+                  <br />
+                  New to Purrojects? <Link to="/signup">Sign Up »</Link>
                 </p>
               </form>
             </center>

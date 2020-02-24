@@ -56,18 +56,29 @@ class CommentForm extends React.Component {
 
     render() {
         return (
-            <div className="comment-box">
-                <div>
-                    {this.renderErrors()}
-                    <textarea
-                        value={this.state.body}
-                        onChange={this.update("body")}
-                    />
-                    <span className="done-button" onClick={this.handleSubmit}>Submit</span>
-                    <span className="done-button" onClick={this.handleCancel}>Cancel</span>
-                </div>
+          <div className="comment-box">
+            <div>
+              <div>
+                <textarea
+                  value={this.state.body}
+                  onChange={this.update("body")}
+                />
+                <div className="comment-input">{this.renderErrors()}</div>
+                <p className="policy">
+                  We have a <b>be nice</b> policy.<br/>
+                  Please be positive and
+                  constructive.
+                </p>
+                <span className="cancel-button" onClick={this.handleCancel}>
+                  Cancel
+                </span>
+                <span className="comment-submit-button" onClick={this.handleSubmit}>
+                  Submit
+                </span>
+              </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 

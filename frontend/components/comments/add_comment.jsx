@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentFormContainer from "./comment_form_container";
+import { withRouter } from "react-router-dom";
 
 class AddComment extends React.Component {
     constructor(props) {
@@ -12,10 +13,15 @@ class AddComment extends React.Component {
     }
 
     toggleForm = () => {
-        this.setState({ 
+        if (!this.props.userId) {
+            this.props.history.push(
+              `/login`
+            );
+        }
+          this.setState({
             formVisible: !this.state.formVisible,
             clickable: !this.state.clickable
-         });
+          });
     }
 
     componentDidUpdate() {
@@ -56,4 +62,4 @@ class AddComment extends React.Component {
     }
 }
 
-export default AddComment;
+export default withRouter (AddComment);

@@ -14,17 +14,20 @@ class CommentList extends React.Component {
         if (!this.props.comments) return null;
         const comments = Object.values(this.props.comments);
         return (
-            <div className="comments-container">
-                <div className="project-step-title">{comments.length} Comments</div>
-                <br />
-                <ul className="comment-list">
-                    {comments.map((comment) => (
-                        <CommentListItem comment={comment} key={comment.id}/>
-                    ))}
-                </ul>
-                <AddComment projectId={this.props.projectId}/>
-            </div>
-        )
+          <div className="comments-container">
+            <div className="project-step-title">{comments.length} Comments</div>
+            <br />
+            <ul className="comment-list">
+              {comments.map(comment => (
+                <CommentListItem comment={comment} key={comment.id} />
+              ))}
+            </ul>
+            <AddComment
+              userId={this.props.userId}
+              projectId={this.props.projectId}
+            />
+          </div>
+        );
     }
 };
 

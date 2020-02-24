@@ -23,7 +23,6 @@ class ProjectShow extends React.Component {
   }
 
   editLinks() {
-    return(
       <div>
         <div className="done-button">
           <Link to={`/projects/${this.props.project.id}/update`}>
@@ -35,30 +34,31 @@ class ProjectShow extends React.Component {
           Delete Purroject
         </div>
       </div>
-    )
   }
 
   render() {
     if (!this.props.project) return null
     if (!this.props.steps) return null
-    if (!this.props.userId) return null
     return (
       <div className="project-show">
         <center>
-          <br/>
+          <br />
           <div className="project-title">{this.props.project.title}</div>
           <div className="project-body">{this.props.project.body}</div>
-          <br/>
-          <hr/>
-          <br/>
+          <br />
+          <hr />
+          <br />
           <StepList
             projectId={this.props.project.id}
             steps={this.props.steps}
           />
-          {this.props.project.author_id === this.props.userId ? this.editLinks() : null }
+          {this.props.project.author_id === this.props.userId
+            ? this.editLinks()
+            : null}
           <CommentListContainer
             projectId={this.props.project.id}
             comments={this.props.comments}
+            userId={this.props.userId}
           />
         </center>
       </div>
