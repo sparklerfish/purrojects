@@ -34,7 +34,7 @@ const receiveErrors = errors => ({
 
 const clearErrors = () => ({
     type: CLEAR_ERRORS
-})
+});
 
 export const requestProjects = () => dispatch => (
     ProjectAPIUtil.fetchProjects()
@@ -70,6 +70,8 @@ export const deleteProject = projectId => dispatch => (
         .then(() => dispatch(removeProject(projectId)))
 );
 
-export const searchProjects = search => dispatch => {
-    return
-}
+export const searchProjects = search => dispatch => (
+    ProjectAPIUtil.searchProjects(search)
+        .then(projects => dispatch(receiveProjects(projects)))
+        .fail(errors => dispatch(receiveErrors(errors)))
+)
