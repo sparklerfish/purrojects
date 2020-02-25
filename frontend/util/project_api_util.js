@@ -33,3 +33,10 @@ export const deleteProject = projectId => (
   })
 );
 
+export const searchProjects = search => (
+    $.ajax({
+        method: "GET",
+        url: `/api/search`,
+        data: { search }
+    })
+)

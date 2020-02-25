@@ -4,7 +4,6 @@ class Api::ProjectsController < ApplicationController
     end
 
     def new
-        
     end
 
     def create
@@ -44,6 +43,12 @@ class Api::ProjectsController < ApplicationController
     def destroy
         @project = Project.find(params[:id])
         @project.destroy
+        render :index
+    end
+
+    def search
+        search = "%" + params[:search].downcase + "%"
+        @projects = Project.where("LOWER(title) like ?", search, search)
         render :index
     end
 
