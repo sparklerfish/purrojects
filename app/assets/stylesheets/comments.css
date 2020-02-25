@@ -119,8 +119,8 @@
 
 .cancel-button {
     margin: 15px 3px 0;
-    font-size: 16px;
-    padding: 12px 16px;
+    font-size: 15px;
+    padding: 10px 16px;
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
@@ -134,8 +134,8 @@
 }
 .comment-submit-button {
     margin: 15px 3px 0;
-    font-size: 16px;
-    padding: 12px 16px;
+    font-size: 15px;
+    padding: 10px 16px;
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
