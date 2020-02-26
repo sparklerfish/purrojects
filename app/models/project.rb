@@ -14,5 +14,5 @@ class Project < ApplicationRecord
     def self.search_by_title(title)
         projects = Project.arel_table
         Project.where(projects[:title].matches("%#{title}%"))
-  end
+    end
 end
