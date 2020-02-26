@@ -69,9 +69,3 @@ export const deleteProject = projectId => dispatch => (
     ProjectAPIUtil.deleteProject(projectId)
         .then(() => dispatch(removeProject(projectId)))
 );
-
-export const searchProjects = search => dispatch => (
-    ProjectAPIUtil.searchProjects(search)
-        .then(projects => dispatch(receiveProjects(projects)))
-        .fail(errors => dispatch(receiveErrors(errors)))
-)

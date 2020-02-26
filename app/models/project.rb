@@ -10,4 +10,9 @@ class Project < ApplicationRecord
     has_many :comments
 
     has_many_attached :photos
+
+    def self.search_by_title(title)
+        projects = Project.arel_table
+        Project.where(projects[:title].matches("%#{title}%"))
+    end
 end
