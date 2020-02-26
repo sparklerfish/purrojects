@@ -43,9 +43,8 @@ export const requestProjects = () => dispatch => (
 
 export const requestProject = projectId => dispatch => (
     ProjectAPIUtil.fetchProject(projectId)
-        .then(project => { 
-            return dispatch(receiveProject(removeSteps(project)))
-        })
+        .then(project => dispatch(receiveProject(removeSteps(project))
+    ))
 );
 
 export const createProject = project => dispatch => {
@@ -69,3 +68,8 @@ export const deleteProject = projectId => dispatch => (
     ProjectAPIUtil.deleteProject(projectId)
         .then(() => dispatch(removeProject(projectId)))
 );
+
+export const searchProjects = search => dispatch => (
+    ProjectAPIUtil.searchProjects(search)
+        .then(projects => receiveProjects(projects))
+)
