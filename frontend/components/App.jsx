@@ -5,7 +5,7 @@ import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import { Route, Switch } from 'react-router-dom';
 import Splash from './splash';
-import MainNav from "./nav/main_nav";
+import MainNavContainer from "./nav/main_nav_container";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectShowContainer from "./projects/project_show_container"; 
 import NewProjectIndexContainer from "./projects/new_project_index_container"; 
@@ -18,7 +18,7 @@ import NotFound from "./not_found";
 const App = () => (
   <div>
     <HeaderContainer />
-    <MainNav />
+    <MainNavContainer />
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
@@ -28,6 +28,7 @@ const App = () => (
       <ProtectedRoute exact path="/projects/:projectId/update" component={EditProjectIndexContainer} />
       <ProtectedRoute exact path="/projects/:projectId/edit" component={EditProjectFormContainer} />
       <ProtectedRoute exact path="/steps/:stepId/edit" component={EditStepFormContainer} />
+      <Route exact path="/search/:query" component={ProjectIndexContainer} />
       <Route exact path="/projects/:projectId" component={ProjectShowContainer} />
       <Route exact path="/projects" component={ProjectIndexContainer} />
       <Route component={NotFound}/>

@@ -1,7 +1,19 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import SearchContainer from '../search/search_container';
 
 class MainNav extends React.Component {
+    constructor(props) {
+        super(props);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        console.log(this.props)
+        // this.props.requestProjects();
+        // this.props.history.push('/projects')
+    }
+
     render() {
         return (
             <div className="mainnav">
@@ -11,7 +23,7 @@ class MainNav extends React.Component {
                             <img src={window.logo} height="60px"/>
                         </Link>
                     </div>
-                    <Link to="/projects" className="button">Projects</Link>
+                    <span className="button" onClick={this.handleClick}>Projects</span>
 
                 </div>
                 <div className="right-main-nav">
@@ -19,7 +31,7 @@ class MainNav extends React.Component {
                         <Link to="/projects/create">PUBLISH PURROJECT</Link>
                     </div>
                     <div className="search-bar">
-                        Search coming soon!
+                        <SearchContainer/>
                     </div>
                 </div>
             </div>

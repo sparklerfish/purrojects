@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class Search extends React.Component {
     constructor(props) {
@@ -15,7 +14,11 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.history.push(`${this.state.search}`)
+        this.props.searchProjects(this.state.search)
+            .then(res => this.props.history.push(`/search/${this.state.search}`))
+            // .then(this.setState({
+            //     search: ""
+            // }))
     }
 
     update(e) {
@@ -24,7 +27,23 @@ class Search extends React.Component {
         });
     }
 
-    
+    render() {
+        return (
+            <form className="search-form" onSubmit={this.handleSubmit}>
+                <input
+                    onChange={this.update}
+                    type="text"
+                    placeholder="Let's Make..."
+                    name="search"
+                    value={this.state.search}
+                />
+                <button type="submit">
+                    <i className="fa fa-search w3-large"></i>
+                </button>
+            </form>
+        )
+    }
+
 }
 
 export default Search;
