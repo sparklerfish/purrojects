@@ -59,7 +59,7 @@
     padding: 6px 12px;
     float: right;
     vertical-align: middle;
-    background-color: #f6f6f6;
+    background-color: #fff;
     border-color: #dedede;
 }
 
@@ -84,4 +84,18 @@
 
 .publish-link a:hover {
     text-decoration: underline;
+}
+
+.search-form input {
+    border: none;
+    outline: none;
+    background-color: #fff;
+}
+
+.search-form i {
+    position: absolute;
+    right: 35px;
+    bottom: 35px;
+    color: #aeaeae;
+    cursor: pointer;
 }

@@ -14,8 +14,17 @@ class ProjectIndex extends React.Component {
         }
     }
 
+
+
     render() {
         const { projects, users } = this.props;
+        if (projects.length === 0) {
+            return (
+                <div className="project-list">
+                    No projects found!
+                </div>
+            )
+        }
         return(
             <div className="project-list">
                     {projects.map(project => (

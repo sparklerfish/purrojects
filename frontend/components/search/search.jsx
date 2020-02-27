@@ -14,6 +14,7 @@ class Search extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        if (this.state.search === "") return;
         this.props.searchProjects(this.state.search)
             .then(res => this.props.history.push(`/search/${this.state.search}`))
         setTimeout(() => this.setState({search: ""}), 100);
@@ -34,10 +35,9 @@ class Search extends React.Component {
                     placeholder="Let's Make..."
                     name="search"
                     value={this.state.search}
+                    autoComplete="off"
                 />
-                <button type="submit">
-                    <i className="fa fa-search w3-large"></i>
-                </button>
+                <i className="fa fa-search w3-large" onClick={this.handleSubmit}></i>
             </form>
         )
     }

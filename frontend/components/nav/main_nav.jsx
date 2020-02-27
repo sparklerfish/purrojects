@@ -11,7 +11,6 @@ class MainNav extends React.Component {
 
     handleClick() {
         console.log(this.props);
-        // console.log(e.currentTarget);
         this.props.requestProjects()
         this.props.history.push('/projects')
     }
