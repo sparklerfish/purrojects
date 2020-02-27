@@ -14,13 +14,6 @@ class ProjectIndex extends React.Component {
         }
     }
 
-    componentDidUpdate(prevProps, prevState) {
-        if (prevProps.match.params.query !== this.props.match.params.query) {
-            this.props.fetchProjects(this.props.match.params.query);
-        }
-    }
-
-
     render() {
         const { projects, users } = this.props;
         return(

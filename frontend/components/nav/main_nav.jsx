@@ -5,13 +5,15 @@ import SearchContainer from '../search/search_container';
 class MainNav extends React.Component {
     constructor(props) {
         super(props);
+        
         this.handleClick = this.handleClick.bind(this);
     }
 
     handleClick() {
-        console.log(this.props)
-        // this.props.requestProjects();
-        // this.props.history.push('/projects')
+        console.log(this.props);
+        // console.log(e.currentTarget);
+        this.props.requestProjects()
+        this.props.history.push('/projects')
     }
 
     render() {

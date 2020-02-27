@@ -16,9 +16,7 @@ class Search extends React.Component {
         e.preventDefault();
         this.props.searchProjects(this.state.search)
             .then(res => this.props.history.push(`/search/${this.state.search}`))
-            // .then(this.setState({
-            //     search: ""
-            // }))
+        setTimeout(() => this.setState({search: ""}), 100);
     }
 
     update(e) {
