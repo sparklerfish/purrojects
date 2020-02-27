@@ -1,7 +1,7 @@
 class Api::ProjectsController < ApplicationController
     def index
-        if params[:search_string]
-            @projects = Project.search_by_title(params[:search_string])
+        if params[:search]
+            @projects = Project.search_by_title(params[:search])
         else
             @projects = Project.includes(:author).all
         end

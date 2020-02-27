@@ -34,7 +34,7 @@ const receiveErrors = errors => ({
 
 const clearErrors = () => ({
     type: CLEAR_ERRORS
-})
+});
 
 export const requestProjects = () => dispatch => (
     ProjectAPIUtil.fetchProjects()
@@ -43,9 +43,8 @@ export const requestProjects = () => dispatch => (
 
 export const requestProject = projectId => dispatch => (
     ProjectAPIUtil.fetchProject(projectId)
-        .then(project => { 
-            return dispatch(receiveProject(removeSteps(project)))
-        })
+        .then(project => dispatch(receiveProject(removeSteps(project))
+    ))
 );
 
 export const createProject = project => dispatch => {
@@ -69,3 +68,13 @@ export const deleteProject = projectId => dispatch => (
     ProjectAPIUtil.deleteProject(projectId)
         .then(() => dispatch(removeProject(projectId)))
 );
+
+export const searchProjects = search => dispatch => {
+    console.log(ProjectAPIUtil.searchProjects(search))
+     return ProjectAPIUtil.searchProjects(search)
+        .then(projects => {
+            console.log(projects)
+            console.log(search)
+            dispatch(receiveProjects(projects))
+        })
+}
