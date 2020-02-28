@@ -3,6 +3,7 @@ import { requestProjects, createProject, updateProject, searchProjects } from ".
 import { requestUsers } from "../../actions/user_actions";
 import { clearSteps } from "../../actions/step_actions";
 import ProjectIndex from "./project_index";
+import { withRouter } from "react-router-dom";
 
 const mapStateToProps = state => {
     return {
@@ -20,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
     searchProjects: string => dispatch(searchProjects(string))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectIndex));

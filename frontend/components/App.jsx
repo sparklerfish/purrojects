@@ -14,6 +14,8 @@ import EditProjectIndexContainer from "./projects/edit_project_index_container";
 import EditStepFormContainer from "./projects/edit_step_form_container";
 import CreateProject from "./projects/new_project_landing";
 import NotFound from "./not_found";
+import Main from "./main";
+
 
 const App = () => (
   <div>
@@ -22,7 +24,7 @@ const App = () => (
     <Switch>
       <AuthRoute path="/signup" component={SignupContainer} />
       <AuthRoute path="/login" component={LoginContainer} />
-      <Route exact path="/" component={Splash} />
+      <Route exact path="/" component={Main} />
       <ProtectedRoute path="/projects/new" component={NewProjectIndexContainer} />
       <ProtectedRoute path="/projects/create" component={CreateProject} />
       <ProtectedRoute exact path="/projects/:projectId/update" component={EditProjectIndexContainer} />
