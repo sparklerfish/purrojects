@@ -2,7 +2,6 @@
 .project-list {
     display: flex;
     position: relative;
-    top: 128px;
     width: 100%;
     flex-flow: row wrap;
     align-items: center;
@@ -35,4 +34,22 @@
     overflow: hidden;
     color: #999;
     font-size: 10pt;
+}
+
+.project-index-header {
+    border-top: 1px solid grey;
+}
+
+.project-index h2 {
+    position: relative;
+    top: 20px;
+    font-family: 'BenchNine', sans-serif;
+    letter-spacing: 0.02em;
+    font-size: 26pt;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 20px;
+    /* padding-bottom: 20px; */
+    border-top: 1px solid #ccc;
+    /* border-bottom: 1px solid #ccc; */
 }

@@ -6,6 +6,9 @@ const Main = () => {
     return (
         <div>
             <Splash/>
+            <div className="project-index">
+            <h2 >EXPLORE PURROJECTS</h2>
+            </div>
             <ProjectIndexContainer/>
         </div>
     )
