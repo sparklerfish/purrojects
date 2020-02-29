@@ -14,17 +14,17 @@ const Footer = () => {
         <div className="about">
           <h3>About Us</h3>
             <ul>
-              <li>Created by Julie Adams</li>
-              <li>Featured Cat: Harry</li>
-              <a href="https://www.instagram.com/harrytabbycat/" target="_blank"><li>Follow Harry on Instagram</li></a>
+            <li><i class="fas fa-small fa-code"></i>Created by: Julie Adams</li>
+            <li><i class="fas fa-small fa-cat"></i> Featured Cat: Harry</li>
+            <li><a href="https://www.instagram.com/harrytabbycat/" target="_blank"><i class="fab fa-small fa-instagram"></i>Follow Harry on Instagram</a></li>
             </ul>
         </div>
         <div className="about-icons">
           <h3>Find Us</h3>
           <ul>
-            <li><i className='fab fa-github-square' style={{ fontSize: '36px' }}></i></li>
-            <li><i className='fab fa-angellist' style={{ fontSize: '36px' }}></i></li>
-            <li><i className='fab fa-linkedin' style={{ fontSize: '36px' }}></i></li>
+            <li><a href="https://github.com/sparklerfish/purrojects" target="_blank"><i className='fab fab-large fa-github-square'></i></a></li>
+            <li><a href="https://angel.co/julie-adams-7" target="_blank"><i className='fab fab-large fa-angellist'></i></a></li>
+            <li><a href="https://www.linkedin.com/in/julie-adams-61767363/" target="_blank"><i className='fab fab-large fa-linkedin'></i></a></li>
           </ul>
         </div>
 

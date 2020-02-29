@@ -6,7 +6,7 @@
     background: #555;
     position: relative;
     justify-content: space-evenly;
-    color: #fff;
+    /* color: #fff; */
 }
 
 .footer-top {
@@ -22,10 +22,14 @@
 
 .about li {
     color: #bbb;
-    line-height: 21px;
+    line-height: 24px;
     padding: 2px 0;
     /* display: inline-block; */
     font-size: 14px;
+}
+
+.about-icons li a:hover {
+    color: #fff;
 }
 
 .about-icons li {
@@ -34,6 +38,9 @@
     line-height: 21px;
     padding: 2px 0;
     font-size: 14px;
+}
+.about-icons li:hover {
+    color: #fff;
 }
 
 .footer h3 {
@@ -69,4 +76,21 @@
 
 .about a:hover {
     color: #fff;
+    /* text-decoration: underline; */
+}
+
+.fab-large {
+    font-size: 36px;
+}
+
+.fa-small {
+    font-size: 14px;
+    margin-right: 5px;
+    margin-top: 2px;
+    /* line-height: 10px; */
+}
+
+.fa-instagram {
+    padding-right: 6px;
+    padding-left: 1px;
 }
