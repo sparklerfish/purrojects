@@ -1,4 +1,3 @@
-
 .project-list {
     display: flex;
     position: relative;
@@ -49,7 +48,5 @@
     margin-left: 50px;
     margin-right: 50px;
     padding-top: 20px;
-    /* padding-bottom: 20px; */
     border-top: 1px solid #ccc;
-    /* border-bottom: 1px solid #ccc; */
 }

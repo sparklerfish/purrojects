@@ -4,30 +4,22 @@
 }
 
 .main-image {
-  height: 450px;
-  width: 100%;
-  background-image: url("harry_gradient.jpg");
-  background-position: 25%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  /* overflow: hidden; */
-  /* top: 128px; */
+    height: 450px;
+    width: 100%;
+    background-image: url("harry_gradient.jpg");
+    background-position: 25%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
 .big-splash-text { 
-    /* position: relative; 
-    top: 265px;
-    left: 50px; */
     color: white;
     font-family: 'BenchNine', sans-serif;
     letter-spacing: 0.02em;
     font-size: 44pt;
 }
 .small-splash-text {
-    /* position: absolute;
-    top: 360px;
-    left: 50px; */
     color: white;
 }
 
@@ -45,14 +37,10 @@
 
 .home-text {
     display: relative;
-    /* padding: 50px; */
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 20px;
-    
-    /* margin-top: 50px; */
     display: flex;
-    /* top: 1000px; */
 }
 
 .home-text-box {
