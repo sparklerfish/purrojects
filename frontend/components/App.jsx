@@ -15,6 +15,7 @@ import EditStepFormContainer from "./projects/edit_step_form_container";
 import CreateProject from "./projects/new_project_landing";
 import NotFound from "./not_found";
 import Main from "./main";
+import Footer from "./footer/footer";
 
 
 const App = () => (
@@ -35,6 +36,7 @@ const App = () => (
       <Route exact path="/projects" component={ProjectIndexContainer} />
       <Route component={NotFound}/>
     </Switch>
+    {/* <Footer/> */}
   </div>
 );
 
