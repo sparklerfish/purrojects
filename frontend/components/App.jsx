@@ -4,7 +4,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import SignupContainer from './session/signup_container';
 import LoginContainer from './session/login_container';
 import { Route, Switch } from 'react-router-dom';
-import Splash from './splash';
 import MainNavContainer from "./nav/main_nav_container";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectShowContainer from "./projects/project_show_container"; 
@@ -15,7 +14,6 @@ import EditStepFormContainer from "./projects/edit_step_form_container";
 import CreateProject from "./projects/new_project_landing";
 import NotFound from "./not_found";
 import Main from "./main";
-import Footer from "./footer/footer";
 
 
 const App = () => (
@@ -36,7 +34,6 @@ const App = () => (
       <Route exact path="/projects" component={ProjectIndexContainer} />
       <Route component={NotFound}/>
     </Switch>
-    {/* <Footer/> */}
   </div>
 );
 

@@ -1,6 +1,7 @@
 import React from "react";
 import Splash from "./splash";
 import ProjectIndexContainer from "./projects/project_index_container";
+import Footer from "./footer/footer";
 
 const Main = () => {
     return (
@@ -10,6 +11,7 @@ const Main = () => {
             <h2>EXPLORE PURROJECTS</h2>
             </div>
             <ProjectIndexContainer/>
+            <Footer/>
         </div>
     )
 }
