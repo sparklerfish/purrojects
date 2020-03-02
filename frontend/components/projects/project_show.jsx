@@ -2,6 +2,7 @@ import React from "react";
 import StepList from "../steps/step_list";
 import { Link } from "react-router-dom";
 import CommentListContainer from "../comments/comment_list_container";
+import Footer from "../footer/footer";
 
 class ProjectShow extends React.Component {
   constructor(props) {
@@ -40,27 +41,30 @@ class ProjectShow extends React.Component {
     if (!this.props.project) return null
     if (!this.props.steps) return null
     return (
-      <div className="project-show">
-        <center>
-          <br />
-          <div className="project-title">{this.props.project.title}</div>
-          <div className="project-body">{this.props.project.body}</div>
-          <br />
-          <hr />
-          <br />
-          <StepList
-            projectId={this.props.project.id}
-            steps={this.props.steps}
-          />
-          {this.props.project.author_id === this.props.userId
-            ? this.editLinks()
-            : null}
-          <CommentListContainer
-            projectId={this.props.project.id}
-            comments={this.props.comments}
-            userId={this.props.userId}
-          />
-        </center>
+      <div>
+        <div className="project-show">
+          <center>
+            <br />
+            <div className="project-title">{this.props.project.title}</div>
+            <div className="project-body">{this.props.project.body}</div>
+            <br />
+            <hr />
+            <br />
+            <StepList
+              projectId={this.props.project.id}
+              steps={this.props.steps}
+            />
+            {this.props.project.author_id === this.props.userId
+              ? this.editLinks()
+              : null}
+            <CommentListContainer
+              projectId={this.props.project.id}
+              comments={this.props.comments}
+              userId={this.props.userId}
+            />
+          </center>
+        </div>
+        <Footer/>
       </div>
     );
   }
