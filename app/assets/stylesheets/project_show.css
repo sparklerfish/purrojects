@@ -2,11 +2,12 @@
 .project-show {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
   width: 100%;
-  position: absolute;
-  top: 128px;
+  position: relative;
+  top: 20px;
   text-align: left;
   padding-left: 50px;
   padding-right: 50px;
+  margin-bottom: 70px;
 }
 
 .project-title {
