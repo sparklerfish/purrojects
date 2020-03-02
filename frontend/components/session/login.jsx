@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from '../footer/footer';
 
 class Login extends React.Component {
   componentDidMount() {
@@ -56,50 +57,53 @@ class Login extends React.Component {
 
   render() {
     return (
-      <div className="session-image">
-        <div className="dimmed">
-          <div className="sessionbox">
-            <center>
-              <form>
-                <label>
-                  <input
-                    className="session-input"
-                    placeholder="Username"
-                    type="text"
-                    value={this.state.username}
-                    onChange={this.handleInput("username")}
-                  />
-                </label>
-                <br />
-                <label>
-                  <input
-                    className="session-input"
-                    placeholder="Password"
-                    type="password"
-                    value={this.state.password}
-                    onChange={this.handleInput("password")}
-                  />
-                </label>
-                <br />
-                <br />
-                {this.renderErrors()}
-                <button className="session-button" onClick={this.handleSubmit}>
-                  Login
-                </button>
-                <button
-                  className="session-button demo"
-                  onClick={this.demoLogin}
-                >
-                  Demo User
-                </button>
-                <p>
+      <div>
+        <div className="session-image">
+          <div className="dimmed">
+            <div className="sessionbox">
+              <center>
+                <form>
+                  <label>
+                    <input
+                      className="session-input"
+                      placeholder="Username"
+                      type="text"
+                      value={this.state.username}
+                      onChange={this.handleInput("username")}
+                    />
+                  </label>
                   <br />
-                  New to Purrojects? <Link to="/signup">Sign Up »</Link>
-                </p>
-              </form>
-            </center>
+                  <label>
+                    <input
+                      className="session-input"
+                      placeholder="Password"
+                      type="password"
+                      value={this.state.password}
+                      onChange={this.handleInput("password")}
+                    />
+                  </label>
+                  <br />
+                  <br />
+                  {this.renderErrors()}
+                  <button className="session-button" onClick={this.handleSubmit}>
+                    Login
+                  </button>
+                  <button
+                    className="session-button demo"
+                    onClick={this.demoLogin}
+                  >
+                    Demo User
+                  </button>
+                  <p>
+                    <br />
+                    New to Purrojects? <Link to="/signup">Sign Up »</Link>
+                  </p>
+                </form>
+              </center>
+            </div>
           </div>
         </div>
+      <Footer/>
       </div>
     );
   }

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"
+import Footer from "../footer/footer";
 
 class Signup extends React.Component {
   componentDidMount() {
@@ -45,54 +46,57 @@ class Signup extends React.Component {
 
   render() {
     return (
-      <div className="session-image">
-        <div className="dimmed">
-          <div className="sessionbox">
-            <center>
-              <form>
-                <label>
-                  <input
-                    className="session-input"
-                    type="text"
-                    placeholder="Username"
-                    value={this.state.username}
-                    onChange={this.handleInput("username")}
-                  />
-                </label>
-                <br />
-                <label>
-                  <input
-                    className="session-input"
-                    type="text"
-                    placeholder="Email"
-                    value={this.state.email}
-                    onChange={this.handleInput("email")}
-                  />
-                </label>
-                <br />
-                <label>
-                  <input
-                    className="session-input"
-                    type="password"
-                    placeholder="Password"
-                    value={this.state.password}
-                    onChange={this.handleInput("password")}
-                  />
-                </label>
-                <br />
-                <br />
-                {this.renderErrors()}
-                <button className="session-button" onClick={this.handleSubmit}>
-                  Sign Me Up !
-                </button>
-                <p>
+      <div>
+        <div className="session-image">
+          <div className="dimmed">
+            <div className="sessionbox">
+              <center>
+                <form>
+                  <label>
+                    <input
+                      className="session-input"
+                      type="text"
+                      placeholder="Username"
+                      value={this.state.username}
+                      onChange={this.handleInput("username")}
+                    />
+                  </label>
                   <br />
-                  Already a member? <Link to="/login">Login »</Link>
-                </p>
-              </form>
-            </center>
+                  <label>
+                    <input
+                      className="session-input"
+                      type="text"
+                      placeholder="Email"
+                      value={this.state.email}
+                      onChange={this.handleInput("email")}
+                    />
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      className="session-input"
+                      type="password"
+                      placeholder="Password"
+                      value={this.state.password}
+                      onChange={this.handleInput("password")}
+                    />
+                  </label>
+                  <br />
+                  <br />
+                  {this.renderErrors()}
+                  <button className="session-button" onClick={this.handleSubmit}>
+                    Sign Me Up !
+                  </button>
+                  <p>
+                    <br />
+                    Already a member? <Link to="/login">Login »</Link>
+                  </p>
+                </form>
+              </center>
+            </div>
           </div>
         </div>
+      <Footer/>
       </div>
     );
   }
