@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Footer from "../footer/footer";
 
 const CreateProject = () => (
     <div>
-        <div className="splash-container">
+        <div className="create-container">
             <div className="create-image"></div>
             <div className="create-text">
                 <div className="big-create-text">
@@ -26,6 +27,7 @@ const CreateProject = () => (
                 </Link>
             </div>
         </div>
+        <Footer/>
     </div>
 );
 
