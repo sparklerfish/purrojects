@@ -9,7 +9,8 @@ class Project < ApplicationRecord
     has_many :steps
     has_many :comments
 
-    has_many_attached :photos
+    has_one_attached :photo
+    has_one_attached :video
 
     def self.search_by_title(title)
         projects = Project.arel_table
