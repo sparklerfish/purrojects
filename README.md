@@ -31,8 +31,8 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
 * Users can view projects with step-by-step directions
 * Users can create, update, and delete projects
   * Steps can be edited or deleted individually
-* Searching for projects
-* Commenting on projects
+* Users can search for projects based on keywords in project title
+* Users can add comments to projects
 
 ---
 
