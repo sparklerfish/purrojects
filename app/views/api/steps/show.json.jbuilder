@@ -1,2 +1,4 @@
 json.extract! step, :id, :title, :body, :project_id
-json.imageUrl url_for(step.photo)
+if step.photo.attached?
+    json.imageUrl url_for(step.photo)
+end
