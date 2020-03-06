@@ -29,7 +29,7 @@ class EditProjectIndex extends React.Component {
                 <div className="edit-box-left">
                     <div className="image-box-holder">
                         <div className="image-box">
-                            Image Upload Coming Soon!
+                            Click to Add Image
                         </div>
                     </div>
                 </div>

@@ -21,8 +21,6 @@ class StepEditBox extends React.Component {
     }
 
     redirect(e) {
-        console.log("redirecting")
-        console.log(e.target.className)
         const path = `/steps/${this.props.step.id}/edit`;
         if (e.target.className !== "image-box" && e.target.className !== "inputfile") {
             this.props.history.push(path);
@@ -31,11 +29,9 @@ class StepEditBox extends React.Component {
 
     handleStepFile(e) {
         console.log("uploading")
-        // return e => {
         e.stopPropagation();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        // console.log("what does this do")
         reader.onloadend = () => {
             this.setState({ imageUrl: reader.result, imageFile: file });
         };
@@ -43,19 +39,13 @@ class StepEditBox extends React.Component {
             reader.readAsDataURL(file);
             console.log(file);
             setTimeout(() => this.handleSubmit(), 100)
-            // this.handleSubmit();
         } else {
             this.setState( { [imageUrl]: "", [imageFile]: null } );
         }
-        // };
     }
 
     handleSubmit() {
-        console.log("submitting")
-        // e.preventDefault();
-        // e.stopPropagation();
         const formData = new FormData();
-        // formData.append('step[title]', this.state.title);
         formData.append('step[project]', this.props.project);
         console.log(this.state)
         if (this.state.imageFile) {

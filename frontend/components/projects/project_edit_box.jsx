@@ -5,7 +5,7 @@ class ProjectEditBox extends React.Component {
     constructor(props) {
         super(props)
 
-        this.edit = this.edit.bind(this);
+        this.redirect = this.redirect.bind(this);
         this.state = ({
             imageUrl: null,
             imageFile: null
@@ -18,41 +18,32 @@ class ProjectEditBox extends React.Component {
         this.props.requestProject(this.props.projectId)
     }
 
-    edit(e) {
-        // e.preventDefault();
-        // e.stopPropagation();
-        // console.log(this.props.location);
+    redirect(e) {
         if (e.target.className !== "image-box" && e.target.className !== "inputfile") {
             this.props.history.push(`/projects/${this.props.projectId}/edit`)
         }
     }
 
-    thisDerp() {
-        console.log("derp")
-    }
-
     handleProjectFile(e) {
         console.log("uploading")
-        // return e => {
         e.stopPropagation();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
-        // console.log("what does this do")
         reader.onloadend = () => {
             this.setState({ imageUrl: reader.result, imageFile: file });
         };
         if (file) {
             reader.readAsDataURL(file);
             this.handleSubmit();
+            setTimeout(() => this.handleSubmit(), 100)
         } else {
-            this.setState({ projectsFormData: { [imageUrl]: "", [imageFile]: null } });
+            this.setState({ [imageUrl]: "", [imageFile]: null });
         }
-        // };
     }
 
     handleSubmit() {
-        console.log("submitting")
         const formData = new FormData();
+        formData.append('project[id]', this.props.projectId);
         if (this.state.imageFile) {
             formData.append('project[photo]', this.state.imageFile);
         }
@@ -69,7 +60,7 @@ class ProjectEditBox extends React.Component {
         if (!this.props.project) return null;
 
         return (
-            <div onClick={this.edit}>
+            <div onClick={this.redirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
                         <div className="image-box-holder">
@@ -78,10 +69,8 @@ class ProjectEditBox extends React.Component {
                                 <input
                                     className='inputfile'
                                     type="file"
-                                    onChange={this.thisDerp}
-                                    // onChange={console.log("WHAT THE FUCK")}
+                                    onChange={this.handleProjectFile}
                                 />
-                                {/* <input type='file'/> */}
                             </div>
                         </label>
                         </div>
