@@ -55,8 +55,22 @@ class ProjectShow extends React.Component {
               steps={this.props.steps}
             />
             {this.props.project.author_id === this.props.userId
-              ? this.editLinks()
+              ? (<div>
+                  <Link to={`/projects/${this.props.project.id}/update`}>
+                    <div className="done-button">
+                        Edit Purroject
+                    </div>
+                  </Link>
+
+                  <div className="delete-button" onClick={this.handleDelete}>
+                    Delete Purroject
+                  </div>
+                  <br/>
+                  <br/>
+              </div>)
               : null}
+              {/* {this.editLinks} */}
+
             <CommentListContainer
               projectId={this.props.project.id}
               comments={this.props.comments}

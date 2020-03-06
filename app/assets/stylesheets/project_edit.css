@@ -12,6 +12,7 @@
     margin-left: auto;
     margin-right: auto;
     /* text-align: center; */
+    cursor: pointer;
 }
 
 .new-edit-container {
@@ -130,7 +131,7 @@
     width: 355px;
     display: block;
     position: absolute;
-    vertical-align: top;
+    /* vertical-align: top; */
     overflow: hidden;
     height: 135px;
     padding-right: 37px;
@@ -142,7 +143,7 @@
     width: 585px;
     display: block;
     position: relative;
-    vertical-align: top;
+    /* vertical-align: top; */
     left: 0;
     top: 0;
 }
@@ -241,4 +242,13 @@
 
 .delete-step:hover {
     color: red;
+}
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }

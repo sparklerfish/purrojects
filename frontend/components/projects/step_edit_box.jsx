@@ -7,10 +7,12 @@ class StepEditBox extends React.Component {
         super(props);
         this.deleteStep = this.deleteStep.bind(this);
         this.redirect = this.redirect.bind(this);
-        this.state = ({
+        this.state = {
             imageUrl: null,
             imageFile: null
-        })
+        }
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleStepFile = this.handleStepFile.bind(this);
     }
 
     deleteStep(e) {
@@ -18,37 +20,50 @@ class StepEditBox extends React.Component {
         this.props.destroyStep(this.props.step.id);
     }
 
-    redirect() {
-        let path = `/steps/${this.props.step.id}/edit`;
-        this.props.history.push(path);
+    redirect(e) {
+        console.log("redirecting")
+        console.log(e.target.className)
+        const path = `/steps/${this.props.step.id}/edit`;
+        if (e.target.className !== "image-box" && e.target.className !== "inputfile") {
+            this.props.history.push(path);
+        }
     }
 
-    handleStepFile() {
-        return e => {
-            const reader = new FileReader();
-            const file = e.currentTarget.files[0];
-            reader.onloadend = () => {
-                this.setState({ imageUrl: reader.result, imageFile: file });
-            };
-            if (file) {
-                reader.readAsDataURL(file);
-            } else {
-                this.setState({ stepsFormData: { [imageUrl]: "", [imageFile]: null } });
-            }
+    handleStepFile(e) {
+        console.log("uploading")
+        // return e => {
+        e.stopPropagation();
+        const reader = new FileReader();
+        const file = e.currentTarget.files[0];
+        // console.log("what does this do")
+        reader.onloadend = () => {
+            this.setState({ imageUrl: reader.result, imageFile: file });
         };
+        if (file) {
+            reader.readAsDataURL(file);
+            console.log(file);
+            setTimeout(() => this.handleSubmit(), 100)
+            // this.handleSubmit();
+        } else {
+            this.setState( { [imageUrl]: "", [imageFile]: null } );
+        }
+        // };
     }
 
-    handleSubmit(e) {
-        e.preventDefault();
+    handleSubmit() {
+        console.log("submitting")
+        // e.preventDefault();
+        // e.stopPropagation();
         const formData = new FormData();
-        formData.append('step[title]', this.state.title);
-        if (this.state.photoFile) {
-
-            formData.append('step[photo]', this.state.photoFile);
+        // formData.append('step[title]', this.state.title);
+        formData.append('step[project]', this.props.project);
+        console.log(this.state)
+        if (this.state.imageFile) {
+            formData.append('step[photo]', this.state.imageFile);
         }
         $.ajax({
-            url: '/api/steps',
-            method: 'POST',
+            url: `/api/steps/${this.props.step.id}`,
+            method: 'PATCH',
             data: formData,
             contentType: false,
             processData: false
@@ -57,22 +72,21 @@ class StepEditBox extends React.Component {
 
     render() {
         if (!this.props.step) return null;
-
         const stepNo = this.props.idx + 1
         return (
             <div onClick={this.redirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
                         <div className="image-box-holder">
-                            <div className="image-box">
-                                <label>Click to Add Image
-                                    <input
-                                        className='inputfile'
-                                        type="file"
-                                        onChange={this.handleStepFile()}
-                                    />
-                                </label>
-                            </div>
+                            <label>
+                                <div className="image-box">Click to Add Image
+                                        <input
+                                            className='inputfile'
+                                            type="file"
+                                            onChange={this.handleStepFile}
+                                        />
+                                </div>
+                            </label>
                         </div>
                     </div>
                     <div className="edit-box-right">

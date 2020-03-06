@@ -14,9 +14,9 @@ const Footer = () => {
         <div className="about">
           <h3>About Us</h3>
             <ul>
-            <li><i class="fas fa-small fa-code"></i>Created by: Julie Adams</li>
-            <li><i class="fas fa-small fa-cat"></i> Featured Cat: Harry</li>
-            <li><a href="https://www.instagram.com/harrytabbycat/" target="_blank"><i class="fab fa-small fa-instagram"></i>Follow Harry on Instagram</a></li>
+            <li><i className="fas fa-small fa-code"></i>Created by: Julie Adams</li>
+            <li><i className="fas fa-small fa-cat"></i> Featured Cat: Harry</li>
+            <li><a href="https://www.instagram.com/harrytabbycat/" target="_blank"><i className="fab fa-small fa-instagram"></i>Follow Harry on Instagram</a></li>
             </ul>
         </div>
         <div className="about-icons">
