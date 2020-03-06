@@ -88,3 +88,12 @@
     margin: 10px 0px 10px 0px;
 
 }
+
+.project-show-image {
+    width: 800px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}

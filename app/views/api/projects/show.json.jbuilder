@@ -1,12 +1,19 @@
 json.set! @project.id do
     json.extract! @project, :id, :title, :body, :author_id, :step_ids, :comment_ids
 
-    if @project.photo.attached?
-      json.imageUrl url_for(@project.photo)
-    else
-      # json.imageUrl asset_path("projects/#{@project.picture_url}")
-      json.imageUrl nil
-    end
+      if @project.photo.attached?
+          json.imageUrl url_for(@project.photo)
+      else
+          if @project.picture_url
+              json.imageUrl asset_path("projects/#{@project.picture_url}")
+          else
+              json.imageUrl asset_path("cat_gradient.jpg")
+          end
+      end
+
+      json.author do
+        json.extract! @project.author, :username
+      end
   end
 
 json.steps do
