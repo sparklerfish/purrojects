@@ -1,6 +1,8 @@
 import { requestProject } from '../../actions/project_actions'
 import { connect } from 'react-redux';
 import ProjectEditBox from './project_edit_box';
+import { withRouter } from 'react-router-dom';
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
@@ -15,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectEditBox);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ProjectEditBox));

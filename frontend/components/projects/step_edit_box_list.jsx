@@ -12,6 +12,7 @@ class StepEditBoxList extends React.Component {
                 <ul className="step-list">
                     {steps.map((step, idx) => (
                         <StepEditBox  
+                            project={this.props.project}
                             step={step} 
                             key={step.id} 
                             idx={idx}

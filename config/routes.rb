@@ -8,7 +8,6 @@ Rails.application.routes.draw do
     resources :projects
     resources :steps
     resources :comments
-    # get '/search/', to: 'projects#search', as 'search'
   end
 end
 

@@ -21,7 +21,7 @@ class EditProjectForm extends React.Component {
 
         return (
             
-            <div style={{zIndex: 15, paddingTop: '100px'}}>
+            <div>
                 <center>
                     <div className="form-container">
                         <form onSubmit={this.handleSubmit}>

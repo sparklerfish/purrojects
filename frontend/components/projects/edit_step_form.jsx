@@ -9,8 +9,9 @@ class EditStepForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.action(this.state);
-        this.props.history.push(`/projects/${this.props.step.project_id}/update`)
+        this.props.action(this.state)
+        setTimeout(() => this.props.history.push(`/projects/${this.props.step.project_id}/update`),
+            100)
     }
 
     update(field) {
@@ -20,7 +21,7 @@ class EditStepForm extends React.Component {
     render() {
         return (
 
-            <div style={{ zIndex: 15, paddingTop: '100px' }}>
+            <div>
                 <center>
                     <div className="form-container">
                         <form onSubmit={this.handleSubmit}>

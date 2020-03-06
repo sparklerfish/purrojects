@@ -29,13 +29,12 @@ class EditProjectIndex extends React.Component {
                 <div className="edit-box-left">
                     <div className="image-box-holder">
                         <div className="image-box">
-                            Image Upload Coming Soon!
+                            Click to Add Image
                         </div>
                     </div>
                 </div>
                 <div className="edit-box-right">
                     <div className="step-box-title">
-
                         Intro + Supplies: (Click to Edit)
                     </div>
                     <img src={window.caret} />
@@ -65,7 +64,7 @@ class EditProjectIndex extends React.Component {
                         this.noProjectComponent()}
                     </div>
                     <StepEditBoxList
-                        projectId={this.props.newProjectId}
+                        project={this.props.project}
                         steps={this.props.steps}
                         destroyStep={this.props.destroyStep}
                     />
