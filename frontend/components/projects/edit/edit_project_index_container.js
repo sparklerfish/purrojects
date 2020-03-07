@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from "react-redux";
 import EditProjectIndex from "./edit_project_index";
-import { requestProject } from '../../actions/project_actions';
-import { requestSteps, createStep, clearSteps, destroyStep } from '../../actions/step_actions';
+import { requestProject } from '../../../actions/project_actions';
+import { requestSteps, createStep, clearSteps, destroyStep } from '../../../actions/step_actions';
 
 const mapStateToProps = (state, ownProps) => ({
     currentUser: state.entities.users[state.session.id],

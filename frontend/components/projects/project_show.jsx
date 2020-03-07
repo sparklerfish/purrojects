@@ -47,7 +47,7 @@ class ProjectShow extends React.Component {
             <br />
             <div className="project-title">{this.props.project.title}</div>
             <p>by {this.props.project.author.username}</p>
-            <img className="project-show-image" src={this.props.project.imageUrl} />
+            {this.props.project.imageUrl ? <img className="project-show-image" src={this.props.project.imageUrl}/> : null}
             <div className="project-body">{this.props.project.body}</div>
             <br />
             <hr />

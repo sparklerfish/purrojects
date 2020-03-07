@@ -7,11 +7,11 @@ import { Route, Switch } from 'react-router-dom';
 import MainNavContainer from "./nav/main_nav_container";
 import ProjectIndexContainer from "./projects/project_index_container";
 import ProjectShowContainer from "./projects/project_show_container"; 
-import NewProjectIndexContainer from "./projects/new_project_index_container"; 
-import EditProjectFormContainer from "./projects/edit_project_form_container";
-import EditProjectIndexContainer from "./projects/edit_project_index_container";
-import EditStepFormContainer from "./projects/edit_step_form_container";
-import CreateProject from "./projects/new_project_landing";
+import NewProjectIndexContainer from "./projects/create/new_project_index_container"; 
+import EditProjectFormContainer from "./projects/edit/edit_project_form_container";
+import EditProjectIndexContainer from "./projects/edit/edit_project_index_container";
+import EditStepFormContainer from "./projects/edit/edit_step_form_container";
+import CreateProject from "./projects/create/new_project_landing";
 import NotFound from "./not_found";
 import Main from "./main";
 

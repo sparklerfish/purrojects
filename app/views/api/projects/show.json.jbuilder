@@ -7,7 +7,7 @@ json.set! @project.id do
           if @project.picture_url
               json.imageUrl asset_path("projects/#{@project.picture_url}")
           else
-              json.imageUrl asset_path("cat_gradient.jpg")
+              json.imageUrl nil
           end
       end
 

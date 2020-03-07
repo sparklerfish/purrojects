@@ -1,4 +1,4 @@
-import { requestProject } from '../../actions/project_actions'
+import { requestProject } from '../../../actions/project_actions'
 import { connect } from 'react-redux';
 import ProjectEditBox from './project_edit_box';
 import { withRouter } from 'react-router-dom';
