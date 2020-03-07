@@ -12,7 +12,7 @@ class ProjectIndexItem extends React.Component {
           <div className="project-item">
               <Link to={`/projects/${this.props.project.id}`}>
                 <div className="project-item-image">
-                  <img src={this.props.project.picture_url} />
+                  <img src={this.props.project.imageUrl} />
                 </div>
             </Link>
             <div className="project-item-info">
