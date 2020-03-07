@@ -1,5 +1,6 @@
 import React from 'react';
 import ProjectIndexItem from './project_index_item';
+import Footer from '../footer/footer';
 
 class ProjectIndex extends React.Component {
     componentDidMount() {
@@ -24,11 +25,14 @@ class ProjectIndex extends React.Component {
             )
         }
         return(
-            <div className="project-list">
-                    {projects.map(project => (
-                        <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
-                    ))}
-            </div>
+            <>
+                <div className="project-list">
+                        {projects.map(project => (
+                            <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
+                        ))}
+                </div>
+                <Footer />
+            </>
         )
     }
 }

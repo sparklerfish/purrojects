@@ -11,7 +11,6 @@ const Main = () => {
             <h2>EXPLORE PURROJECTS</h2>
             </div>
             <ProjectIndexContainer/>
-            <Footer/>
         </div>
     )
 }
