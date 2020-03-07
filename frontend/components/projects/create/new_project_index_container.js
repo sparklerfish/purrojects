@@ -1,9 +1,9 @@
 import React from 'react';
-import { createStep, clearSteps, requestSteps, destroyStep } from "../../actions/step_actions";
+import { createStep, clearSteps, requestSteps, destroyStep } from "../../../actions/step_actions";
 import { connect } from "react-redux";
 import NewProjectIndex from "./new_project_index";
-import { openModal, closeModal } from "../../actions/modal_actions";
-import { requestProject } from '../../actions/project_actions';
+import { openModal, closeModal } from "../../../actions/modal_actions";
+import { requestProject } from '../../../actions/project_actions';
 
 const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from './modal'
-import ProjectEditBoxContainer from './project_edit_box_container';
-import StepEditBoxList from './step_edit_box_list'
+import ProjectEditBoxContainer from '../edit/project_edit_box_container';
+import StepEditBoxList from '../edit/step_edit_box_list'
 
 
 class NewProjectIndex extends React.Component {

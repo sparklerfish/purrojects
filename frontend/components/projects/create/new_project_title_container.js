@@ -1,9 +1,9 @@
 import React from 'react';
-import { createProject } from "../../actions/project_actions";
+import { createProject } from "../../../actions/project_actions";
 import { connect } from "react-redux";
 import NewProjectTitle from "./new_project_title";
-import { closeModal } from '../../actions/modal_actions'
-import { clearErrors } from '../../actions/error_actions'
+import { closeModal } from '../../../actions/modal_actions'
+import { clearErrors } from '../../../actions/error_actions'
 
 const mapStateToProps = state => ({
     currentUser: state.entities.users[state.session.id],

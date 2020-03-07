@@ -1,5 +1,5 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
 import NewProjectTitleContainer from './new_project_title_container';
 
