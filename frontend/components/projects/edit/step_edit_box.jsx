@@ -19,11 +19,13 @@ class StepEditBox extends React.Component {
         e.stopPropagation();
         this.props.destroyStep(this.props.step.id);
     }
-
     redirect(e) {
+        console.log(e.target.className)
         const path = `/steps/${this.props.step.id}/edit`;
-        if (e.target.className !== "image-box" && e.target.className !== "inputfile") {
-            this.props.history.push(path);
+        if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
+            return;
+        } else {
+            this.props.history.push(path)
         }
     }
 
@@ -60,6 +62,48 @@ class StepEditBox extends React.Component {
         });
     }
 
+    imageForm() {
+        return (
+            <label>
+                <div className="image-box-holder image-box">
+                    <div>Click to Add Image
+                        <input
+                            className='inputfile'
+                            type="file"
+                            onChange={this.handleStepFile}
+                        />
+                    </div>
+
+                </div>
+            </label>
+        )
+    }
+
+    previewImage() {
+        let image;
+        if (this.props.step.imageUrl) {
+            image = this.props.step.imageUrl
+        } else if (this.state.imageUrl) {
+            image = this.state.imageUrl
+        }
+        return (
+            <label>
+                <div className="image-box-holder image-box">
+                    Click to Change Image
+                <div className="image-preview-box">
+                        <img className="image-preview" src={image} />
+
+                    </div>
+                    <input
+                        className='inputfile'
+                        type="file"
+                        onChange={this.handleStepFile}
+                    />
+                </div>
+            </label>
+        )
+    }
+
     render() {
         if (!this.props.step) return null;
         const stepNo = this.props.idx + 1
@@ -67,16 +111,8 @@ class StepEditBox extends React.Component {
             <div onClick={this.redirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
-                        <div className="image-box-holder">
-                            <label>
-                                <div className="image-box">Click to Add Image
-                                        <input
-                                            className='inputfile'
-                                            type="file"
-                                            onChange={this.handleStepFile}
-                                        />
-                                </div>
-                            </label>
+                        <div className="edit-box-left">
+                            {this.state.imageUrl || this.props.step.imageUrl ? this.previewImage() : this.imageForm()}
                         </div>
                     </div>
                     <div className="edit-box-right">

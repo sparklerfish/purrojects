@@ -19,7 +19,10 @@ class ProjectEditBox extends React.Component {
     }
 
     redirect(e) {
-        if (e.target.className !== "image-box" && e.target.className !== "inputfile") {
+        console.log(e.target.className)
+        if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
+            return;
+        } else {
             this.props.history.push(`/projects/${this.props.projectId}/edit`)
         }
     }
@@ -56,6 +59,48 @@ class ProjectEditBox extends React.Component {
         });
     }
 
+    imageForm() {
+        return (
+            <label>
+                <div className="image-box-holder image-box">
+                    <div>Click to Add Image
+                        <input
+                            className='inputfile'
+                            type="file"
+                            onChange={this.handleProjectFile}
+                        />
+                    </div>
+
+                </div>
+            </label>
+        )
+    }
+
+    previewImage() {
+        let image;
+        if (this.props.project.imageUrl) {
+            image = this.props.project.imageUrl
+        } else if (this.state.imageUrl) {
+            image = this.state.imageUrl
+        }
+        return (
+                <label>
+                <div className="image-box-holder image-box">
+                Click to Change Image
+                <div className="image-preview-box">
+                <img className="image-preview" src={image} />
+
+                </div>
+                    <input
+                        className='inputfile'
+                        type="file"
+                        onChange={this.handleProjectFile}
+                    />
+                </div>
+                </label>
+        )
+    }
+
     render() {
         if (!this.props.project) return null;
 
@@ -63,18 +108,8 @@ class ProjectEditBox extends React.Component {
             <div onClick={this.redirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
-                        <div className="image-box-holder">
-                        <label>
-                            <div className="image-box">Click to Add Image
-                                <input
-                                    className='inputfile'
-                                    type="file"
-                                    onChange={this.handleProjectFile}
-                                />
-                            </div>
-                        </label>
+                            {this.state.imageUrl || this.props.project.imageUrl ? this.previewImage() : this.imageForm()}
                         </div>
-                    </div>
                     <div className="edit-box-right">
                         <div className="step-box-title">
                         Intro + Supplies: {this.props.project.title}

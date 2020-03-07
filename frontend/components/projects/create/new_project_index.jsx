@@ -29,10 +29,8 @@ class NewProjectIndex extends React.Component {
         return (
             <div className="edit-box">
                 <div className="edit-box-left">
-                    <div className="image-box-holder">
-                        <div className="image-box">
+                    <div className="image-box-holder image-box">
                             Click to Upload Image
-                            </div>
                     </div>
                 </div>
                 <div className="edit-box-right">
@@ -55,7 +53,7 @@ class NewProjectIndex extends React.Component {
 
 
     render() {
-        let emptyStep = {title: "", body: "", project_id: this.props.newProjectId}
+        let emptyStep = {title: "", body: "", project_id: this.props.newProjectId, imageUrl: null}
         return (
             <div className="new-edit-container">
                 <Modal />
