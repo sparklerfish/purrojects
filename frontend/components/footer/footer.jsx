@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="about">
           <h3>About Us</h3>
             <ul>
-            <li><i className="fas fa-small fa-code"></i>Created by: Julie Adams</li>
+            <li><a href="https://sparklerfish.github.io" target="_blank"><i className="fas fa-small fa-code"></i>Created by: Julie Adams</a></li>
             <li><i className="fas fa-small fa-cat"></i> Featured Cat: Harry</li>
             <li><a href="https://www.instagram.com/harrytabbycat/" target="_blank"><i className="fab fa-small fa-instagram"></i>Follow Harry on Instagram</a></li>
             </ul>
