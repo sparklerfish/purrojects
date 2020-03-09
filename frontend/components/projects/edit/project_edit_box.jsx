@@ -19,7 +19,7 @@ class ProjectEditBox extends React.Component {
     }
 
     redirect(e) {
-        if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
+        if (e.target.className.split(" ").includes("no-redirect")) {
             return;
         } else {
             this.props.history.push(`/projects/${this.props.projectId}/edit`)
@@ -59,16 +59,15 @@ class ProjectEditBox extends React.Component {
 
     imageForm() {
         return (
-            <label>
-                <div className="image-box-holder image-box">
+            <label className="no-redirect">
+                <div className="image-box-holder image-box no-redirect">
                     <div>Click to Add Image
                         <input
-                            className='inputfile'
+                            className='inputfile no-redirect'
                             type="file"
                             onChange={this.handleProjectFile}
                         />
                     </div>
-
                 </div>
             </label>
         )
@@ -82,20 +81,20 @@ class ProjectEditBox extends React.Component {
             image = this.state.imageUrl
         }
         return (
-                <label>
-                <div className="image-box-holder image-box">
+            <label className="no-redirect">
+                <div className="image-box-holder image-box no-redirect">
                 Click to Change Image
-                <div className="image-preview-box">
-                <img className="image-preview" src={image} />
+                <div className="image-preview-box no-redirect">
+                <img className="image-preview no-redirect" src={image} />
 
                 </div>
                     <input
-                        className='inputfile'
+                        className='inputfile no-redirect'
                         type="file"
                         onChange={this.handleProjectFile}
                     />
                 </div>
-                </label>
+            </label>
         )
     }
 
@@ -106,7 +105,7 @@ class ProjectEditBox extends React.Component {
             <div onClick={this.redirect}>
                 <div className="edit-box">
                     <div className="edit-box-left">
-                            {this.state.imageUrl || this.props.project.imageUrl ? this.previewImage() : this.imageForm()}
+                        {this.state.imageUrl || this.props.project.imageUrl ? this.previewImage() : this.imageForm()}
                         </div>
                     <div className="edit-box-right">
                         <div className="step-box-title">

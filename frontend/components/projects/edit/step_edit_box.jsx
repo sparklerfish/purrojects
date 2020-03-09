@@ -19,12 +19,14 @@ class StepEditBox extends React.Component {
         e.stopPropagation();
         this.props.destroyStep(this.props.step.id);
     }
+
     redirect(e) {
+        console.log(e.target.className)
         const path = `/steps/${this.props.step.id}/edit`;
-        if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
+        if (e.target.className.split(" ").includes("no-redirect")) {
             return;
         } else {
-            this.props.history.push(path)
+            this.props.history.push(path);
         }
     }
 
@@ -60,16 +62,15 @@ class StepEditBox extends React.Component {
 
     imageForm() {
         return (
-            <label>
-                <div className="image-box-holder image-box">
-                    <div>Click to Add Image
+            <label className="no-redirect">
+                <div className="image-box-holder image-box no-redirect">
+                    <div className="no-redirect">Click to Add Image
                         <input
-                            className='inputfile'
+                            className='inputfile no-redirect'
                             type="file"
                             onChange={this.handleStepFile}
                         />
                     </div>
-
                 </div>
             </label>
         )
@@ -83,15 +84,15 @@ class StepEditBox extends React.Component {
             image = this.state.imageUrl
         }
         return (
-            <label>
-                <div className="image-box-holder image-box">
+            <label className="no-redirect">
+                <div className="image-box-holder image-box no-redirect">
                     Click to Change Image
-                <div className="image-preview-box">
-                        <img className="image-preview" src={image} />
+                <div className="image-preview-box no-redirect">
+                <img className="image-preview no-redirect" src={image} />
 
                     </div>
                     <input
-                        className='inputfile'
+                        className='inputfile no-redirect'
                         type="file"
                         onChange={this.handleStepFile}
                     />
