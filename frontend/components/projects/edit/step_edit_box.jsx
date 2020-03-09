@@ -20,7 +20,6 @@ class StepEditBox extends React.Component {
         this.props.destroyStep(this.props.step.id);
     }
     redirect(e) {
-        console.log(e.target.className)
         const path = `/steps/${this.props.step.id}/edit`;
         if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
             return;
@@ -30,7 +29,6 @@ class StepEditBox extends React.Component {
     }
 
     handleStepFile(e) {
-        console.log("uploading")
         e.stopPropagation();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
@@ -39,7 +37,6 @@ class StepEditBox extends React.Component {
         };
         if (file) {
             reader.readAsDataURL(file);
-            console.log(file);
             setTimeout(() => this.handleSubmit(), 100)
         } else {
             this.setState( { [imageUrl]: "", [imageFile]: null } );
@@ -49,7 +46,6 @@ class StepEditBox extends React.Component {
     handleSubmit() {
         const formData = new FormData();
         formData.append('step[project]', this.props.project);
-        console.log(this.state)
         if (this.state.imageFile) {
             formData.append('step[photo]', this.state.imageFile);
         }

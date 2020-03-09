@@ -19,7 +19,6 @@ class ProjectEditBox extends React.Component {
     }
 
     redirect(e) {
-        console.log(e.target.className)
         if (e.target.className == "image-box-holder image-box" || e.target.className == "image-box" || e.target.className == "inputfile" || e.target.className == "image-preview" || e.target.className == "image-box-holder" || e.target.className == "image-preview-box") {
             return;
         } else {
@@ -28,7 +27,6 @@ class ProjectEditBox extends React.Component {
     }
 
     handleProjectFile(e) {
-        console.log("uploading")
         e.stopPropagation();
         const reader = new FileReader();
         const file = e.currentTarget.files[0];
