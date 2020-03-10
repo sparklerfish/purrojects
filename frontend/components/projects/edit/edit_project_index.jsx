@@ -27,10 +27,8 @@ class EditProjectIndex extends React.Component {
         return (
             <div className="edit-box">
                 <div className="edit-box-left">
-                    <div className="image-box-holder">
-                        <div className="image-box">
-                            Click to Add Image
-                        </div>
+                    <div className="image-box-holder image-box no-redirect">
+                        Click to Add Image
                     </div>
                 </div>
                 <div className="edit-box-right">
@@ -74,11 +72,9 @@ class EditProjectIndex extends React.Component {
 
                     <div className="new-submit">
                         <center>
-                            {/* <Link to={`/projects/${this.props.match.params.projectId}`}> */}
-                                <div className="done-button" onClick={this.handleSubmit}>
-                                    Done with Purroject!
-                                </div>
-                            {/* </Link> */}
+                            <div className="done-button" onClick={this.handleSubmit}>
+                                Done with Purroject!
+                            </div>
                         </center>
                     </div>
                 </div>

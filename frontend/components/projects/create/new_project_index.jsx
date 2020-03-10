@@ -74,11 +74,9 @@ class NewProjectIndex extends React.Component {
                         </div>
                     </div>
                     <div className="new-submit">
-                        <Link to={`/projects/${this.props.newProjectId}`}>
-                            <div className="done-button" onClick={this.handleSubmit}>
-                                Done with Purroject!
-                            </div>
-                        </Link>
+                        <div className="done-button" onClick={this.handleSubmit}>
+                            Done with Purroject!
+                        </div>
                     </div>
                 </div>
             </div>
