@@ -51,15 +51,13 @@ class EditProjectIndex extends React.Component {
         this.props.history.push(`/projects/${this.props.match.params.projectId}`)
     }
 
-
-
     render() {
         let emptyStep = { title: "", body: "", project_id: this.props.match.params.projectId }
         return (
             <div className="new-edit-container">
                 <div>
                     <div>
-                        {(localStorage.getItem('newProjectId') > 0) ?
+                        {(localStorage.getItem('newProjectId') > 0 || this.props.location.projectId) ?
                             <ProjectEditBoxContainer projectId={this.props.match.params.projectId} /> :
                         this.noProjectComponent()}
                     </div>
@@ -76,11 +74,11 @@ class EditProjectIndex extends React.Component {
 
                     <div className="new-submit">
                         <center>
-                            <Link to={`/projects/${this.props.match.params.projectId}`}>
+                            {/* <Link to={`/projects/${this.props.match.params.projectId}`}> */}
                                 <div className="done-button" onClick={this.handleSubmit}>
                                     Done with Purroject!
                                 </div>
-                            </Link>
+                            {/* </Link> */}
                         </center>
                     </div>
                 </div>

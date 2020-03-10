@@ -26,7 +26,8 @@ class ProjectShow extends React.Component {
   editLinks() {
       <div>
         <div className="done-button">
-          <Link to={`/projects/${this.props.project.id}/update`}>
+          <Link to={`/projects/${this.props.project.id}/update`}
+            projectId={this.props.project.id}>
             Edit Purroject
           </Link>
         </div>
