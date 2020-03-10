@@ -20,7 +20,7 @@ Purrojects is an Instructables clone for finding and sharing instructions for cr
 
 ## Technologies
 #### Backend
-Purrojects is built on a Ruby on Rails framework with a PostgreSQL database.
+Purrojects is built on a Ruby on Rails framework with a PostgreSQL database. User-uploaded images are hosted with Amazon Web Services.
 
 #### Frontend
 Purrojects uses React and Redux to dynamically update and respond to user interaction in a single-page app.
@@ -31,11 +31,11 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
 * Users can view projects with step-by-step directions
 * Users can create, update, and delete projects
   * Steps can be edited or deleted individually
+  * Users can add photos to projects and steps
 * Users can search for projects based on keywords in project title
 * Users can add comments to projects
 
 ---
 
 ## Future Direction
-* Adding pictures and videos to projects and steps
 * Filtering projects by category
