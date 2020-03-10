@@ -21,7 +21,6 @@ class StepEditBox extends React.Component {
     }
 
     redirect(e) {
-        console.log(e.target.className)
         const path = `/steps/${this.props.step.id}/edit`;
         if (e.target.className.split(" ").includes("no-redirect")) {
             return;

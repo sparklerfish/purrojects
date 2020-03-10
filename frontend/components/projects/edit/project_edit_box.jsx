@@ -77,8 +77,8 @@ class ProjectEditBox extends React.Component {
         let image;
         if (this.state.imageUrl) {
             image = this.state.imageUrl
-        } else if (this.props.step.imageUrl) {
-            image = this.props.step.imageUrl
+        } else if (this.props.project.imageUrl) {
+            image = this.props.project.imageUrl
         }
         return (
             <label className="no-redirect">
