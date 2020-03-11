@@ -18,7 +18,6 @@ class EditStepForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        console.log(this.props.action(this.state))
         this.props.action(this.state)
         this.redirect();
     }
