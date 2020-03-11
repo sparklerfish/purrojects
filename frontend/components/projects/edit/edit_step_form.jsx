@@ -5,25 +5,22 @@ class EditStepForm extends React.Component {
         super(props);
         this.state = this.props.step;
         this.handleSubmit = this.handleSubmit.bind(this)
-        // this.redirect = this.redirect.bind(this)
+        this.redirect = this.redirect.bind(this)
     }
 
-    // redirect() {
-    //     if (!this.props.step.project_id) {
-    //         setTimeout(this.redirect(), 100);
-    //     } else {
-    //         this.props.history.push(`/projects/${this.props.step.project_id}/update`)
-    //     }
-    // }
+    redirect() {
+        if (!this.props.step.project_id) {
+            setTimeout(this.redirect(), 100);
+        } else {
+            this.props.history.push(`/projects/${this.props.step.project_id}/update`)
+        }
+    }
 
     handleSubmit(e) {
         e.preventDefault();
-        if (!this.props.step.project_id) {
-            setTimeout(this.handleSubmit(), 100);
-        } else {
+        console.log(this.props.action(this.state))
         this.props.action(this.state)
-        this.props.history.push(`/projects/${this.props.step.project_id}/update`)
-        }
+        this.redirect();
     }
 
     update(field) {
