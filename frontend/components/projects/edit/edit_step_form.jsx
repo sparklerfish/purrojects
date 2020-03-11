@@ -5,7 +5,7 @@ class EditStepForm extends React.Component {
         super(props);
         this.state = this.props.step;
         this.handleSubmit = this.handleSubmit.bind(this)
-        this.redirect = this.redirect.bind(this)
+        // this.redirect = this.redirect.bind(this)
     }
 
     // redirect() {
