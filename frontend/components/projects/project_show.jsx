@@ -41,6 +41,7 @@ class ProjectShow extends React.Component {
   render() {
     if (!this.props.project) return null
     if (!this.props.steps) return null
+    window.scrollTo(0, 0);
     return (
       <div>
         <div className="project-show">
