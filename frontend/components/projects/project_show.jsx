@@ -11,10 +11,15 @@ class ProjectShow extends React.Component {
   }
 
   componentDidMount() {
-      this.props.requestProject(this.props.match.params.projectId);
-      this.props.requestSteps(this.props.match.params.projectId);
-      this.props.requestComments(this.props.match.params.projectId);
+    this.props.requestProject(this.props.match.params.projectId);
+    this.props.requestSteps(this.props.match.params.projectId);
+    this.props.requestComments(this.props.match.params.projectId);
+    if (this.props.location.state) {
+      const prevPath = this.props.location.state.prevPath;
+      if (prevPath === "/") window.scrollTo(0, 0);
+    }
   }
+
 
   handleDelete() {
     if (window.confirm("Do you really want to delete this purroject?")) {
@@ -41,7 +46,6 @@ class ProjectShow extends React.Component {
   render() {
     if (!this.props.project) return null
     if (!this.props.steps) return null
-    window.scrollTo(0, 0);
     return (
       <div>
         <div className="project-show">
@@ -73,7 +77,6 @@ class ProjectShow extends React.Component {
                   <br/>
               </div>)
               : null}
-              {/* {this.editLinks} */}
 
             <CommentListContainer
               projectId={this.props.project.id}

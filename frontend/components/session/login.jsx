@@ -31,6 +31,7 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state);
+    this.props.history.goBack();
   }
 
   demoLogin(e) {
@@ -39,6 +40,7 @@ class Login extends React.Component {
       username: "guest",
       password: "password"
     });
+    this.props.history.goBack()
   }
 
   renderErrors() {

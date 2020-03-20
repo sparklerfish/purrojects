@@ -10,13 +10,19 @@ class ProjectIndexItem extends React.Component {
 
         return (
           <div className="project-item">
-              <Link to={`/projects/${this.props.project.id}`}>
+            <Link to={{
+              pathname: `/projects/${this.props.project.id}`,
+              state: { prevPath: location.pathname }
+            }}>
                 <div className="project-item-image">
                 <img src={this.props.project.imageUrl ? this.props.project.imageUrl : window.placeholder} />
                 </div>
             </Link>
             <div className="project-item-info">
-              <Link to={`/projects/${this.props.project.id}`}>
+              <Link to={{
+                pathname: `/projects/${this.props.project.id}`,
+                state: {prevPath: location.pathname}
+              }}>
                 <b>{this.props.project.title}</b>
               </Link>{" "}
               by {this.props.project.author.username}
