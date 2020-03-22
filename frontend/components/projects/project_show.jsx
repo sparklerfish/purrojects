@@ -23,8 +23,10 @@ class ProjectShow extends React.Component {
 
   handleDelete() {
     if (window.confirm("Do you really want to delete this purroject?")) {
-      this.props.deleteProject(this.props.project.id)
-      this.props.history.push(`/projects`)
+      return new Promise((resolve, reject) => {
+        resolve(this.props.deleteProject(this.props.project.id))
+      })
+      .then(this.props.history.push(`/projects`))
     }
   }
 
