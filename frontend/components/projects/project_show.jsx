@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import StepList from "../steps/step_list";
 import { Link } from "react-router-dom";
 import CommentListContainer from "../comments/comment_list_container";
@@ -149,11 +149,12 @@ class ProjectShow extends React.Component {
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          <Modal.Header closeButton>
-            {/* <Modal.Title>Modal heading</Modal.Title> */}
-          </Modal.Header>
-          <Modal.Body>Are you sure you want to delete this project?</Modal.Body>
-          <Modal.Footer>
+          <Modal.Body style={{ textAlign: "center" }}>
+            Are you sure you want to delete this project?
+          </Modal.Body>
+          <Modal.Footer
+            style={{ textAlign: "center", justifyContent: "center" }}
+          >
             <Button
               variant="secondary"
               style={deleteButton}
