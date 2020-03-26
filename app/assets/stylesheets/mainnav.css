@@ -78,10 +78,12 @@
 
 .publish-link a {
     text-decoration: none;
+    color: #555;
 }
 
 .publish-link a:hover {
     text-decoration: underline;
+    color: #555;
 }
 
 .search-form input {
