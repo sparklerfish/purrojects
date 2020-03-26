@@ -149,12 +149,10 @@ class ProjectShow extends React.Component {
         </div>
 
         <Modal show={this.state.show} onHide={this.handleClose}>
-          {/* <Modal.Header closeButton> */}
-          {/* <Modal.Title>Modal heading</Modal.Title> */}
-          {/* </Modal.Header> */}
-          <Modal.Body closeButton>
-            Are you sure you want to delete this project?
-          </Modal.Body>
+          <Modal.Header closeButton>
+            {/* <Modal.Title>Modal heading</Modal.Title> */}
+          </Modal.Header>
+          <Modal.Body>Are you sure you want to delete this project?</Modal.Body>
           <Modal.Footer>
             <Button
               variant="secondary"
@@ -163,7 +161,7 @@ class ProjectShow extends React.Component {
             >
               Delete Purroject
             </Button>
-            &nbsp; 
+            &nbsp; &nbsp;
             <Button
               variant="primary"
               style={cancelButton}
