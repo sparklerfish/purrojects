@@ -2,7 +2,7 @@
   list-style-type: none;
   margin: 0;
   background-color: #555;
-  height: 38px;
+  /* height: 38px; */
   padding: 0;
 }
 
@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #555;
+  height: 38px;
+  box-sizing: border-box;
 }
 
 .right-nav li {
@@ -27,6 +29,8 @@
 .right-nav {
   padding: 0px 20px 0px 0px;
   background-color: #555;
+  position: relative;
+  top: -8px;
 }
 
 .right-nav li a {
@@ -56,8 +60,9 @@
     color: #ccc;
     font-size: 9pt;
     text-align: center;
-    padding: 12px 5px;
+    /* padding: 12px 0px; */
     text-decoration: none;
+    position: relative;
 }
 
 
@@ -71,8 +76,9 @@
 }
 
 .left-nav {
-  padding: 0px 20px 0px 0px;
+  /* padding: 0px 20px 0px 0px; */
   background-color: #555;
+  top: -8px;
 }
 
 .left-nav li a {

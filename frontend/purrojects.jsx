@@ -4,7 +4,7 @@ import React from 'react';
 import Root from './components/root';
 import { loadState, saveState } from './local_storage';
 import throttle from 'lodash/throttle';
-
+// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { closeModal } from './actions/modal_actions'; 
 
 document.addEventListener("DOMContentLoaded", () => {
