@@ -32,6 +32,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3'
 gem 'faker'
 gem 'sprockets'
+gem 'bootstrap'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
