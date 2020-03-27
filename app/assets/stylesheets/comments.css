@@ -172,3 +172,21 @@
     font-size: 13px;
     font-weight: 700;
 }
+
+.delete-comment {
+    padding: 0;
+    position: absolute;
+    display: block;
+    top: 10px;
+    /* bottom: 500px; */
+    right: 15px;
+    font-size: 25px;
+    color: #7E7E7E;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.delete-comment:hover {
+    color: red;
+}

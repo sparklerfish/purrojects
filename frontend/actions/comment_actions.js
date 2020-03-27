@@ -8,26 +8,26 @@ export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS'
 
 // sync actions
-export const receiveComments = ({ comments }) => ({
+const receiveComments = ({ comments }) => ({
         type: RECEIVE_ALL_COMMENTS,
         comments
 });
 
-export const receiveComment = comment => ({
+const receiveComment = comment => ({
     type: RECEIVE_COMMENT,
     comment
 });
 
-export const removeComment = commentId => ({
+const removeComment = commentId => ({
     type: REMOVE_COMMENT,
     commentId
 });
 
-export const clearComments = () => ({
+const clearComments = () => ({
     type: CLEAR_COMMENTS
 });
 
-export const receiveErrors = errors => ({
+const receiveErrors = errors => ({
     type: RECEIVE_COMMENT_ERRORS,
     errors
 });

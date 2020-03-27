@@ -11,6 +11,7 @@ class CommentList extends React.Component {
     }
 
     render() {
+      console.log(this.props)
         if (!this.props.comments) return null;
         const comments = Object.values(this.props.comments);
         return (
@@ -19,7 +20,13 @@ class CommentList extends React.Component {
             <br />
             <ul className="comment-list">
               {comments.map(comment => (
-                <CommentListItem comment={comment} key={comment.id} />
+                <CommentListItem 
+                  comment={comment}
+                  key={comment.id}
+                  userId={this.props.userId}
+                  currentUser={this.props.currentUser}
+                  destroyComment={this.props.destroyComment}
+                />
               ))}
             </ul>
             <AddComment
