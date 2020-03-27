@@ -28,7 +28,9 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createNewUser(this.state);
-    this.props.history.goBack();
+    if (!this.props.errors) {
+      (setTimeout(() => this.props.history.goBack(), 100))
+    }
   }
 
   renderErrors() {

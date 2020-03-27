@@ -31,7 +31,9 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state);
-    this.props.history.goBack();
+    if (!this.props.errors) {
+      (setTimeout(() => this.props.history.goBack(), 100))
+    }
   }
 
   demoLogin(e) {
