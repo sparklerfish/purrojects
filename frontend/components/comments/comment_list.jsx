@@ -11,7 +11,6 @@ class CommentList extends React.Component {
     }
 
     render() {
-      console.log(this.props)
         if (!this.props.comments) return null;
         const comments = Object.values(this.props.comments);
         return (

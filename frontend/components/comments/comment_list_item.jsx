@@ -69,7 +69,6 @@ class CommentListItem extends React.Component {
             margin: "10px 0px 10px 0px"
         };
 
-        console.log(this.props)
         return (
             <>
                 <li className="comment-container">
