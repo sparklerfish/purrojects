@@ -26,6 +26,21 @@ class CommentListItem extends React.Component {
         this.setState({ show: true });
     }
 
+
+    deleteButton() {
+        if (this.props.currentUser && this.props.comment.author.username === this.props.currentUser.username) {
+            return (
+                <div
+                    className="delete-comment"
+                    onClick={this.handleShow}>
+                    ×
+                </div>
+            )
+        } else {
+            return null;
+        }
+    }
+
     render() {
         if (!this.props.comment.author) return null;
 
@@ -69,6 +84,7 @@ class CommentListItem extends React.Component {
             margin: "10px 0px 10px 0px"
         };
 
+
         return (
             <>
                 <li className="comment-container">
@@ -76,13 +92,7 @@ class CommentListItem extends React.Component {
                     <span className="comment-author">{this.props.comment.author.username} </span>
                     <span className="comment-timestamp">{this.props.comment.time_ago} </span>
                     <div className="comment-body">{this.props.comment.body}</div>
-                    {this.props.comment.author.username === this.props.currentUser ? (
-                        <div
-                            className="delete-comment"
-                            onClick={this.handleShow}>
-                            ×
-                        </div>
-                    ) : null }
+                    {this.deleteButton()}
                 </li>
 
                 <Modal show={this.state.show} onHide={this.handleClose}>

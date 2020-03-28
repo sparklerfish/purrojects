@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
         steps: state.entities.steps,
         comments: state.entities.comments,
         userId: state.session.id,
-        currentUser: state.entities.users[state.session.id].username
+        currentUser: state.entities.users[state.session.id]
     };
 }
 
