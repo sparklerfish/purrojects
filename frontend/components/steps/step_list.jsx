@@ -1,21 +1,18 @@
 import React from 'react'
 import StepListItem from './step_list_item'
-class StepList extends React.Component {
-  render() {
-    if (!this.props.steps) return null;
-    
-    const steps = Object.values(this.props.steps)
-    return (
-      <div>
-        <ul className="step-list">
-          {steps.map((step, idx) => (
-            <StepListItem step={step} key={step.id} idx={idx}/>
-          ))}
-        </ul>
-      </div>
-    );
-  }
 
+const StepList = props => {
+    if (!props.steps) return null;
+    
+    const steps = Object.values(props.steps);
+
+    return (
+      <ul className="step-list">
+        {steps.map((step, idx) => (
+          <StepListItem step={step} key={`step-${step.id}`} idx={idx}/>
+        ))}
+      </ul>
+    );
 }
 
 export default StepList;

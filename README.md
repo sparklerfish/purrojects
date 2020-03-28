@@ -37,9 +37,9 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
       Project index component:
       ```javascript
         <div className="project-list">
-                {projects.map(project => (
-                    <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
-                ))}
+          {projects.map(project => (
+            <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
+          ))}
         </div>
       ```
 * Users can view projects with step-by-step directions
@@ -56,6 +56,14 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
           projectId={this.props.project.id}
           steps={this.props.steps}
         />
+      ```
+
+      ``` javascript
+      <ul className="step-list">
+        {steps.map((step, idx) => (
+          <StepListItem step={step} key={`step-${step.id}`} idx={idx}/>
+        ))}
+      </ul>
       ```
 * Users can create and update projects
   ![project create](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_create.png "Purrojects Project Create Page")
