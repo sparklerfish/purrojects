@@ -31,7 +31,7 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
 
 ## Features
 * Users can view projects with step-by-step directions
-![](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/purrojects_sized.png?raw=true "Purrojects Logo")
+<!-- ![](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/purrojects_sized.png?raw=true "Purrojects Logo") -->
 * Users can create, update, and delete projects
   * Steps can be edited or deleted individually
   * Users can add photos to projects and steps
