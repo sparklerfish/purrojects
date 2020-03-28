@@ -32,8 +32,8 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
 
 ## Features
 * Users can browse projects
-* ![project index](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_index.png "Purrojects Project Index Page")
-  * Project list is structured with a container component populated with reusable project index item presentational components.
+    ![project index](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_index.png "Purrojects Project Index Page")
+    * Project list is structured with a container component populated with reusable project index item presentational components.
       Project index component:
       ```javascript
         <div className="project-list">
@@ -43,8 +43,8 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
         </div>
       ```
 * Users can view projects with step-by-step directions
-* ![project show](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_show.png "Purrojects Project Show Page")
-  * Project view is structured with a container component populated with reusable step presentational components.
+    ![project show](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_show.png "Purrojects Project Show Page")
+    * Project view is structured with a container component populated with reusable step presentational components.
       ```javascript
         <div className="project-title">{this.props.project.title}</div>
         <p>by {this.props.project.author.username}</p>
@@ -57,10 +57,21 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
           steps={this.props.steps}
         />
       ```
-* Users can create, update, and delete projects
+* Users can create and update projects
+  ![project create](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_create.png "Purrojects Project Create Page")
   * Steps can be edited or deleted individually
   * Users can add photos to projects and steps
+  ![project image](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_edit.png "Purrojects Project Edit Page")
+    * Image upload form displays an image preview if one has been uploaded
+      ``` javascript
+        <div className="edit-box-left">
+            {this.state.imageUrl || this.props.step.imageUrl ? this.previewImage() : this.imageForm()}
+        </div>
+      ```
+  * Users can edit and delete projects that they have authored
+  ![project delete](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_deleet.png "Purrojects Project Delete Modal")
 * Users can search for projects based on keywords in project title
+
 * Users can add comments to projects
 
 ---
