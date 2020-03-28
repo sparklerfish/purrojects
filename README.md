@@ -1,7 +1,6 @@
 # README
 
 ![purrojects logo](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/purrojects_sized.png?raw=true "Purrojects Logo")
-![purrojects logo](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/main.png "Purrojects Logo")
 
 
 # Table of Contents
@@ -14,6 +13,8 @@
 
 ## Introduction
 Purrojects is an Instructables clone for finding and sharing instructions for creating projects for cats.
+![front page](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/main.png "Purrojects Front Page")
+
 
 [Live link to Purrojects!](https://purrojects.herokuapp.com)
 
@@ -30,8 +31,32 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
 ---
 
 ## Features
+* Users can browse projects
+* ![project index](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_index.png "Purrojects Project Index Page")
+  * Project list is structured with a container component populated with reusable project index item presentational components.
+      Project index component:
+      ```javascript
+        <div className="project-list">
+                {projects.map(project => (
+                    <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
+                ))}
+        </div>
+      ```
 * Users can view projects with step-by-step directions
-<!-- ![](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/purrojects_sized.png?raw=true "Purrojects Logo") -->
+* ![project show](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_show.png "Purrojects Project Show Page")
+  * Project view is structured with a container component populated with reusable step presentational components.
+      ```javascript
+        <div className="project-title">{this.props.project.title}</div>
+        <p>by {this.props.project.author.username}</p>
+        {this.props.project.imageUrl ? (
+          <img className="project-show-image" src={this.props.project.imageUrl} />
+        ) : null}
+        <div className="project-body">{this.props.project.body}</div>
+        <StepList
+          projectId={this.props.project.id}
+          steps={this.props.steps}
+        />
+      ```
 * Users can create, update, and delete projects
   * Steps can be edited or deleted individually
   * Users can add photos to projects and steps
