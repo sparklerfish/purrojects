@@ -1,5 +1,3 @@
-# README
-
 ![purrojects logo](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/purrojects_sized.png?raw=true "Purrojects Logo")
 
 
