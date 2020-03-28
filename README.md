@@ -79,8 +79,43 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
   * Users can edit and delete projects that they have authored
   ![project delete](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_delete.png "Purrojects Project Delete Modal")
 * Users can search for projects based on keywords in project title
+  ![project search](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_search.png "Purrojects Project Search")
+  * Search dispatches an action to fetch projects with a title that matches the query param
+
+    Async action to search projects:
+    ``` javascript
+    export const searchProjects = search => dispatch => (
+      ProjectAPIUtil.searchProjects(search)
+        .then(projects => dispatch(receiveProjects(projects)))
+    );
+    ```
+    Ajax request to project API endpoint
+    ``` javascript
+    export const searchProjects = search => (
+      $.ajax({
+          method: "GET",
+          url: `/api/projects`,
+          data: { search }
+      })
+    )
+    ```
+
+
 
 * Users can add comments to projects
+  ![comment form](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/comment_form.png "Purrojects Comment Form")
+  * Clicking "Add Comment" or "Cancel" toggles visibility of comment form
+    ``` javascript
+    <div className="new-submit" id="comment-form">
+      {this.state.clickable ? this.clickableButton() : this.unclickableButton()}
+      {this.state.formVisible ? (
+      <CommentFormContainer
+          projectId={this.props.projectId}
+          toggleForm={this.toggleForm}
+      />
+      ) : null}
+    </div>
+    ```
 
 ---
 
