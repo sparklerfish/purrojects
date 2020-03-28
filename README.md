@@ -69,7 +69,7 @@ Purrojects uses React and Redux to dynamically update and respond to user intera
         </div>
       ```
   * Users can edit and delete projects that they have authored
-  ![project delete](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_deleet.png "Purrojects Project Delete Modal")
+  ![project delete](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/project_delete.png "Purrojects Project Delete Modal")
 * Users can search for projects based on keywords in project title
 
 * Users can add comments to projects
