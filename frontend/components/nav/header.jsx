@@ -1,26 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const Header = props => {
 
-  loggedInRightNav() {
+  const loggedInRightNav = () => {
     return (
       <div className="right-nav">
         <ul>
           <li>
-            <a onClick={this.props.logout}>Logout</a>
+            <a onClick={props.logout}>Logout</a>
           </li>
           <li>|</li>
-          <li>Hello, {this.props.currentUser.username}!</li>
+          <li>Hello, {props.currentUser.username}!</li>
         </ul>
       </div>
     );
   }
 
-  loggedOutRightNav() {
+  const loggedOutRightNav = () => {
     return (
       <div className="right-nav">
         <ul>
@@ -36,34 +33,29 @@ class Header extends React.Component {
     );
   }
 
-  render() {
-    return (
-      <div className="navbar">
-        <div className="left-nav">
-          <ul>
-            <li>
-              <Link to="/">
-                <i className="fa fa-home w3-large"></i>
-              </Link>
-            </li>
-            <li>
-              Sleep
-            </li>
-            <li>
-              Eat
-            </li>
-            <li>
-              Play
-            </li>
-          </ul>
-        </div>
-        {this.props.currentUser
-          ? this.loggedInRightNav()
-          : this.loggedOutRightNav()}
+  return (
+    <div className="navbar">
+      <div className="left-nav">
+        <ul>
+          <li>
+            <Link to="/">
+              <i className="fa fa-home w3-large"></i>
+            </Link>
+          </li>
+          <li>
+            Sleep
+          </li>
+          <li>
+            Eat
+          </li>
+          <li>
+            Play
+          </li>
+        </ul>
       </div>
-    );
-  }
+      {props.currentUser ? loggedInRightNav() : loggedOutRightNav()}
+    </div>
+  );
 }
-
 
 export default Header;
