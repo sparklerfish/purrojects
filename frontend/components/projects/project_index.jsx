@@ -13,10 +13,9 @@ class ProjectIndex extends React.Component {
         }
     }
 
-
-
     render() {
         const { projects, users } = this.props;
+
         if (projects.length === 0) {
             return (
                 <div className="project-list">
@@ -24,12 +23,13 @@ class ProjectIndex extends React.Component {
                 </div>
             )
         }
-        return(
+        
+        return (
             <>
                 <div className="project-list">
-                        {projects.map(project => (
-                            <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
-                        ))}
+                    {projects.map(project => (
+                        <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
+                    ))}
                 </div>
                 <Footer />
             </>
