@@ -17,13 +17,10 @@ class Search extends React.Component {
         if (this.state.search === "") return;
         this.props.searchProjects(this.state.search)
             .then(res => this.props.history.push(`/search/${this.state.search}`))
-        // setTimeout(() => this.setState({search: ""}), 500);
     }
 
     update(e) {
-        this.setState({
-            search: e.currentTarget.value
-        });
+        this.setState({search: e.currentTarget.value});
     }
 
     render() {
@@ -39,9 +36,8 @@ class Search extends React.Component {
                 />
                 <i className="fa fa-search w3-large" onClick={this.handleSubmit}></i>
             </form>
-        )
+        );
     }
-
 }
 
 export default Search;
