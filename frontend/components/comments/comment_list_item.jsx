@@ -42,6 +42,7 @@ class CommentListItem extends React.Component {
     }
 
     render() {
+        console.log(this.props.comment)
         if (!this.props.comment.author) return null;
 
         const deleteButton = {
