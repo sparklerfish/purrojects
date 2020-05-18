@@ -17,22 +17,10 @@ class CommentForm extends React.Component {
     handleSubmit() {
         this.props.clearErrors();
         let comment = Object.assign({}, this.state)
-        const create = new Promise((resolve, reject) => {
-          if (this.props.createComment(comment)) {
-            resolve();
-          }
-        });
-
-        create.then(()=> {
-            setTimeout(() => {
-                if (this.props.errors.length === 0) {
-                    this.toggleForm();
-                    // this.props.requestComments(this.props.comment.project_id);
-                } else {
-                    return;
-                }
-            }, 100);
-        });
+        this.props.createComment(comment)
+          .then(() => {
+            if (this.props.errors.length === 0) this.toggleForm();
+          })
     }
 
     cancel() {

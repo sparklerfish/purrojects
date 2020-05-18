@@ -44,7 +44,7 @@ export const requestComments = projectId => dispatch => {
 }
 
 export const createComment = comment => dispatch => {
-    CommentAPIUtil.createComment(comment)
+    return CommentAPIUtil.createComment(comment)
         .then(comment => dispatch(receiveComment(comment)))
         .fail(errors => dispatch(receiveErrors(errors)))
 }
