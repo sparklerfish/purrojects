@@ -33,6 +33,7 @@ gem 'aws-sdk-s3'
 gem 'faker'
 gem 'sprockets'
 gem 'bootstrap'
+gem "actionview", ">= 5.2.4.2"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
