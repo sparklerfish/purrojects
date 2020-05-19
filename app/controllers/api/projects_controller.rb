@@ -47,7 +47,6 @@ class Api::ProjectsController < ApplicationController
     def destroy
         @project = Project.find(params[:id])
         @project.destroy
-        render :index
     end
 
     def search

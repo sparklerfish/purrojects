@@ -38,9 +38,8 @@ class ProjectShow extends React.Component {
   }
 
   handleDelete() {
-      return new Promise((resolve, reject) => {
-        resolve(this.props.deleteProject(this.props.project.id));
-      }).then(setTimeout(() => this.props.history.push(`/projects`), 100));
+    this.props.deleteProject(this.props.project.id)
+      .then(() => this.props.history.push(`/projects`));
   }
 
   editLinks() {
