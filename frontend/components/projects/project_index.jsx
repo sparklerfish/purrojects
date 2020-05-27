@@ -1,40 +1,42 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ProjectIndexItem from './project_index_item';
 import Footer from '../footer/footer';
 
-class ProjectIndex extends React.Component {
-    componentDidMount() {
-        this.props.requestUsers();
-        this.props.clearSteps();
-        if (this.props.location.pathname.includes("search")) {
-            this.props.searchProjects(this.props.match.params.query);
+const ProjectIndex = props => {
+
+    const { projects, users } = props;
+
+    useEffect(() => {
+        props.requestUsers();
+        props.clearSteps();
+        if (props.location.pathname.includes("search")) {
+            props.searchProjects(props.match.params.query);
         } else {
-            this.props.requestProjects();
-        }
-    }
+            props.requestProjects();
+        }    
+    }, []);
 
-    render() {
-        const { projects, users } = this.props;
-
-        if (projects.length === 0) {
-            return (
-                <div className="project-list">
-                    No projects found!
-                </div>
-            )
-        }
-        
+    if (projects.length === 0) {
         return (
             <>
                 <div className="project-list">
-                    {projects.map(project => (
-                        <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
-                    ))}
+                    No projects found!
                 </div>
                 <Footer />
             </>
         )
     }
+    
+    return (
+        <>
+            <div className="project-list">
+                {projects.map(project => (
+                    <ProjectIndexItem project={project} users={users} key={`project-${project.id}`}/>
+                ))}
+            </div>
+            <Footer />
+        </>
+    )
 }
 
 export default ProjectIndex;
