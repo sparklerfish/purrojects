@@ -47,7 +47,7 @@ const ProjectShow = props => {
       borderColor: "#800000",
       color: "#fff",
       textDecoration: "none",
-      margin: "10px 0px 10px 0px"
+      // margin: "10px 0px 10px 0px"
     };
 
     const cancelButton = {
@@ -93,9 +93,9 @@ const ProjectShow = props => {
             steps={props.steps}
           />
           {props.project.author_id === props.userId ? (
-            <div>
-              <Link to={`/projects/${props.project.id}/update`}>
-                <div className="done-button">Edit Purroject</div>
+            <>
+              <Link to={`/projects/${props.project.id}/update`} style={{ width: "200px"}}>
+                <div className="done-button" style={{ textDecoration: "none", width: "200px"}}>Edit Purroject</div>
               </Link>
 
               <div className="delete-button" onClick={handleShow}>
@@ -103,7 +103,7 @@ const ProjectShow = props => {
               </div>
               <br />
               <br />
-            </div>
+            </>
           ) : null}
 
           <CommentListContainer
