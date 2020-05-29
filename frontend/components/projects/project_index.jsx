@@ -3,7 +3,6 @@ import ProjectIndexItem from './project_index_item';
 import Footer from '../footer/footer';
 
 const ProjectIndex = props => {
-
     const { projects, users } = props;
 
     useEffect(() => {

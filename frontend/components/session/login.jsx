@@ -1,55 +1,46 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Footer from '../footer/footer';
 
-class Login extends React.Component {
-  componentDidMount() {
-    this.props.clearErrors();
+const Login = props => {
+  const [creds, setCreds] = useState({
+    username: "",
+    password: ""
+  })
+
+  useEffect(() => {
+    props.clearErrors();
     window.scrollTo(0, 0);
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      username: "",
-      password: ""
-    };
-    
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleInput = this.handleInput.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
-  }
-
-  handleInput(type) {
+  }, [])
+  
+  const handleInput = (type) => {
     return e => {
-      this.setState({ [type]: e.target.value });
+      setCreds({ [type]: e.target.value });
     };
   }
 
-  handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.login(this.state);
-    if (!this.props.errors) {
-      (setTimeout(() => this.props.history.goBack(), 100))
+    props.login(creds);
+    if (!props.errors) {
+      (setTimeout(() => props.history.goBack(), 100))
     }
   }
 
-  demoLogin(e) {
+  const demoLogin = (e) => {
     e.preventDefault();
-    this.props.login({
+    props.login({
       username: "guest",
       password: "password"
     });
-    this.props.history.goBack()
+    props.history.goBack()
   }
 
-  renderErrors() {
-    if (this.props.errors.length > 0) {
+  const renderErrors = () => {
+    if (props.errors.length > 0) {
       return (
         <ul className="session-errors">
-          {this.props.errors.map((error, i) => (
+          {props.errors.map((error, i) => (
             <li key={`error-${i}`}>{error}</li>
           ))}
         </ul>
@@ -59,58 +50,57 @@ class Login extends React.Component {
     }
   }
 
-  render() {
-    return (
-      <div>
-        <div className="session-image">
-          <div className="dimmed">
-            <div className="sessionbox">
-              <center>
-                <form>
-                  <label>
-                    <input
-                      className="session-input"
-                      placeholder="Username"
-                      type="text"
-                      value={this.state.username}
-                      onChange={this.handleInput("username")}
-                    />
-                  </label>
+  return (
+    <div>
+      <div className="session-image">
+        <div className="dimmed">
+          <div className="sessionbox">
+            <center>
+              <form>
+                <label>
+                  <input
+                    className="session-input"
+                    placeholder="Username"
+                    type="text"
+                    value={creds.username}
+                    onChange={handleInput("username")}
+                  />
+                </label>
+                <br />
+                <label>
+                  <input
+                    className="session-input"
+                    placeholder="Password"
+                    type="password"
+                    value={creds.password}
+                    onChange={handleInput("password")}
+                  />
+                </label>
+                <br />
+                <br />
+                {renderErrors()}
+                <button className="session-button" onClick={handleSubmit}>
+                  Login
+                </button>
+                <button
+                  className="session-button demo"
+                  onClick={demoLogin}
+                >
+                  Demo User
+                </button>
+                <p>
                   <br />
-                  <label>
-                    <input
-                      className="session-input"
-                      placeholder="Password"
-                      type="password"
-                      value={this.state.password}
-                      onChange={this.handleInput("password")}
-                    />
-                  </label>
-                  <br />
-                  <br />
-                  {this.renderErrors()}
-                  <button className="session-button" onClick={this.handleSubmit}>
-                    Login
-                  </button>
-                  <button
-                    className="session-button demo"
-                    onClick={this.demoLogin}
-                  >
-                    Demo User
-                  </button>
-                  <p>
-                    <br />
-                    New to Purrojects? <Link to="/signup">Sign Up »</Link>
-                  </p>
-                </form>
-              </center>
-            </div>
+                  New to Purrojects? <Link to="/signup">Sign Up »</Link>
+                </p>
+              </form>
+            </center>
           </div>
         </div>
-      <Footer/>
       </div>
-    );
-  }
+    <Footer/>
+    </div>
+  );
+
 }
 
 export default Login;
