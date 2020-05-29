@@ -1,44 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-class StepForm extends React.Component {
-    constructor(props) {
-        super(props);
+const StepForm = props => {
+    const [step, setStep] = useState(props.step)
 
-        this.state = this.props.step;
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
-
-    handleSubmit(e) {
+    const handleSubmit = e => {
         e.preventDefault();
-        this.props.action(this.state);
+        props.action(step);
     }
 
-    update(field) {
-        return e => this.setState({ [field]: e.currentTarget.value })
+    const update = field => {
+        return e => setStep({ [field]: e.currentTarget.value })
     }
 
-    render() {
-        return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label for="title">
-                        <input
-                            type="text"
-                            value={this.state.title}
-                            onChange={this.update("title")}
-                        />
-                    </label>
-                    <label for="body">
-                        <textarea
-                            value={this.state.body}
-                            onChange={this.update("body")}
-                        />
-                    </label>
-                    <input type="submit" value="Submit" />
-                </form>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label for="title">
+                    <input
+                        type="text"
+                        value={state.title}
+                        onChange={update("title")}
+                    />
+                </label>
+                <label for="body">
+                    <textarea
+                        value={state.body}
+                        onChange={update("body")}
+                    />
+                </label>
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
+    )
 }
 
 export default StepForm;
