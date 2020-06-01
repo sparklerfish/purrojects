@@ -59,9 +59,6 @@
     resize: none;
 }
 
-
-
-
 .form-container {
     position: relative;
     width: 800px;
@@ -78,20 +75,24 @@
     border: 1px solid transparent;
     border-radius: 4px;
     cursor: pointer;
-    /* display: inline-block; */
     font-size: 14px;
     font-weight: 400;
     margin-bottom: 0;
     padding: 6px 12px;
     text-align: center;
     vertical-align: middle;
-    /* white-space: nowrap; */
     background-color: #e86c00;
     border-color: #cf6000;
     color: #fff;
     text-decoration: none;
-    margin-left: auto;
-    margin-right: auto;
+    display: inline-block;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
+}
+
+.done-button a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 .new-submit {
