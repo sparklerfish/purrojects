@@ -13,10 +13,8 @@ const Login = props => {
     window.scrollTo(0, 0);
   }, [])
   
-  const handleInput = (type) => {
-    return e => {
-      setCreds({ [type]: e.target.value });
-    };
+  const handleInput = (e) => {
+    setCreds({ ...creds, [e.target.name]: e.target.value });
   }
 
   const handleSubmit = (e) => {
