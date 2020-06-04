@@ -13,10 +13,8 @@ const Login = props => {
     window.scrollTo(0, 0);
   }, [])
   
-  const handleInput = (type) => {
-    return e => {
-      setCreds({ [type]: e.target.value });
-    };
+  const handleInput = (e) => {
+    setCreds({ ...creds, [e.target.name]: e.target.value });
   }
 
   const handleSubmit = (e) => {
@@ -60,20 +58,24 @@ const Login = props => {
                 <label>
                   <input
                     className="session-input"
+                    name="username"
                     placeholder="Username"
                     type="text"
                     value={creds.username}
-                    onChange={handleInput("username")}
+                    onChange={handleInput}
+                    autoComplete="username"
                   />
                 </label>
                 <br />
                 <label>
                   <input
                     className="session-input"
+                    name="password"
                     placeholder="Password"
                     type="password"
                     value={creds.password}
-                    onChange={handleInput("password")}
+                    onChange={handleInput}
+                    autoComplete="current-password"
                   />
                 </label>
                 <br />

@@ -55,6 +55,7 @@ const Signup = props => {
                     placeholder="Username"
                     value={creds.username}
                     onChange={handleInput}
+                    autoComplete="username"
                   />
                 </label>
                 <br />
@@ -66,6 +67,7 @@ const Signup = props => {
                     placeholder="Email"
                     value={creds.email}
                     onChange={handleInput}
+                    autoComplete="email"
                   />
                 </label>
                 <br />
@@ -77,6 +79,7 @@ const Signup = props => {
                     placeholder="Password"
                     value={creds.password}
                     onChange={handleInput}
+                    autoComplete="current-password"
                   />
                 </label>
                 <br />
