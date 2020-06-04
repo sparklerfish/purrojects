@@ -62,7 +62,8 @@ const Login = props => {
                     placeholder="Username"
                     type="text"
                     value={creds.username}
-                    onChange={handleInput("username")}
+                    onChange={handleInput}
+                    autoComplete="username"
                   />
                 </label>
                 <br />
@@ -73,7 +74,8 @@ const Login = props => {
                     placeholder="Password"
                     type="password"
                     value={creds.password}
-                    onChange={handleInput("password")}
+                    onChange={handleInput}
+                    autoComplete="current-password"
                   />
                 </label>
                 <br />
