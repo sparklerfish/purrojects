@@ -58,6 +58,7 @@ const Login = props => {
                 <label>
                   <input
                     className="session-input"
+                    name="username"
                     placeholder="Username"
                     type="text"
                     value={creds.username}
@@ -68,6 +69,7 @@ const Login = props => {
                 <label>
                   <input
                     className="session-input"
+                    name="password"
                     placeholder="Password"
                     type="password"
                     value={creds.password}
