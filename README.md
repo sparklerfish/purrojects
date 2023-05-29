@@ -14,7 +14,7 @@ Purrojects is an Instructables clone for finding and sharing instructions for cr
 ![front page](https://github.com/sparklerfish/purrojects/blob/master/app/assets/images/screenshots/main.png "Purrojects Front Page")
 
 
-[Live link to Purrojects!](https://purrojects.herokuapp.com)
+[Live link to Purrojects!](https://purrojects.duckdns.org)
 
 ---
 
